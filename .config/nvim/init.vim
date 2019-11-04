@@ -253,7 +253,6 @@ command! TT tabnew term://$SHELL | setlocal nonumber norelativenumber nocursorli
 
 
 " Popup guake-style terminal
-" FIXME: Open this *across* vertical splits
 " Keep track of buffer and window with these variables
 let s:term_buf = 0
 let s:term_win = 0
@@ -279,8 +278,10 @@ endfunction
 
 " TODO: Open a fixed percentage of overall lines
 nnoremap <silent><leader>t :call TermToggle(20)<CR>
-" FIXME: This activates in insert mode.
+" FIXME: This activates in insert mode. Not good!
 " inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
+" FIXME: This still activates in insert mode while in a terminal buffer.
+" Also not good!
 tnoremap <silent><leader>t <C-\><C-n>:call TermToggle(20)<CR>
 
 " ## 6. Autogroups
