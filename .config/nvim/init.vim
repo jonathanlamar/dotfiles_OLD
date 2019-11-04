@@ -70,6 +70,9 @@ else
   Plugin 'ctrlpvim/ctrlp.vim'
 endif
 
+" Compile in background for linting.
+Plugin 'neomake/neomake'
+
 " Git stuff
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter' " Not sure if this plays nice with fugitive.
@@ -109,7 +112,13 @@ let g:onedark_italics=1
 let base16colorspace=256
 
 "Deoplete settings
+" TODO: Figure out what these actually do.  I'm pretty sure deoplete is not
+" optimal.
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources={}
+let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
+let g:deoplete#omni#input_patterns={}
+let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 " Ripgrep for file indexing, sort of faster, but not really, but also why not use ripgrep for everything
 if executable('rg')
@@ -153,6 +162,23 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
+"Linting with neomake
+let g:neomake_sbt_maker = {
+      \ 'exe': 'sbt',
+      \ 'args': ['-Dsbt.log.noformat=true', 'compile'],
+      \ 'append_file': 0,
+      \ 'auto_enabled': 1,
+      \ 'output_stream': 'stdout',
+      \ 'errorformat':
+          \ '%E[%trror]\ %f:%l:\ %m,' .
+            \ '%-Z[error]\ %p^,' .
+            \ '%-C%.%#,' .
+            \ '%-G%.%#'
+     \ }
+let g:neomake_enabled_makers = ['sbt']
+let g:neomake_verbose=3
+" Neomake on text change
+autocmd InsertLeave,TextChanged *.scala,*.sbt update | Neomake! sbt
 
 " ## 3. Basic sets
 "
@@ -212,7 +238,14 @@ augroup CursorLine
     autocmd WinLeave * setlocal nocursorline
 augroup END
 augroup end
-"
+
+" easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
 
 " ## 4. Cool remaps
 "

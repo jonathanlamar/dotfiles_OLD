@@ -11,6 +11,17 @@
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[ \t]*)*val[ \t]+([a-zA-Z0-9_]+)/\3/V,values/
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[ \t]*)*var[ \t]+([a-zA-Z0-9_]+)/\3/v,variables/
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
+--exclude=target
+--exclude=.git
+--exclude=.svn
+--exclude=.hg
+--exclude=node_modules
+--exclude=bundle.js
+--exclude=*.js.map
+--exclude=*.min.*
+--exclude=*.swp
+--exclude=*.bak
+--exclude=*.tar.*
 
 --langdef=R
 --langmap=r:.R.r
@@ -20,5 +31,5 @@
 
 --python-kinds=-i
 --exclude=*.pyc
---exclude=*/.ipynb_checkpoints/*
---exclude=*/__pycache__/*
+--exclude=*/.ipynb_checkpoints/
+--exclude=*/__pycache__/
