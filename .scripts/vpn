@@ -1,0 +1,6 @@
+#!/bin/sh
+
+CONTRACTOR=Apex
+USER=p2837730
+
+sudo openconnect webvpn.chartercom.com/$CONTRACTOR -u $USER

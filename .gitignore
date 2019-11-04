@@ -1,0 +1,17 @@
+*
+!.gitignore
+
+# Only keep the files I want
+!.bashrc
+!.config
+!.config/nvim
+!.config/nvim/init.vim
+!.config/ranger
+!.config/ranger/*
+!.config/termite
+!.config/termite/config
+!.ctags
+!.profile
+!.scripts
+!.scripts/*
+!.zshrc
