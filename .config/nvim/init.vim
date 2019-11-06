@@ -1,10 +1,10 @@
 " TODO: Make a makefile
 " Before copying this to ~/.config/nvim/init.vim, make sure to prep by running the following:
 " > mkdir -p ~/.config/nvim/autoload
-" > mkdir -p ~/.config/nvim/bundle
-" > git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+" > curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+" >     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " > curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" Then, open vim, run :PluginInstall, then close, restart, and run :UpdateRemotePlugins
+" Then, open vim, run :PlugInstall, then close, restart, and run :UpdateRemotePlugins
 "
 " DEPENDENCIES:
 " ripgrep, fzf, python3, pynvim (pip package), exuberant ctags
@@ -23,61 +23,56 @@ set nocompatible              " be iMproved, required
 filetype plugin on
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.config/nvim/plugged')
 
 " General functionality
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Colorschemes
 " Bundle 'altercation/vim-colors-solarized' " Gross
-Plugin 'sjl/badwolf'
-Plugin 'morhetz/gruvbox'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'tomasr/molokai'
-Plugin 'joshdick/onedark.vim'
+Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
 
 " Syntax highlighting
-Plugin 'sheerun/vim-polyglot'
-Plugin 'mechatroner/rainbow_csv'
-Plugin 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
-Plugin 'vim-python/python-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'mechatroner/rainbow_csv'
+Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
+Plug 'vim-python/python-syntax'
 let g:python_highlight_all = 1
 
 " Code auto-completion
-"Plugin 'davidhalter/jedi-vim' " Something for python I think?
-Plugin 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
+"Plug 'davidhalter/jedi-vim' " Something for python I think?
+Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 
 " Commenting and other nice code stuff
 " Comment-in-movement:
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Surround-movement-with-X:
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Repleat-plugin-with-.:
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " CTRL P for fuzzy codebase searching
 " FZF / Ctrlp for file navigation
 if executable('fzf')
   set rtp+=/usr/local/opt/fzf
-  Plugin 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf.vim'
 else
-  Plugin 'ctrlpvim/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
 endif
 
 " Git stuff
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter' " Not sure if this plays nice with fugitive.
-Plugin 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter' " Not sure if this plays nice with fugitive.
+Plug 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-
+call plug#end()
 
 
 " ## 2. Plugin Configs
