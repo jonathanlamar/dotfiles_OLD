@@ -4,10 +4,12 @@
 " > curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 " >     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " > curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+" pip install pynvim
+" pip install sexpdata websocket-client
 " Then, open vim, run :PlugInstall, then close, restart, and run :UpdateRemotePlugins
 "
 " DEPENDENCIES:
-" ripgrep, fzf, python3, pynvim (pip package), exuberant ctags
+" ripgrep, fzf, python3, exuberant ctags
 "
 " TODO: Set up python virtual environment for nvim as suggested online. (I'm
 " lazy and haven't done it yet)
@@ -48,6 +50,10 @@ let g:python_highlight_all = 1
 " Code auto-completion
 "Plug 'davidhalter/jedi-vim' " Something for python I think?
 Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+" IDE-like features for scala
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+" Not totally sure what this is for, but something to do with remote plugins
+Plug 'roxma/nvim-yarp'
 
 " Commenting and other nice code stuff
 " Comment-in-movement:
@@ -60,6 +66,7 @@ Plug 'tpope/vim-repeat'
 " CTRL P for fuzzy codebase searching
 " FZF / Ctrlp for file navigation
 if executable('fzf')
+  " TODO: Should this be an option?
   set rtp+=/usr/local/opt/fzf
   Plug 'junegunn/fzf.vim'
 else
