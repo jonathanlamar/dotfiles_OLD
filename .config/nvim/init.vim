@@ -15,6 +15,22 @@
 " lazy and haven't done it yet)
 
 
+
+" Testing: Pasting here
+" curl -sL install-node.now.sh/lts | sh
+" curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+" # Make sure to use coursier v1.1.0-M9 or newer.
+" curl -L -o coursier https://git.io/coursier
+" chmod +x coursier
+" ./coursier bootstrap \
+"   --java-opt -Xss4m \
+"   --java-opt -Xms100m \
+"   --java-opt -Dmetals.client=coc.nvim \
+"   org.scalameta:metals_2.12:0.7.6 \
+"   -r bintray:scalacenter/releases \
+"   -r sonatype:snapshots \
+"   -o /usr/local/bin/metals-vim -f
+
 " ## 1: Plugins
 "
 "
@@ -51,9 +67,12 @@ let g:python_highlight_all = 1
 "Plug 'davidhalter/jedi-vim' " Something for python I think?
 Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 " IDE-like features for scala
+" FIXME: This doesn't seem to be working
 Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
-" Not totally sure what this is for, but something to do with remote plugins
-Plug 'roxma/nvim-yarp'
+" This may be a fix
+Plug 'neoclide/coc.nvim', {'branch': 'release' }
+" This was recommended in the install guide for coc
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Commenting and other nice code stuff
 " Comment-in-movement:
@@ -101,7 +120,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
 " How to format long paths in tabs
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -128,10 +147,10 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " Commenting out until I understand what they do.
-" let g:deoplete#sources={}
-" let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
-" let g:deoplete#omni#input_patterns={}
-" let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
+let g:deoplete#sources={}
+let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
+let g:deoplete#omni#input_patterns={}
+let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 
 " Ripgrep for file indexing, sort of faster, but not really, but also why not use ripgrep for everything
@@ -257,8 +276,8 @@ nnoremap k gk
 " NERDTree stuff
 augroup nerd
   autocmd!
-  nnoremap <Leader>n :NERDTreeToggle <Bar> if &filetype ==# 'nerdtree' <Bar> wincmd p <Bar> endif <CR>
   nnoremap <Leader>f :NERDTreeFocus <CR>
+  autocmd FileType nerdtree nnoremap <Esc> :NERDTreeClose <CR>
 augroup end
 
 " Make it easier to make it easier to edit text :P
@@ -348,12 +367,13 @@ augroup end
 augroup scala
   autocmd!
   " TODO: Set filetype scala for sbt files
-  autocmd FileType scala,sbt set tabstop=2
-  autocmd FileType scala,sbt set softtabstop=2
-  autocmd FileType scala,sbt set shiftwidth=2
-  autocmd FileType scala,sbt set softtabstop=2
-  autocmd FileType scala,sbt set foldmethod=syntax " This will do for now
-  autocmd Filetype scala,sbt call deoplete#enable()
+  autocmd BufRead,BufNewFile *.sbt set filetype=scala
+  autocmd FileType scala set tabstop=2
+  autocmd FileType scala set softtabstop=2
+  autocmd FileType scala set shiftwidth=2
+  autocmd FileType scala set softtabstop=2
+  autocmd FileType scala set foldmethod=syntax " This will do for now
+  autocmd Filetype scala call deoplete#enable()
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
 augroup end
 
