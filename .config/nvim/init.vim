@@ -67,9 +67,6 @@ let g:python_highlight_all = 1
 "Plug 'davidhalter/jedi-vim' " Something for python I think?
 Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 " IDE-like features for scala
-" FIXME: This doesn't seem to be working
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
-" This may be a fix
 Plug 'neoclide/coc.nvim', {'branch': 'release' }
 " This was recommended in the install guide for coc
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -133,8 +130,6 @@ let g:gruvbox_contrast_white = 'hard'
 let g:gruvbox_italic = 1
 let g:gruvbox_improved_warnings = 1
 let g:gruvbox_number_column = 'bg1'
-let g:gruvbox_vert_split = 'gray'
-" let g:gruvbox_italicize_strings = 1 " Not sure if I like this
 
 
 "Deoplete settings
@@ -146,11 +141,6 @@ let g:deoplete#auto_complete_delay = 500 " Wait this many milliseconds for autoc
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-" Commenting out until I understand what they do.
-" let g:deoplete#sources={}
-" let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
-" let g:deoplete#omni#input_patterns={}
-" let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 
 " Ripgrep for file indexing, sort of faster, but not really, but also why not use ripgrep for everything
@@ -202,10 +192,14 @@ endif
 "
 "
 "
+
 " No-brainers
 set background=dark
 colorscheme gruvbox
-" WARNING: Only do this if the colorscheme looks good with default terminal background
+" Match tildes at end of buffer to number column color... sort of.
+autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
+" Allow terminal default transparent background
+" WARNING: Only do this if the terminal and vim colorschemes are the same
 autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 filetype plugin indent on    " required
 set termguicolors " This allows truecolor, so the gruvbox settings work
@@ -238,6 +232,9 @@ set wildmenu " I TODO: What does this do?
 set foldenable " enable folding
 set foldlevelstart=100 " open most folds by default
 set foldnestmax=1000 " 10 nested fold max
+
+" When using macros, I always accidentally hit shift-Q and go to Ex mode.
+nnoremap Q <Nop>
 
 " I like to see a cursorline only on the active pane
 " FIXME: This breaks nocursorline setting on terminals
