@@ -1,4 +1,23 @@
-" TODO: Make a makefile
+" README: Initial Setup
+" DEPENDENCIES:
+" The following are dependencies, whose installation varies by platform
+" ripgrep, fzf, python3, exuberant ctags, node.js
+"
+" Is this cross-platform?
+" curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+"
+" # Make sure to use coursier v1.1.0-M9 or newer.
+" curl -L -o coursier https://git.io/coursier
+" chmod +x coursier
+" sudo ./coursier bootstrap \
+"   --java-opt -Xss4m \
+"   --java-opt -Xms100m \
+"   --java-opt -Dmetals.client=coc.nvim \
+"   org.scalameta:metals_2.12:0.7.6 \
+"   -r bintray:scalacenter/releases \
+"   -r sonatype:snapshots \
+"   -o /usr/local/bin/metals-vim -f
+"
 " Before copying this to ~/.config/nvim/init.vim, make sure to prep by running the following:
 " > mkdir -p ~/.config/nvim/autoload
 " > curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -8,28 +27,10 @@
 " pip install sexpdata websocket-client
 " Then, open vim, run :PlugInstall, then close, restart, and run :UpdateRemotePlugins
 "
-" DEPENDENCIES:
-" ripgrep, fzf, python3, exuberant ctags
-"
 " TODO: Set up python virtual environment for nvim as suggested online. (I'm
 " lazy and haven't done it yet)
 
 
-
-" Testing: Pasting here
-" curl -sL install-node.now.sh/lts | sh
-" curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-" # Make sure to use coursier v1.1.0-M9 or newer.
-" curl -L -o coursier https://git.io/coursier
-" chmod +x coursier
-" ./coursier bootstrap \
-"   --java-opt -Xss4m \
-"   --java-opt -Xms100m \
-"   --java-opt -Dmetals.client=coc.nvim \
-"   org.scalameta:metals_2.12:0.7.6 \
-"   -r bintray:scalacenter/releases \
-"   -r sonatype:snapshots \
-"   -o /usr/local/bin/metals-vim -f
 
 " ## 1: Plugins
 "
