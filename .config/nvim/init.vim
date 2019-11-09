@@ -83,8 +83,6 @@ Plug 'tpope/vim-repeat'
 " CTRL P for fuzzy codebase searching
 " FZF / Ctrlp for file navigation
 if executable('fzf')
-  " TODO: Should this be an option?
-  set rtp+=/usr/local/opt/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
@@ -371,6 +369,7 @@ augroup scala
   autocmd FileType scala set shiftwidth=2
   autocmd FileType scala set softtabstop=2
   autocmd FileType scala set foldmethod=syntax " This will do for now
+  " Still figuring out what to do RE deoplete and metals
   autocmd Filetype scala call deoplete#enable()
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
 augroup end
