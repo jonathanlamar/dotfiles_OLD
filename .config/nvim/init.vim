@@ -199,7 +199,7 @@ colorscheme gruvbox
 autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
 " Allow terminal default transparent background
 " WARNING: Only do this if the terminal and vim colorschemes are the same
-autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
+" autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 filetype plugin indent on    " required
 set termguicolors " This allows truecolor, so the gruvbox settings work
 set number
