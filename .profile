@@ -8,7 +8,7 @@ export BROWSER="firefox"
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile
 export SCRIPTS=$HOME/.scripts
-export VIMRC=$HOME~/.config/nvim/init.vim
+export VIMRC=$HOME/.config/nvim/init.vim
 
 #export TERM=xterm-256color
 

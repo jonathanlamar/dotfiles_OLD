@@ -47,7 +47,7 @@ bold_is_bright = true
 clickable_url = true
 #dynamic_title = true
 # font = Ubuntu Mono derivative Powerline 13
-font = DejaVu Sans Mono for Powerline Book 12
+font = DejaVu Sans Mono for Powerline Book 11
 scrollback_lines = -1
 # "system", "on" or "off"
 cursor_blink = system
