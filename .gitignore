@@ -13,6 +13,7 @@
 !.config/termite/config
 !.ctags
 !.profile
+!README.md
 !.scripts
 !.scripts/*
 !.zshrc

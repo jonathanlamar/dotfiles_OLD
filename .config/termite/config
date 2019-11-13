@@ -45,14 +45,11 @@ bold_is_bright = true
 #cell_height_scale = 1.0
 #cell_width_scale = 1.0
 clickable_url = true
-#dynamic_title = true
-# font = Ubuntu Mono derivative Powerline 13
+dynamic_title = true
 font = DejaVu Sans Mono for Powerline Book 11
 scrollback_lines = -1
 # "system", "on" or "off"
-cursor_blink = system
+cursor_blink = on
 
 # "block", "underline" or "ibeam"
 cursor_shape = block
-
-# vim: ft=dosini cms=#%s
