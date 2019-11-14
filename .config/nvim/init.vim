@@ -84,7 +84,7 @@ Plug 'tpope/vim-repeat'
 " FZF / Ctrlp for file navigation
 if executable('fzf')
   " TODO: Should this be an option?
-  " set rtp+=/usr/local/opt/fzf
+  set rtp+=/usr/local/opt/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
