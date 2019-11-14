@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 ZSH=/home/jon/.oh-my-zsh/
+# ZSH=/Users/p2837730/.oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,4 +112,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Just source .profile
 [[ -f ~/.profile ]] && . ~/.profile
+
+# Just source .bash_profile (for work computer only, which has extra aliases for mac os)
+# FIXME: This is not a good solution
+# [[ -f ~/.bash_profile ]] && . ~/.bash_profile
 

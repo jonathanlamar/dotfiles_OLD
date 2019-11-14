@@ -83,6 +83,8 @@ Plug 'tpope/vim-repeat'
 " CTRL P for fuzzy codebase searching
 " FZF / Ctrlp for file navigation
 if executable('fzf')
+  " TODO: Should this be an option?
+  " set rtp+=/usr/local/opt/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
