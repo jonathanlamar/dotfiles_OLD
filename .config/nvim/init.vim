@@ -246,15 +246,14 @@ augroup end
 " easier split navigations
 " a la i3
 nnoremap <C-J> <C-W><C-J>
-nnoremap <C-U> <C-W>-
+" nnoremap <C-U> <C-W>-
 nnoremap <C-K> <C-W><C-K>
-nnoremap <C-I> <C-W>+
+" nnoremap <C-I> <C-W>+
 nnoremap <C-L> <C-W><C-L>
-nnoremap <C-O> <C-W>>
+" nnoremap <C-O> <C-W>>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <C-Y> <C-W><
-nnoremap <C-Y> <C-W><
-nnoremap <C-Y> <C-W><
+" FIXME: This overmaps the scroll page up motion
+" nnoremap <C-Y> <C-W><
 
 
 
