@@ -232,9 +232,6 @@ set foldenable " enable folding
 set foldlevelstart=100 " open most folds by default
 set foldnestmax=1000 " 10 nested fold max
 
-" When using macros, I always accidentally hit shift-Q and go to Ex mode.
-nnoremap Q <Nop>
-
 " I like to see a cursorline only on the active pane
 " FIXME: This breaks nocursorline setting on terminals
 augroup culine
@@ -242,18 +239,6 @@ augroup culine
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
 augroup end
-
-" easier split navigations
-" a la i3
-nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-U> <C-W>-
-nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-I> <C-W>+
-nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-O> <C-W>>
-nnoremap <C-H> <C-W><C-H>
-" FIXME: This overmaps the scroll page up motion
-" nnoremap <C-Y> <C-W><
 
 
 
@@ -279,6 +264,23 @@ augroup end
 map <leader>rc :tabe $MYVIMRC <cr>
 " TODO: This breaks vim-airline.
 autocmd bufwritepost $MYVIMRC source $MYVIMRC
+
+" When using macros, I always accidentally hit shift-Q and go to Ex mode.
+nnoremap Q <Nop>
+
+" easier split navigations
+" a la i3
+nnoremap <C-J> <C-W><C-J>
+nnoremap <M-j> <C-w>-
+nnoremap <C-K> <C-W><C-K>
+nnoremap <M-k> <C-w>+
+nnoremap <C-L> <C-W><C-L>
+nnoremap <M-l> <C-W>>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <M-h> <C-W><
+
+" Add blank line below cursor
+nnoremap <M-o> o<Esc>
 
 " ## 5. Terimal Stuff
 "
