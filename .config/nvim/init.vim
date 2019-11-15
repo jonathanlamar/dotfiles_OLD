@@ -259,7 +259,7 @@ nnoremap k gk
 augroup nerd
   autocmd!
   nnoremap <Leader>f :NERDTreeFocus <CR>
-  autocmd FileType nerdtree nnoremap <Esc> :NERDTreeClose <CR>
+  autocmd FileType nerdtree nnoremap <buffer> <Esc> :NERDTreeClose <CR>
 augroup end
 
 " Make it easier to make it easier to edit text :P
