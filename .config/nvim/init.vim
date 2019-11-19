@@ -23,8 +23,8 @@
 " > curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 " >     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " > curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" pip install pynvim
-" pip install sexpdata websocket-client
+" pip3 install pynvim
+" pip3 install sexpdata websocket-client
 " Then, open vim, run :PlugInstall, then close, restart, and run :UpdateRemotePlugins
 "
 " TODO: Set up python virtual environment for nvim as suggested online. (I'm
@@ -201,7 +201,7 @@ colorscheme gruvbox
 autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
 " Allow terminal default transparent background
 " WARNING: Only do this if the terminal and vim colorschemes are the same
-" autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
+autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 filetype plugin indent on    " required
 set termguicolors " This allows truecolor, so the gruvbox settings work
 set number
