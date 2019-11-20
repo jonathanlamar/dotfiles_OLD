@@ -66,11 +66,9 @@ let g:python_highlight_all = 1
 
 " Code auto-completion
 "Plug 'davidhalter/jedi-vim' " Something for python I think?
-Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
 " IDE-like features for scala
 Plug 'neoclide/coc.nvim', {'branch': 'release' }
-" This was recommended in the install guide for coc
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Commenting and other nice code stuff
 " Comment-in-movement:
@@ -85,6 +83,7 @@ Plug 'tpope/vim-repeat'
 if executable('fzf')
   " TODO: Should this be an option?
   " set rtp+=/usr/local/opt/fzf
+  set rtp+=/home/jon/Applications/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
@@ -136,8 +135,8 @@ let g:gruvbox_number_column = 'bg1'
 "Deoplete settings
 " TODO: Figure out what these actually do.  I'm pretty sure deoplete is not optimal.
 " Disable deoplete at start and only enable for specific filetypes below.
-let g:deoplete#enable_at_startup = 0
-let g:deoplete#auto_complete_delay = 500 " Wait this many milliseconds for autocomplete
+" let g:deoplete#enable_at_startup = 0
+" let g:deoplete#auto_complete_delay = 500 " Wait this many milliseconds for autocomplete
 " use tab to forward cycle
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
@@ -346,7 +345,7 @@ augroup python
   autocmd FileType python set tabstop=4
   autocmd FileType python set expandtab
   autocmd FileType python set autoindent
-  autocmd Filetype python call deoplete#enable()
+  " autocmd Filetype python call deoplete#enable()
   autocmd BufRead,BufNewFile  *.ipynb set syntax=python " TODO Set filetype=python for these files
   autocmd filetype python set foldmethod=indent
   autocmd BufWritePre *.py %s/\s\+$//e " Remove all trailing whitespace
@@ -359,7 +358,7 @@ augroup sql
   autocmd BufRead,BufNewFile *.sql,*.hql set softtabstop=2
   autocmd BufRead,BufNewFile *.sql,*.hql set shiftwidth=2
   autocmd BufRead,BufNewFile *.sql,*.hql set softtabstop=2
-  autocmd BufRead,BufNewFile *.sql,*.hql call deoplete#enable()
+  " autocmd BufRead,BufNewFile *.sql,*.hql call deoplete#enable()
   autocmd BufWritePre *.sql,*.hql %s/\s\+$//e
 augroup end
 
@@ -373,7 +372,7 @@ augroup scala
   autocmd FileType scala set softtabstop=2
   autocmd FileType scala set foldmethod=syntax " This will do for now
   " Still figuring out what to do RE deoplete and metals
-  autocmd Filetype scala call deoplete#enable()
+  " autocmd Filetype scala call deoplete#enable()
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
 augroup end
 
@@ -384,7 +383,7 @@ augroup markdown
   autocmd FileType markdown set softtabstop=4
   autocmd FileType markdown set shiftwidth=4
   autocmd FileType markdown set softtabstop=4
-  autocmd Filetype markdown call deoplete#disable()
+  " autocmd Filetype markdown call deoplete#disable()
   autocmd BufWritePre *.md %s/\s\+$//e
 augroup end
 
@@ -394,7 +393,7 @@ augroup bash
   autocmd FileType bash set softtabstop=2
   autocmd FileType bash set shiftwidth=2
   autocmd FileType bash set softtabstop=2
-  autocmd Filetype bash call deoplete#enable()
+  " autocmd Filetype bash call deoplete#enable()
   autocmd BufWritePre *.sh %s/\s\+$//e
 augroup end
 
@@ -404,7 +403,7 @@ augroup vim
   autocmd FileType vim set softtabstop=2
   autocmd FileType vim set shiftwidth=2
   autocmd FileType vim set softtabstop=2
-  autocmd Filetype vim call deoplete#enable()
+  " autocmd Filetype vim call deoplete#enable()
   autocmd BufWritePre *.vim %s/\s\+$//e
 augroup end
 

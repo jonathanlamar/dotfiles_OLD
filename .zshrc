@@ -105,7 +105,14 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# Source profile.  One easy location for global stuff.
+
+# fzf Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/jon/Applications/fzf/shell/completion.zsh" 2> /dev/null
+
+# fzf Key bindings
+# ------------
+source "/home/jon/Applications/fzf/shell/key-bindings.zsh"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
