@@ -23,8 +23,8 @@
 " > curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 " >     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " > curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" pip install pynvim
-" pip install sexpdata websocket-client
+" pip3 install pynvim
+" pip3 install sexpdata websocket-client
 " Then, open vim, run :PlugInstall, then close, restart, and run :UpdateRemotePlugins
 "
 " TODO: Set up python virtual environment for nvim as suggested online. (I'm
@@ -32,22 +32,18 @@
 
 
 
-" ## 1: Plugins
+" ## 1: Plugins and their settings
 "
 "
 "
 execute pathogen#infect()
 
-set nocompatible              " be iMproved, required
+set nocompatible
 filetype plugin on
 
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.config/nvim/plugged')
 
-" General functionality
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Colorschemes
 " Bundle 'altercation/vim-colors-solarized' " Gross
@@ -56,21 +52,64 @@ Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
+" Gruvbox settings need to be enabled before the colorscheme is set..?
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_white = 'hard'
+let g:gruvbox_italic = 1
+let g:gruvbox_improved_warnings = 1
+let g:gruvbox_number_column = 'bg1'
+
+
+" General functionality
+" NERDTree for "dumb" file navigation
+Plug 'scrooloose/nerdtree'
+let NERDTreeDirArrows = 1
+
+
+" Airline for nifty infor in the status and tablines
+Plug 'vim-airline/vim-airline'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" Show tab line even if only one tab, but hide buffers
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_powerline_fonts = 1
+" How to format long paths in tabs
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'gruvbox'
+
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
+" Neat column highlighting for csv and tsv files.
 Plug 'mechatroner/rainbow_csv'
+
+" vim-scala - modern scaladoc indentation
 Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
+let g:scala_scaladoc_indent = 1
+
+" Nice python syntax highlighting.  Doesn't seem to work with all
+" colorschemes, but does with gruvbox
 Plug 'vim-python/python-syntax'
 let g:python_highlight_all = 1
 
-" Code auto-completion
+
+" Code auto-completion.  FIXME: None of this stuff works very well.
 "Plug 'davidhalter/jedi-vim' " Something for python I think?
-Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+" TODO: Figure out what these actually do.  I'm pretty sure deoplete is not optimal.
+" Disable deoplete at start and only enable for specific filetypes below.
+" let g:deoplete#enable_at_startup = 0
+" let g:deoplete#auto_complete_delay = 500 " Wait this many milliseconds for autocomplete
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " IDE-like features for scala
-Plug 'neoclide/coc.nvim', {'branch': 'release' }
-" This was recommended in the install guide for coc
-autocmd FileType json syntax match Comment +\/\/.\+$+
+" Plug 'neoclide/coc.nvim', {'branch': 'release' }
 
 " Commenting and other nice code stuff
 " Comment-in-movement:
@@ -85,71 +124,15 @@ Plug 'tpope/vim-repeat'
 if executable('fzf')
   " TODO: Should this be an option?
   set rtp+=/usr/local/opt/fzf
+  set rtp+=/home/jon/Applications/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
 endif
-
-" Git stuff
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter' " Not sure if this plays nice with fugitive.
-Plug 'tpope/vim-fugitive'
-
-" All of your Plugins must be added before the following line
-call plug#end()
-
-
-" ## 2. Plugin Configs
-"
-"
-"
-" NERDTree stuff
-let NERDTreeDirArrows = 1
-
-
-" vim-scala - modern scaladoc indentation
-let g:scala_scaladoc_indent = 1
-
-
-" Airline settings
-let g:airline_theme = 'gruvbox'
-" Show tab line even if only one tab, but hide buffers
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline_powerline_fonts = 1
-" How to format long paths in tabs
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-
-" Gruvbox settings need to be enabled before the colorscheme is set..?
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_white = 'hard'
-let g:gruvbox_italic = 1
-let g:gruvbox_improved_warnings = 1
-let g:gruvbox_number_column = 'bg1'
-
-
-"Deoplete settings
-" TODO: Figure out what these actually do.  I'm pretty sure deoplete is not optimal.
-" Disable deoplete at start and only enable for specific filetypes below.
-let g:deoplete#enable_at_startup = 0
-let g:deoplete#auto_complete_delay = 500 " Wait this many milliseconds for autocomplete
-" use tab to forward cycle
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" use tab to backward cycle
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-
 " Ripgrep for file indexing, sort of faster, but not really, but also why not use ripgrep for everything
 if executable('rg')
   let $FZF_DEFAULT_COMMAND = 'rg --files --no-messages "" .'
 endif
-
-
 " Use FZF for files and tags if available, otherwise fall back onto CtrlP
 if executable('fzf')
   let g:fzf_command_prefix = 'Fzf' " namespacing commands
@@ -186,6 +169,13 @@ else
 endif
 
 
+" Git stuff
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter' " Not sure if this plays nice with fugitive.
+Plug 'tpope/vim-fugitive'
+
+" All of your Plugins must be added before the following line
+call plug#end()
 
 
 
@@ -201,7 +191,7 @@ colorscheme gruvbox
 autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
 " Allow terminal default transparent background
 " WARNING: Only do this if the terminal and vim colorschemes are the same
-" autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
+autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 filetype plugin indent on    " required
 set termguicolors " This allows truecolor, so the gruvbox settings work
 set number
@@ -259,7 +249,7 @@ nnoremap k gk
 augroup nerd
   autocmd!
   nnoremap <Leader>f :NERDTreeFocus <CR>
-  autocmd FileType nerdtree nnoremap <Esc> :NERDTreeClose <CR>
+  autocmd FileType nerdtree nnoremap <buffer> <Esc> :NERDTreeClose <CR>
 augroup end
 
 " Make it easier to make it easier to edit text :P
@@ -346,7 +336,7 @@ augroup python
   autocmd FileType python set tabstop=4
   autocmd FileType python set expandtab
   autocmd FileType python set autoindent
-  autocmd Filetype python call deoplete#enable()
+  " autocmd Filetype python call deoplete#enable()
   autocmd BufRead,BufNewFile  *.ipynb set syntax=python " TODO Set filetype=python for these files
   autocmd filetype python set foldmethod=indent
   autocmd BufWritePre *.py %s/\s\+$//e " Remove all trailing whitespace
@@ -359,7 +349,7 @@ augroup sql
   autocmd BufRead,BufNewFile *.sql,*.hql set softtabstop=2
   autocmd BufRead,BufNewFile *.sql,*.hql set shiftwidth=2
   autocmd BufRead,BufNewFile *.sql,*.hql set softtabstop=2
-  autocmd BufRead,BufNewFile *.sql,*.hql call deoplete#enable()
+  " autocmd BufRead,BufNewFile *.sql,*.hql call deoplete#enable()
   autocmd BufWritePre *.sql,*.hql %s/\s\+$//e
 augroup end
 
@@ -373,7 +363,7 @@ augroup scala
   autocmd FileType scala set softtabstop=2
   autocmd FileType scala set foldmethod=syntax " This will do for now
   " Still figuring out what to do RE deoplete and metals
-  autocmd Filetype scala call deoplete#enable()
+  " autocmd Filetype scala call deoplete#enable()
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
 augroup end
 
@@ -384,7 +374,7 @@ augroup markdown
   autocmd FileType markdown set softtabstop=4
   autocmd FileType markdown set shiftwidth=4
   autocmd FileType markdown set softtabstop=4
-  autocmd Filetype markdown call deoplete#disable()
+  " autocmd Filetype markdown call deoplete#disable()
   autocmd BufWritePre *.md %s/\s\+$//e
 augroup end
 
@@ -394,7 +384,7 @@ augroup bash
   autocmd FileType bash set softtabstop=2
   autocmd FileType bash set shiftwidth=2
   autocmd FileType bash set softtabstop=2
-  autocmd Filetype bash call deoplete#enable()
+  " autocmd Filetype bash call deoplete#enable()
   autocmd BufWritePre *.sh %s/\s\+$//e
 augroup end
 
@@ -404,7 +394,7 @@ augroup vim
   autocmd FileType vim set softtabstop=2
   autocmd FileType vim set shiftwidth=2
   autocmd FileType vim set softtabstop=2
-  autocmd Filetype vim call deoplete#enable()
+  " autocmd Filetype vim call deoplete#enable()
   autocmd BufWritePre *.vim %s/\s\+$//e
 augroup end
 

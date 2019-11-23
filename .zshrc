@@ -105,7 +105,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# Source profile.  One easy location for global stuff.
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
