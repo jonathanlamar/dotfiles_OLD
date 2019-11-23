@@ -2,8 +2,8 @@ export PATH=$PATH:$HOME/.scripts
 # Auto-added by yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export EDITOR="nvim -n"
-export TERMINAL="gnome-terminal"
-export BROWSER="firefox"
+export TERMINAL="iTerm2"
+# export BROWSER="firefox"
 
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile
@@ -26,8 +26,3 @@ alias python=python3
 # fi
 
 
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == */home/jon/Applications/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/jon/Applications/fzf/bin"
-fi

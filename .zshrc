@@ -2,8 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-ZSH=/home/jon/.oh-my-zsh/
-# ZSH=/Users/p2837730/.oh-my-zsh/
+# ZSH=/home/jon/.oh-my-zsh/
+ZSH=/Users/p2837730/.oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,14 +106,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 
-# fzf Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "/home/jon/Applications/fzf/shell/completion.zsh" 2> /dev/null
-
-# fzf Key bindings
-# ------------
-source "/home/jon/Applications/fzf/shell/key-bindings.zsh"
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -122,5 +114,5 @@ source "/home/jon/Applications/fzf/shell/key-bindings.zsh"
 
 # Just source .bash_profile (for work computer only, which has extra aliases for mac os)
 # FIXME: This is not a good solution
-# [[ -f ~/.bash_profile ]] && . ~/.bash_profile
+[[ -f ~/.bash_profile ]] && . ~/.bash_profile
 
