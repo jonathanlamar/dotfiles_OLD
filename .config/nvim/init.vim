@@ -1,41 +1,15 @@
-" README: Initial Setup
-" DEPENDENCIES:
-" The following are dependencies, whose installation varies by platform
-" ripgrep, fzf, python3, exuberant ctags, node.js
+" init.vim
+" Author: Jon Lamar
+" Goal: Just enough IDE functionality to do serious python and scala/spark
+" development without missing Intellij or PyCharm too much, or being a bloated
+" and generally worse version of those programs.  Generally stay out of the
+" way for  way for all other filetypes.
 "
-" Is this cross-platform?
-" curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-"
-" # Make sure to use coursier v1.1.0-M9 or newer.
-" curl -L -o coursier https://git.io/coursier
-" chmod +x coursier
-" sudo ./coursier bootstrap \
-"   --java-opt -Xss4m \
-"   --java-opt -Xms100m \
-"   --java-opt -Dmetals.client=coc.nvim \
-"   org.scalameta:metals_2.12:0.7.6 \
-"   -r bintray:scalacenter/releases \
-"   -r sonatype:snapshots \
-"   -o /usr/local/bin/metals-vim -f
-"
-" Before copying this to ~/.config/nvim/init.vim, make sure to prep by running the following:
-" > mkdir -p ~/.config/nvim/autoload
-" > curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-" >     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-" > curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" pip3 install pynvim
-" pip3 install sexpdata websocket-client
-" Then, open vim, run :PlugInstall, then close, restart, and run :UpdateRemotePlugins
-"
-" TODO: Set up python virtual environment for nvim as suggested online. (I'm
-" lazy and haven't done it yet)
-
+" Outstanding TODOs:
+" 1. Incorporate make scripts for scala and markdown (pandoc)
 
 
 " ## 1: Plugins and their settings
-"
-"
-"
 execute pathogen#infect()
 
 set nocompatible
@@ -445,17 +419,19 @@ augroup python
   autocmd FileType python set expandtab
   autocmd FileType python set autoindent
   autocmd BufRead,BufNewFile  *.ipynb set syntax=python " TODO Set filetype=python for these files
+  autocmd FileType python :CocEnable
   autocmd filetype python set foldmethod=indent
   autocmd BufWritePre *.py %s/\s\+$//e " Remove all trailing whitespace
 augroup end
 
 augroup sql
   autocmd!
-  autocmd BufRead,BufNewFile *.hql set syntax=sql
-  autocmd BufRead,BufNewFile *.sql,*.hql set tabstop=2
-  autocmd BufRead,BufNewFile *.sql,*.hql set softtabstop=2
-  autocmd BufRead,BufNewFile *.sql,*.hql set shiftwidth=2
-  autocmd BufRead,BufNewFile *.sql,*.hql set softtabstop=2
+  autocmd BufRead,BufNewFile *.hql set filetype=sql
+  autocmd FileType sql set tabstop=2
+  autocmd FileType sql set softtabstop=2
+  autocmd FileType sql set shiftwidth=2
+  autocmd FileType sql set softtabstop=2
+  autocmd FileType sql :CocEnable " no language server, but basic completion is better than none
   autocmd BufWritePre *.sql,*.hql %s/\s\+$//e
 augroup end
 
@@ -468,6 +444,7 @@ augroup scala
   autocmd FileType scala set shiftwidth=2
   autocmd FileType scala set softtabstop=2
   autocmd FileType scala set foldmethod=syntax " This will do for now
+  autocmd FileType scala :CocEnable
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
 augroup end
 
@@ -478,6 +455,7 @@ augroup markdown
   autocmd FileType markdown set softtabstop=4
   autocmd FileType markdown set shiftwidth=4
   autocmd FileType markdown set softtabstop=4
+  autocmd FileType markdown :CocDisable
   autocmd BufWritePre *.md %s/\s\+$//e
 augroup end
 
@@ -487,6 +465,7 @@ augroup bash
   autocmd FileType bash set softtabstop=2
   autocmd FileType bash set shiftwidth=2
   autocmd FileType bash set softtabstop=2
+  autocmd FileType bash :CocEnable " no language server, but basic completion is better than none
   autocmd BufWritePre *.sh %s/\s\+$//e
 augroup end
 
@@ -496,6 +475,7 @@ augroup vim
   autocmd FileType vim set softtabstop=2
   autocmd FileType vim set shiftwidth=2
   autocmd FileType vim set softtabstop=2
+  autocmd FileType vim :CocEnable " no language server, but basic completion is better than none
   autocmd BufWritePre *.vim %s/\s\+$//e
 augroup end
 
