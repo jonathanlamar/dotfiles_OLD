@@ -21,17 +21,28 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Colorschemes
 " Bundle 'altercation/vim-colors-solarized' " Gross
-Plug 'sjl/badwolf'
-Plug 'morhetz/gruvbox'
-" Plug 'NLKNguyen/papercolor-theme'
-" Plug 'tomasr/molokai'
-" Plug 'joshdick/onedark.vim'
-" Gruvbox settings need to be enabled before the colorscheme is set..?
+Plug 'morhetz/gruvbox' " The gold standard of warm dark colorschemes
+Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
+Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
+Plug 'drewtempelmeyer/palenight.vim' " Based on onedark: harder contrast, but also cooler.
+Plug 'ayu-theme/ayu-vim'
+" ColorScheme settings need to be enabled before the colorscheme is set.
+set termguicolors
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_white = 'hard'
 let g:gruvbox_italic = 1
 let g:gruvbox_improved_warnings = 1
 let g:gruvbox_number_column = 'bg1'
+let g:PaperColor_Theme_Options = {
+  \   'language': {
+  \     'python': {
+  \       'highlight_builtins' : 1
+  \     },
+  \   }
+  \ }
+let g:onedark_terminal_italics = 1
+let g:palenight_terminal_italics=1
+let ayucolor = 'mirage'
 
 
 " General functionality
@@ -53,7 +64,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'ayu_mirage'
 
 
 " Syntax highlighting
@@ -123,7 +134,8 @@ nmap <leader>ac <Plug>(coc-codeaction)
 
 " Remap for do action format
 "nmap <silent> F <Plug>(coc-action-format) "does not work
-nnoremap <silent> F :call CocAction('format')<CR>
+" " FIXME: Interferes with find-in-line
+" nnoremap <silent> F :call CocAction('format')<CR>
 
 " Show signature help
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
@@ -261,20 +273,16 @@ call plug#end()
 
 
 " ## 3. Basic sets
-"
-"
-"
-
 " No-brainers
 set background=dark
-colorscheme gruvbox
-" Match tildes at end of buffer to number column color... sort of.
-autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
+colorscheme ayu
+" Match tildes at end of buffer to number column color...
+" TODO: THese are gruvbox colors.  Generalize.
+" autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
 " Allow terminal default transparent background
 " WARNING: Only do this if the terminal and vim colorschemes are the same
 autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 filetype plugin indent on    " required
-set termguicolors " This allows truecolor, so the gruvbox settings work
 set number
 set relativenumber
 syntax enable

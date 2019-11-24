@@ -15,11 +15,6 @@ The following are dependencies, whose installation varies by platform
 * ripgrep
 * fzf (but not through apt.  Build through source instead)
 * python3
-    * Some python packages (all available through pip):
-        1. pynvim
-        2. virtualenv (if using environment for nvim)
-        3. sexpdata (TODO: what for?)
-        4. websocket-client
 * exuberant ctags
 * node.js
 * yarn (TODO: Maybe.  I think it's only for building coc.nvim) Install using the following (may not be cross platform):
