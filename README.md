@@ -44,7 +44,6 @@ sudo ./coursier bootstrap \
   -o /usr/local/bin/metals-vim -f
 
 # Prep $HOME/.config/nvim.
-```bash
 mkdir -p ~/.config/nvim/autoload
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
