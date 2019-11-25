@@ -46,7 +46,7 @@ curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 sudo pip3 install pynvim virtualenv sexpdata websocket-client
 ```
-* Then, open vim and run `:PlugInstall`, then close, restart, and run `:CocInstall coc-python`, then `:UpdateRemotePlugins`.
+* Then, open vim and run `:PlugInstall`, then close, restart, and run `:UpdateRemotePlugins`.
 
 
 
