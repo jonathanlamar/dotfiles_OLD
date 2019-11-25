@@ -122,6 +122,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Show signature help
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
 " Use K to show documentation in preview window
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
