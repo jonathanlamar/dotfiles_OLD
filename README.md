@@ -31,6 +31,7 @@ git pull
 
 The following are dependencies, whose installation varies by platform
 
+* neovim >= 0.4.2
 * ripgrep
 * fzf (but not through apt.  Build through source instead)
 * python3
