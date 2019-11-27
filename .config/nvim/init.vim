@@ -9,7 +9,7 @@
 " 1. Incorporate make scripts for scala and markdown (pandoc)
 
 " Virtual environment for running required neovim modules
-let g:python3_host_prog = '/home/jon/.config/nvim/venv/bin/python'
+let g:python3_host_prog = '/Users/p2837730/.config/nvim/venv/bin/python'
 
 " ## 1: Plugins and their settings
 execute pathogen#infect()
