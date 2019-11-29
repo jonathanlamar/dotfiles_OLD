@@ -65,7 +65,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'ayu_mirage'
+let g:airline_theme = 'onedark'
 
 
 " Syntax highlighting
@@ -230,7 +230,7 @@ call plug#end()
 " ## 3. Basic sets
 " No-brainers
 set background=dark
-colorscheme ayu
+colorscheme onedark
 " Match tildes at end of buffer to number column color...
 " TODO: THese are gruvbox colors.  Generalize.
 " autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
