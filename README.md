@@ -37,8 +37,7 @@ The following are dependencies, whose installation varies by platform
 * python3
 * exuberant ctags
 * node.js
-* yarn (TODO: Maybe.  I think it's only for building coc.nvim) Install using the
-following (may not be cross platform):
+* yarn.  Install using the following (may not be cross platform):
 
 ```bash
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
@@ -67,7 +66,6 @@ sudo ./coursier bootstrap \
 mkdir -p ~/.config/nvim/autoload
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 pip install virtualenv
 cd ~/.config/nvim
@@ -75,7 +73,6 @@ virtualenv venv
 source venv/bin/activate
 pip install pynvim sexpdata websocket-client
 deactivate
+vim +PlugInstall
+vim +GoInstallBinaries
 ```
-
-* Then, open vim and run `:PlugInstall`.
-

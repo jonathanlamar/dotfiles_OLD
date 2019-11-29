@@ -12,7 +12,6 @@
 let g:python3_host_prog = '/Users/p2837730/.config/nvim/venv/bin/python'
 
 " ## 1: Plugins and their settings
-execute pathogen#infect()
 
 set nocompatible
 filetype plugin on
@@ -66,7 +65,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'ayu_mirage'
+let g:airline_theme = 'onedark'
 
 
 " Syntax highlighting
@@ -84,6 +83,29 @@ let g:scala_scaladoc_indent = 1
 " colorschemes, but does with gruvbox
 Plug 'vim-python/python-syntax'
 let g:python_highlight_all = 1
+
+" Golang support for building, etc.
+Plug 'fatih/vim-go'
+" disable vim-go :GoDef short cut (gd)
+" this is handled by coc.nvim
+let g:go_def_mapping_enabled = 0
+" Set foldmethod=syntax and get this stuff
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+" vim-go syntax highlighting
+let g:go_highlight_trailing_whitespace_error = 1
+" Highlight commonly used types
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+" highlight struct and interface names
+let g:go_highlight_types = 1
+" highlight struct field named
+let g:go_highlight_fields = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 0
 
 
 " Code auto-completion.
@@ -225,7 +247,7 @@ call plug#end()
 " ## 3. Basic sets
 " No-brainers
 set background=dark
-colorscheme ayu
+colorscheme onedark
 " Match tildes at end of buffer to number column color...
 " TODO: THese are gruvbox colors.  Generalize.
 " autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
@@ -380,9 +402,21 @@ augroup python
   autocmd FileType python set expandtab
   autocmd FileType python set autoindent
   autocmd BufRead,BufNewFile  *.ipynb set syntax=python " TODO Set filetype=python for these files
-  autocmd FileType python :CocEnable
+  " autocmd FileType python :CocEnable
   autocmd filetype python set foldmethod=indent
   autocmd BufWritePre *.py %s/\s\+$//e " Remove all trailing whitespace
+augroup end
+
+augroup golang
+  autocmd!
+  autocmd FileType go set shiftwidth=4
+  autocmd FileType go set softtabstop=4
+  autocmd FileType go set tabstop=4
+  autocmd FileType go set expandtab
+  autocmd FileType go set autoindent
+  " autocmd FileType go :CocEnable
+  autocmd filetype go set foldmethod=indent
+  autocmd BufWritePre *.go :GoFmt " Auto-format on save
 augroup end
 
 augroup sql
@@ -392,7 +426,7 @@ augroup sql
   autocmd FileType sql set softtabstop=2
   autocmd FileType sql set shiftwidth=2
   autocmd FileType sql set softtabstop=2
-  autocmd FileType sql :CocEnable " no language server, but basic completion is better than none
+  " autocmd FileType sql :CocEnable " no language server, but basic completion is better than none
   autocmd BufWritePre *.sql,*.hql %s/\s\+$//e
 augroup end
 
@@ -405,7 +439,7 @@ augroup scala
   autocmd FileType scala set shiftwidth=2
   autocmd FileType scala set softtabstop=2
   autocmd FileType scala set foldmethod=syntax " This will do for now
-  autocmd FileType scala :CocEnable
+  " autocmd FileType scala :CocEnable
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
 augroup end
 
@@ -416,7 +450,7 @@ augroup markdown
   autocmd FileType markdown set softtabstop=4
   autocmd FileType markdown set shiftwidth=4
   autocmd FileType markdown set softtabstop=4
-  autocmd FileType markdown :CocDisable
+  " autocmd FileType markdown :CocDisable
   autocmd BufWritePre *.md %s/\s\+$//e
 augroup end
 
@@ -426,7 +460,7 @@ augroup bash
   autocmd FileType bash set softtabstop=2
   autocmd FileType bash set shiftwidth=2
   autocmd FileType bash set softtabstop=2
-  autocmd FileType bash :CocEnable " no language server, but basic completion is better than none
+  " autocmd FileType bash :CocEnable " no language server, but basic completion is better than none
   autocmd BufWritePre *.sh %s/\s\+$//e
 augroup end
 
@@ -436,7 +470,7 @@ augroup vim
   autocmd FileType vim set softtabstop=2
   autocmd FileType vim set shiftwidth=2
   autocmd FileType vim set softtabstop=2
-  autocmd FileType vim :CocEnable " no language server, but basic completion is better than none
+  " autocmd FileType vim :CocEnable " no language server, but basic completion is better than none
   autocmd BufWritePre *.vim %s/\s\+$//e
 augroup end
 
