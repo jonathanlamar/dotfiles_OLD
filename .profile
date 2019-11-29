@@ -25,7 +25,8 @@ export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 export GOROOT=/lib/go-1.13
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/golib
-export PATH=$PATH:$GOPATH/bin
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 export GOPATH=$GOPATH:$HOME/repos/golang
 
 # This was to auto-start xserver on my rickety arch laptop.

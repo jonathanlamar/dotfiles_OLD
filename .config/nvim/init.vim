@@ -12,7 +12,6 @@
 let g:python3_host_prog = '/home/jon/.config/nvim/venv/bin/python'
 
 " ## 1: Plugins and their settings
-execute pathogen#infect()
 
 set nocompatible
 filetype plugin on
@@ -85,6 +84,11 @@ let g:scala_scaladoc_indent = 1
 Plug 'vim-python/python-syntax'
 let g:python_highlight_all = 1
 
+" Golang support for building, etc.
+Plug 'fatih/vim-go'
+" disable vim-go :GoDef short cut (gd)
+" this is handled by coc.nvim
+let g:go_def_mapping_enabled = 0
 
 " Code auto-completion.
 Plug 'neoclide/coc.nvim', {'branch': 'release' }
