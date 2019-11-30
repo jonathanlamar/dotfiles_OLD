@@ -442,6 +442,7 @@ augroup scala
   autocmd FileType scala set foldmethod=syntax " This will do for now
   " autocmd FileType scala :CocEnable
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
+  autocmd BufWritePre *.scala,*.sbt :SortScalaImports
 augroup end
 
 augroup markdown
