@@ -14,6 +14,9 @@ export PROFILE=$HOME/.profile
 export SCRIPTS=$HOME/.scripts
 export VIMRC=$HOME/.config/nvim/init.vim
 
+# Make sure my scripts are on path
+export PATH=$SCRIPTS:$PATH
+
 # python virtualenv stuff
 export PATH=$HOME/.local/bin:$PATH
 
