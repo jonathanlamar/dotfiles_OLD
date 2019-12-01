@@ -13,6 +13,7 @@ export TERMINAL="iTerm2"
 export PROFILE=$HOME/.profile
 export SCRIPTS=$HOME/.scripts
 export VIMRC=$HOME/.config/nvim/init.vim
+export REPOS=$HOME/repos
 
 # Make sure my scripts are on path
 export PATH=$SCRIPTS:$PATH
