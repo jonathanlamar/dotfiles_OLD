@@ -33,4 +33,6 @@ esac
 done
 
 # Spawn the repl process in background
-while sleep 1 ; do find . -name $INPUT | entr -d mdpdf -i $INPUT -o $OUTPUT ; done
+while sleep 1; do
+    find . -name $INPUT | entr -d mdpdf $INPUT
+done
