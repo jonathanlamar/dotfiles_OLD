@@ -26,9 +26,8 @@ export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 # Golang stuff.  Going with 1.13 even though apt installed 1.12.
-export GOROOT=/lib/go-1.13
+export GOROOT=/usr/lib/go-1.13
 export PATH=$GOROOT/bin:$PATH
-export GOPATH=$HOME/golib
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 export GOPATH=$GOPATH:$HOME/repos/golang
