@@ -108,11 +108,11 @@ source $ZSH/oh-my-zsh.sh
 
 # fzf Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/jon/Applications/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/home/jon/bin/fzf/shell/completion.zsh" 2> /dev/null
 
 # fzf Key bindings
 # ------------
-source "/home/jon/Applications/fzf/shell/key-bindings.zsh"
+source "/home/jon/bin/fzf/shell/key-bindings.zsh"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

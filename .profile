@@ -41,6 +41,6 @@ export GOPATH=$GOPATH:$HOME/repos/golang
 
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/jon/Applications/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/jon/Applications/fzf/bin"
+if [[ ! "$PATH" == */home/jon/bin/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/jon/bin/fzf/bin"
 fi
