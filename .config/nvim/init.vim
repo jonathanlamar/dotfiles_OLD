@@ -178,7 +178,7 @@ Plug 'tpope/vim-repeat'
 if executable('fzf')
   " TODO: Should this be an option?
   " set rtp+=/usr/local/opt/fzf
-  set rtp+=/home/jon/Applications/fzf
+  set rtp+=/home/jon/bin/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
