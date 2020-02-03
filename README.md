@@ -35,6 +35,7 @@ The following are dependencies, whose installation varies by platform
 * ripgrep
 * fzf (but not through apt.  Build through source instead)
 * python3
+  * also the `jedi` package available through pip, for code completion.
 * exuberant ctags
 * node.js
 * yarn.  Install using the following (may not be cross platform):
@@ -73,6 +74,10 @@ virtualenv venv
 source venv/bin/activate
 pip install pynvim sexpdata websocket-client
 deactivate
-vim +PlugInstall
-vim +GoInstallBinaries
+```
+Finally, run the following commands in neovim
+```vim
+:PlugInstall
+:GoInstallBinaries
+:CocInstall coc-python
 ```
