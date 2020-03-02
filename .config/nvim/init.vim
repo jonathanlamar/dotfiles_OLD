@@ -454,6 +454,8 @@ augroup markdown
   autocmd FileType markdown set softtabstop=4
   " autocmd FileType markdown :CocDisable
   autocmd BufWritePre *.md %s/\s\+$//e
+  " autocmd BufWritePre *.md :normal ggVGgq " Format file on save
+  autocmd FileType markdown set textwidth=80
 augroup end
 
 augroup bash
