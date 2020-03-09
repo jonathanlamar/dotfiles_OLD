@@ -248,12 +248,20 @@ call plug#end()
 " No-brainers
 set background=dark
 colorscheme onedark
+
 " Match tildes at end of buffer to number column color...
-" TODO: THese are gruvbox colors.  Generalize.
+" TODO: These are gruvbox colors.  Generalize.
 " autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
+
 " Allow terminal default transparent background
 " WARNING: Only do this if the terminal and vim colorschemes are the same
 autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
+
+" Make vertical splits more visible
+" WARNING: These colors are chosen for onedark
+autocmd ColorScheme * highlight! VertSplit ctermbg=236 guibg=#2C323C
+set fillchars+=vert:\ 
+
 filetype plugin indent on    " required
 set number
 set relativenumber
@@ -472,6 +480,5 @@ augroup vim
   autocmd FileType vim set shiftwidth=2
   autocmd FileType vim set softtabstop=2
   " autocmd FileType vim :CocEnable " no language server, but basic completion is better than none
-  autocmd BufWritePre *.vim %s/\s\+$//e
 augroup end
 
