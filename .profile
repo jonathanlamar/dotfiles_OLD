@@ -39,8 +39,3 @@ export PATH=$GOBIN:$PATH
 # fi
 
 
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == */home/jon/bin/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/jon/bin/fzf/bin"
-fi
