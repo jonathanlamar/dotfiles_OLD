@@ -9,7 +9,7 @@
 " 1. Incorporate make scripts for scala and markdown (pandoc)
 
 " Virtual environment for running required neovim modules
-let g:python3_host_prog = '/Users/p2837730/.config/nvim/venv/bin/python'
+let g:python3_host_prog = '/home/jon/.config/nvim/venv/bin/python'
 
 " ## 1: Plugins and their settings
 
@@ -260,8 +260,8 @@ autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 
 " Make vertical splits more visible
 " WARNING: These colors are chosen for onedark
-autocmd ColorScheme * highlight! VertSplit ctermbg=236 guibg=#2C323C
-set fillchars+=vert:\ 
+autocmd ColorScheme * highlight! VertSplit ctermbg=236 guibg=#2C323C ctermfg=145 guifg=#ABB2BF
+set fillchars+=vert:\|
 
 filetype plugin indent on    " required
 set number
@@ -410,6 +410,7 @@ augroup python
   autocmd FileType python set tabstop=4
   autocmd FileType python set expandtab
   autocmd FileType python set autoindent
+  autocmd FileType python set colorcolumn=80
   autocmd BufRead,BufNewFile  *.ipynb set syntax=python " TODO Set filetype=python for these files
   " autocmd FileType python :CocEnable
   autocmd filetype python set foldmethod=indent
@@ -448,6 +449,7 @@ augroup scala
   autocmd FileType scala set shiftwidth=2
   autocmd FileType scala set softtabstop=2
   autocmd FileType scala set foldmethod=syntax " This will do for now
+  autocmd FileType python set colorcolumn=80
   " autocmd FileType scala :CocEnable
   autocmd BufWritePre *.scala,*.sbt %s/\s\+$//e
   autocmd BufWritePre *.scala,*.sbt :SortScalaImports
