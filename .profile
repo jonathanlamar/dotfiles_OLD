@@ -6,8 +6,8 @@ alias pip=pip3
 alias python=python3
 
 export EDITOR="nvim -n"
-export TERMINAL="gnome-terminal"
-export BROWSER="firefox"
+export TERMINAL="iTerm2"
+# export BROWSER="firefox"
 
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile
