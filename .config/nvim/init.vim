@@ -58,14 +58,25 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 " Show tab line even if only one tab, but hide buffers
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
-" How to format long paths in tabs
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+" let g:airline_section_b = '%{getcwd()}' " in section B of the status line display the CWD
+"TABLINE:
+let g:airline#extensions#tabline#enabled = 1           " enable airline tabline
+" let g:airline#extensions#tabline#formatter = 'unique_tail' " How to format long paths in tabs
+let g:airline#extensions#tabline#fnamemod = ':t'       " disable file paths in the tab
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline
+" let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
+" let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)
+let g:airline#extensions#tabline#show_tab_count = 0    " dont show tab numbers on the right
+" let g:airline#extensions#tabline#tab_min_count = 2     " minimum of 2 tabs needed to display the tabline
+let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
+let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'gruvbox'
 
 
 " Syntax highlighting
@@ -248,11 +259,11 @@ call plug#end()
 " ## 3. Basic sets
 " No-brainers
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 
 " Match tildes at end of buffer to number column color...
 " TODO: These are gruvbox colors.  Generalize.
-" autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
+autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
 
 " Allow terminal default transparent background
 " WARNING: Only do this if the terminal and vim colorschemes are the same
@@ -260,12 +271,11 @@ autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 
 " Make vertical splits more visible
 " WARNING: These colors are chosen for onedark
-autocmd ColorScheme * highlight! VertSplit ctermbg=236 guibg=#2C323C ctermfg=145 guifg=#ABB2BF
+autocmd ColorScheme * highlight! VertSplit ctermfg=223 guifg=#EBDBB2
 set fillchars+=vert:\|
 
 filetype plugin indent on    " required
 set number
-set relativenumber
 syntax enable
 
 " General stuff I like to have
@@ -355,9 +365,9 @@ nnoremap <M-o> o<Esc>
 
 " Terminal stuff for neovim
 " These are for more permanent shells.  They will not persist on close
-command! T new term://$SHELL | setlocal nonumber norelativenumber nocursorline
-command! VT vnew term://$SHELL | setlocal nonumber norelativenumber nocursorline
-command! TT tabnew term://$SHELL | setlocal nonumber norelativenumber nocursorline
+command! T new term://$SHELL | setlocal nonumber nocursorline
+command! VT vnew term://$SHELL | setlocal nonumber nocursorline
+command! TT tabnew term://$SHELL | setlocal nonumber nocursorline
 
 " Set Esc to be the key for leaving the terminal.
 " Except for fzf, where it is already mapped to kill the program and exit.

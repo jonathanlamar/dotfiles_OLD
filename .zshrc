@@ -120,7 +120,3 @@ source "/home/jon/bin/fzf/shell/key-bindings.zsh"
 # Just source .profile
 [[ -f ~/.profile ]] && . ~/.profile
 
-# Just source .bash_profile (for work computer only, which has extra aliases for mac os)
-# FIXME: This is not a good solution
-[[ -f ~/.bash_profile ]] && . ~/.bash_profile
-
