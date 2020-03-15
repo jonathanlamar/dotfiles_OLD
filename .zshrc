@@ -112,7 +112,3 @@ source $ZSH/oh-my-zsh.sh
 # Just source .profile
 [[ -f ~/.profile ]] && . ~/.profile
 
-# Just source .bash_profile (for work computer only, which has extra aliases for mac os)
-# FIXME: This is not a good solution
-[[ -f ~/.bash_profile ]] && . ~/.bash_profile
-

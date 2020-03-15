@@ -31,18 +31,15 @@ git pull
 
 The following are dependencies, whose installation varies by platform
 
-* neovim >= 0.4.2
+* neovim >= 0.4.2 (compile from source if on ubuntu; requires cmake and other dependencies)
 * ripgrep
 * fzf (but not through apt.  Build through source instead)
 * python3
   * also the `jedi` package available through pip, for code completion.
 * exuberant ctags
-* node.js
-* yarn.  Install using the following (may not be cross platform):
-
-```bash
-curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-```
+* node.js and npm
+* yarn
+* java
 
 ### Install instructions for neovim
 
@@ -50,18 +47,6 @@ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 cross platform at this point).
 
 ```bash
-# Install coursier for metals (Make sure to use coursier v1.1.0-M9 or newer).
-cd ~/Applications # Put coursier somewhere...
-curl -L -o coursier https://git.io/coursier
-chmod +x coursier
-sudo ./coursier bootstrap \
-  --java-opt -Xss4m \
-  --java-opt -Xms100m \
-  --java-opt -Dmetals.client=coc.nvim \
-  org.scalameta:metals_2.12:0.7.6 \
-  -r bintray:scalacenter/releases \
-  -r sonatype:snapshots \
-  -o /usr/local/bin/metals-vim -f
 
 # Prep $HOME/.config/nvim.
 mkdir -p ~/.config/nvim/autoload
@@ -75,9 +60,16 @@ source venv/bin/activate
 pip install pynvim sexpdata websocket-client
 deactivate
 ```
-Finally, run the following commands in neovim
+
+Run the following commands in neovim
 ```vim
 :PlugInstall
 :GoInstallBinaries
 :CocInstall coc-python
+```
+
+Finally, install metals node module
+```bash
+cd ~/.config/coc/extensions
+npm install metals-languageclient
 ```
