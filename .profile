@@ -1,5 +1,5 @@
-alias ll="ls -lhG --color"
-alias la="ls -alhG --color"
+alias ll="ls -lhG"
+alias la="ls -alhG"
 alias vim="nvim"
 alias jnb="jupyter notebook"
 alias pip=pip3
