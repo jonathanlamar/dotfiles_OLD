@@ -6,8 +6,8 @@ alias pip=pip3
 alias python=python3
 
 export EDITOR="nvim -n"
-export BROWSER="firefox"
-export TERMINAL="gnome-terminal"
+# export BROWSER="firefox"
+export TERMINAL="iTerm2"
 
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile
@@ -25,7 +25,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
-# Golang stuff.  Going with 1.13 even though apt installed 1.12.
+# Golang stuff.
 export GOROOT=/usr/local/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/repos/golang
