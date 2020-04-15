@@ -62,6 +62,7 @@ deactivate
 ```
 
 Run the following commands in neovim
+
 ```vim
 :PlugInstall
 :GoInstallBinaries
@@ -69,6 +70,7 @@ Run the following commands in neovim
 ```
 
 Finally, install metals node module
+
 ```bash
 cd ~/.config/coc/extensions
 npm install metals-languageclient
