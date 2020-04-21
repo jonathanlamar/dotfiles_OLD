@@ -9,7 +9,7 @@
 " 1. Incorporate make scripts for scala and markdown (pandoc)
 
 " Virtual environment for running required neovim modules
-let g:python3_host_prog = '/home/jon/.config/nvim/venv/bin/python'
+let g:python3_host_prog = '/Users/p2837730/.config/nvim/venv/bin/python'
 
 " ## 1: Plugins and their settings
 
@@ -188,8 +188,8 @@ Plug 'tpope/vim-repeat'
 " FZF / Ctrlp for file navigation
 if executable('fzf')
   " TODO: Should this be an option?
-  " set rtp+=/usr/local/opt/fzf
-  set rtp+=/home/jon/bin/fzf
+  set rtp+=/usr/local/opt/fzf
+  " set rtp+=/home/jon/bin/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'

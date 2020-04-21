@@ -1,13 +1,13 @@
-alias ll="ls -lhG --color"
-alias la="ls -alhG --color"
+alias ll="ls -lhG"
+alias la="ls -alhG"
 alias vim="nvim"
 alias jnb="jupyter notebook"
 alias pip=pip3
 alias python=python3
 
 export EDITOR="nvim -n"
-export BROWSER="firefox"
-export TERMINAL="gnome-terminal"
+# export BROWSER="firefox"
+export TERMINAL="iTerm2"
 
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile

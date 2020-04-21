@@ -4,6 +4,8 @@
 # Only keep the files I want
 !.bashrc
 !.config
+!.config/alacritty
+!.config/alacritty/alacritty.yml
 !.config/nvim
 !.config/nvim/init.vim
 !.config/nvim/coc-settings.json
