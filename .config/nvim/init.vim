@@ -6,10 +6,12 @@
 " way for  way for all other filetypes.
 "
 " Outstanding TODOs:
-" 1. Incorporate make scripts for scala and markdown (pandoc)
+" 1. Break into smaller files.
+" 2. Integrate with vim plugins for intellij and vscode
+" 3. Figure out option for Alt+* keybindings in Mac (use option instead)
 
 " Virtual environment for running required neovim modules
-let g:python3_host_prog = '/home/jon/.config/nvim/venv/bin/python'
+let g:python3_host_prog = $HOME . '/.config/nvim/venv/bin/python'
 
 " ## 1: Plugins and their settings
 
@@ -145,6 +147,7 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-python',
   \ 'coc-markdownlint',
+  \ 'coc-metals',
   \ 'coc-r-lsp',
   \ 'coc-json',
   \ ]
@@ -187,8 +190,7 @@ Plug 'tpope/vim-repeat'
 " CTRL P for fuzzy codebase searching
 " FZF / Ctrlp for file navigation
 if executable('fzf')
-  " TODO: Should this be an option?
-  set rtp+=/home/jon/bin/fzf
+  set rtp+=$HOME/bin/fzf
   Plug 'junegunn/fzf.vim'
 else
   Plug 'ctrlpvim/ctrlp.vim'
@@ -269,7 +271,7 @@ autocmd ColorScheme * highlight! EndOfBuffer ctermfg=243 guifg=#7c6f64
 autocmd ColorScheme * highlight! Normal guibg=NONE ctermbg=NONE
 
 " Make vertical splits more visible
-" WARNING: These colors are chosen for onedark
+" WARNING: These colors are chosen for gruvbox
 autocmd ColorScheme * highlight! VertSplit ctermfg=223 guifg=#EBDBB2
 set fillchars+=vert:\|
 

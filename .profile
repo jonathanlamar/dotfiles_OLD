@@ -21,10 +21,6 @@ export PATH=$SCRIPTS:$PATH
 # python virtualenv stuff
 export PATH=$HOME/.local/bin:$PATH
 
-# Auto-added by yarn
-export PATH=$HOME/.yarn/bin:$PATH
-export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
-
 # Golang stuff.
 export GOROOT=/usr/lib/go
 export PATH=$GOROOT/bin:$PATH
@@ -34,6 +30,6 @@ export PATH=$GOBIN:$PATH
 
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/jon/bin/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/jon/bin/fzf/bin"
+if [[ ! "$PATH" == *$HOME/bin/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}$HOME/bin/fzf/bin"
 fi
