@@ -6,6 +6,8 @@
 !.config
 !.config/alacritty
 !.config/alacritty/alacritty.yml
+!.config/dotfiles
+!.config/dotfiles/install.yml
 !.config/nvim
 !.config/nvim/init.vim
 !.config/nvim/coc-settings.json

@@ -27,9 +27,15 @@ git checkout -f master
 git pull
 ```
 
-### Dependencies
+### Ansible Install
 
-The following are dependencies, whose installation varies by platform
+I made an Ansible playbook for installing, hidden in
+`.config/dotfiles/install.yml`.  This has not been tested, but should work.
+
+### Manual Install
+
+To install without Ansible, follow these steps.  The following are dependencies,
+whose installation varies by platform.
 
 * neovim >= 0.4.3 (as of Ubuntu 20.04, this is the version available through
     apt.)
@@ -43,7 +49,7 @@ The following are dependencies, whose installation varies by platform
 * nodejs
 * npm
 * yarn
-* java 8
+* java 8 (I think any java will do, but for some reason I used java 8)
 
 ### Install instructions for neovim
 
