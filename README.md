@@ -10,9 +10,6 @@ These are my dotfiles.  Most work has been done on the vim config.
 
 ## Install
 
-I don't have a script for deploying this repo, so you'll have to follow these
-instructions and be ready to improvise.
-
 ### Cloning
 
 The best and easiest way is to clone directly into your home directory. This is
