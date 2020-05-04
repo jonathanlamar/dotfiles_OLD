@@ -31,7 +31,7 @@ git pull
 
 The following are dependencies, whose installation varies by platform
 
-* neovim >= 0.4.2 (as of Ubuntu 20.04, this is the version available through
+* neovim >= 0.4.3 (as of Ubuntu 20.04, this is the version available through
     apt.)
 * ripgrep
 * fzf, but not through apt.
