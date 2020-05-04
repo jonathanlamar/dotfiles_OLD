@@ -22,7 +22,6 @@ export PATH=$SCRIPTS:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
 # Golang stuff.
-export GOROOT=/usr/lib/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/repos/golang
 export GOBIN=$GOPATH/bin
