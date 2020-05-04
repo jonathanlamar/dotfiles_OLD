@@ -57,18 +57,14 @@ mkdir -p ~/.config/nvim/autoload
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Set up python environment for vim
 cd ~/.config/nvim
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 deactivate
+
+# Set up vim (finally)
+vim -c "PlugInstall" -c "GoInstallBinaries" -c "q\!"
 ```
 
-Run the following commands in neovim
-
-```vim
-:PlugInstall
-:GoInstallBinaries
-:CocInstall coc-python
-:CocInstall coc-metals
-```
