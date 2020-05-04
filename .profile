@@ -26,7 +26,7 @@ export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 # Golang stuff.
-export GOROOT=/usr/local/go
+export GOROOT=/usr/lib/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/repos/golang
 export GOBIN=$GOPATH/bin
