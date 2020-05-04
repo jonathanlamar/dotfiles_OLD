@@ -9,6 +9,7 @@
 !.config/nvim
 !.config/nvim/init.vim
 !.config/nvim/coc-settings.json
+!.config/nvim/requirements.txt
 !.config/ranger
 !.config/ranger/*
 !.config/termite
