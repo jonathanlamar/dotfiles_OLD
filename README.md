@@ -4,9 +4,9 @@ These are my dotfiles.  Most work has been done on the vim config.
 
 ## To-do list
 
-1. Better pandoc loop script.  I want to detect changes to a wildcard search of
-markdown files, and compile all to their corresponding pdf outputs.
-2. Write a build script!
+1. Consolidate branches and handle different computers by sourcing another file,
+   or somethinhg.
+2. Automate build using ansible.
 
 ## Install
 
@@ -31,15 +31,19 @@ git pull
 
 The following are dependencies, whose installation varies by platform
 
-* neovim >= 0.4.2 (compile from source if on ubuntu; requires cmake and other dependencies)
+* neovim >= 0.4.2 (as of Ubuntu 20.04, this is the version available through
+    apt.)
 * ripgrep
-* fzf (but not through apt.  Build through source instead)
+* fzf, but not through apt.
+  * Clone the repo and follow the install instructions,
+  * Install in ~/bin/fzf, and do not let the installer update the dotfiles.
 * python3
-  * also the `jedi` package available through pip, for code completion.
-* exuberant ctags
-* node.js and npm
+  * `pip3 install jedi virtualenv`
+* exuberant-ctags
+* nodejs
+* npm
 * yarn
-* java
+* java 8
 
 ### Install instructions for neovim
 
@@ -53,11 +57,10 @@ mkdir -p ~/.config/nvim/autoload
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-pip install virtualenv
 cd ~/.config/nvim
 virtualenv venv
 source venv/bin/activate
-pip install pynvim sexpdata websocket-client
+pip install -r requirements.txt
 deactivate
 ```
 
@@ -67,11 +70,5 @@ Run the following commands in neovim
 :PlugInstall
 :GoInstallBinaries
 :CocInstall coc-python
-```
-
-Finally, install metals node module
-
-```bash
-cd ~/.config/coc/extensions
-npm install metals-languageclient
+:CocInstall coc-metals
 ```
