@@ -65,6 +65,7 @@ pip install -r requirements.txt
 deactivate
 
 # Set up vim (finally)
-vim -c "PlugInstall" -c "GoInstallBinaries" -c "q\!"
+vim -c "PlugInstall" -c "qa\!"
+vim -c "GoInstallBinaries" -c "qa\!"
 ```
 
