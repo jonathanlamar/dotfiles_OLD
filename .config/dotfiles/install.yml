@@ -11,14 +11,16 @@
       apt: name={{ item }} state=present
       with_items:
         - exuberant-ctags 
+        - git
         - golang-go
         - neovim 
         - nodejs 
         - npm 
         - openjdk-8-jdk,
         - zsh
-        - python3 
+        - python3-gi
         - python3-pip 
+        - python3-xlib
         - ripgrep 
         - yarn 
 
@@ -27,6 +29,12 @@
       with_items:
         - jedi
         - virtualenv
+
+    - name: Install pygrid
+      shell: |
+        mkdir ~/bin
+        cd ~/bin
+        git clone https://github.com/mjs7231/pygrid.git
 
     - name: Activate zshell
       expect:
@@ -51,7 +59,6 @@
 
     - name: Clone fzf
       shell: |
-        mkdir ~/bin
         cd ~/bin
         git clone --depth 1 https://github.com/junegunn/fzf.git fzf
         cd fzf
