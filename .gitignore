@@ -6,6 +6,8 @@
 !.config
 !.config/alacritty
 !.config/alacritty/alacritty.yml
+!.config/autostart
+!.config/autostart/pygrid.desktop
 !.config/dotfiles
 !.config/dotfiles/install.yml
 !.config/nvim
