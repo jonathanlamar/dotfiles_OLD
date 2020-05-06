@@ -4,9 +4,8 @@ These are my dotfiles.  Most work has been done on the vim config.
 
 ## To-do list
 
-1. Consolidate branches and handle different computers by sourcing another file,
-   or somethinhg.
-2. Automate build using ansible.
+1. Break init.vim into smaller files.
+2. Integrate relevant parts of init.vim with vscode and intellij vim plugins.
 
 ## Install
 
@@ -27,48 +26,10 @@ git pull
 ### Ansible Install
 
 I made an Ansible playbook for installing, hidden in
-`.config/dotfiles/install.yml`.  This has not been tested, but should work.
+`.config/dotfiles/install.yml`.  This has not been tested, but should work in
+Ubuntu.
 
 ### Manual Install
 
-To install without Ansible, follow these steps.  The following are dependencies,
-whose installation varies by platform.
-
-* neovim >= 0.4.3 (as of Ubuntu 20.04, this is the version available through
-    apt.)
-* ripgrep
-* fzf, but not through apt.
-  * Clone the repo and follow the install instructions,
-  * Install in ~/bin/fzf, and do not let the installer update the dotfiles.
-* python3
-  * `pip3 install jedi virtualenv`
-* exuberant-ctags
-* nodejs
-* npm
-* yarn
-* java 8 (I think any java will do, but for some reason I used java 8)
-
-### Install instructions for neovim
-
-* Once the above dependencies are met, run the following commands (should be
-cross platform at this point).
-
-```bash
-
-# Prep $HOME/.config/nvim.
-mkdir -p ~/.config/nvim/autoload
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Set up python environment for vim
-cd ~/.config/nvim
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-deactivate
-
-# Set up vim (finally)
-vim -c "PlugInstall" -c "qa\!"
-vim -c "GoInstallBinaries" -c "qa\!"
-```
-
+To install without Ansible, follow the steps in the playbook in your shell.  It
+should be fairly human-readable.
