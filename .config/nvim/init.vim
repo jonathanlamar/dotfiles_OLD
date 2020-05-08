@@ -541,11 +541,14 @@ let s:term_buf = 0
 let s:term_win = 0
 
 function! TermToggle(height)
+  " Height input should be a float between 0 and 1, to represent portion of
+  " height to use for pop-up term.
+  let s:term_toggle_height = float2nr(&lines * a:height)
   if win_gotoid(s:term_win)
     hide
   else
     botright new terminal
-    exec "resize ".a:height
+    exec "resize ".s:term_toggle_height
     try
       exec "buffer ".s:term_buf
       exec "bd terminal"
@@ -558,6 +561,14 @@ function! TermToggle(height)
     let s:term_win = win_getid()
   endif
 endfunction
+
+nnoremap <silent><leader>t :call TermToggle(0.3)<CR>
+" FIXME: This activates in insert mode. Not good!
+" inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
+" FIXME: This still activates in insert mode while in a terminal buffer.
+" Also not good!
+tnoremap <silent><leader>t <C-\><C-n>:call TermToggle(0.3)<CR>
+
 
 " Floating Term
 let s:float_term_border_win = 0
@@ -608,13 +619,8 @@ function! FloatTerm(...)
   autocmd TermClose * ++once :bd! | call nvim_win_close(s:float_term_border_win, v:true)
 endfunction
 
-" TODO: Open a fixed percentage of overall lines
-nnoremap <silent><leader>t :call TermToggle(20)<CR>
-" FIXME: This activates in insert mode. Not good!
-" inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
-" FIXME: This still activates in insert mode while in a terminal buffer.
-" Also not good!
-tnoremap <silent><leader>t <C-\><C-n>:call TermToggle(20)<CR>
+
+
 
 " ## 6. Autogroups
 "
