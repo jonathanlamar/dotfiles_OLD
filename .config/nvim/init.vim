@@ -11,7 +11,7 @@
 " 3. Figure out option for Alt+* keybindings in Mac (use option instead)
 
 " Virtual environment for running required neovim modules
-let g:python3_host_prog = $HOME . '/.config/nvim/venv/bin/python'
+let g:python3_host_prog = expand('~/.config/nvim/venv/bin/python')
 
 " ## 1: Plugins and their settings
 
@@ -85,8 +85,6 @@ let g:airline_theme = 'gruvbox'
 Plug 'sheerun/vim-polyglot'
 " Neat column highlighting for csv and tsv files.
 Plug 'mechatroner/rainbow_csv'
-" for nested parentheses
-Plug 'kien/rainbow_parentheses.vim'
 
 " vim-scala - modern scaladoc indentation
 Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
@@ -125,6 +123,8 @@ let g:go_highlight_variable_assignments = 0
 Plug 'neoclide/coc.nvim', {'branch': 'release' }
 
 " ------- coc settings
+
+
 
 
 " TextEdit might fail if hidden is not set.
@@ -274,13 +274,15 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Global extensions
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-python',
+  \ 'coc-java',
+  \ 'coc-json',
   \ 'coc-markdownlint',
   \ 'coc-metals',
-  \ 'coc-r-lsp',
-  \ 'coc-json',
+  \ 'coc-pairs',
+  \ 'coc-python',
+  \ 'coc-snippets',
+  \ 'coc-vimlsp',
+  \ 'coc-yaml',
   \ ]
 
 
@@ -293,10 +295,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 let g:rainbow#max_level = 16
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 autocmd FileType * RainbowParentheses
-" Cool icons
-Plug 'ryanoasis/vim-devicons'
-" Making stuff
-Plug 'neomake/neomake'
 " Better Comments
 Plug 'jbgutierrez/vim-better-comments'
 

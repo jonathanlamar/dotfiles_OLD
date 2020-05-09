@@ -17,12 +17,13 @@
         - nodejs 
         - npm 
         - openjdk-8-jdk,
-        - zsh
         - python3-gi
         - python3-pip 
         - python3-xlib
         - ripgrep 
+        - xsel
         - yarn 
+        - zsh
 
     - name: Pip dependencies
       pip: name={{ item }} state=present
