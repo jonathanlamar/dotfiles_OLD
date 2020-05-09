@@ -14,6 +14,14 @@
 !.config/nvim/init.vim
 !.config/nvim/coc-settings.json
 !.config/nvim/requirements.txt
+!.config/nvim/filetypes
+!.config/nvim/filetypes/*
+!.config/nvim/filetypes/settings/*
+!.config/nvim/general
+!.config/nvim/general/*
+!.config/nvim/plugins
+!.config/nvim/plugins/*
+!.config/nvim/plugins/settings/*
 !.config/nvim/utils
 !.config/nvim/utils/snips
 !.config/pygrid.json
