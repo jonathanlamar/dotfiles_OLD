@@ -10,9 +10,9 @@ let g:airline_powerline_fonts = 1
 " STATUSLINE:
 " Straight separators
 let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
+" let g:airline_left_alt_sep = '|'
 let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
+" let g:airline_right_alt_sep = '|'
 
 " TABLINE:
 let g:airline#extensions#tabline#enabled = 1           " enable airline tabline
