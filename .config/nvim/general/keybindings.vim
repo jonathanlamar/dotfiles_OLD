@@ -37,10 +37,12 @@ vnoremap > >gv
 if !exists('g:vscode')
 
   " Navigation a la Intellij
-  nnoremap <C-[> <C-O> 
-  nnoremap <C-]> <C-I> 
-  nnoremap <C-O> <Nop>
-  nnoremap <C-I> <Nop>
+  " nnoremap <C-[> <C-O> 
+  " nnoremap <C-]> <C-I> 
+  " nnoremap <C-O> <Nop>
+  " nnoremap <C-I> <Nop>
+  " " For some reason, the above mappings make escape act like Ctrl-O
+  " nnoremap <Esc> <Esc>
 
   " Make it easier to make it easier to edit text :P
   map <leader>rc :tabe $MYVIMRC <cr>
