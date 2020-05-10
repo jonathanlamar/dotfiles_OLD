@@ -34,6 +34,7 @@ if !exists('g:vscode')
   set termguicolors
   set background=dark
   colorscheme gruvbox
+  let g:airline_theme = 'gruvbox'
 
 
   " TABS:

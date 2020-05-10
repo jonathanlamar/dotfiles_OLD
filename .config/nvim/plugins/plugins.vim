@@ -29,7 +29,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     source $HOME/.config/nvim/plugins/settings/vim-airline.vim
 
     Plug 'vim-airline/vim-airline-themes'
-    source $HOME/.config/nvim/plugins/settings/vim-airline-themes.vim
 
     " Fuzzy search for files and tags, grep contents, etc.
     Plug 'junegunn/fzf.vim'
@@ -47,14 +46,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   if !exists('g:vscode')
     " The gold standard of warm dark colorschemes
-    Plug 'morhetz/gruvbox' 
+    Plug 'morhetz/gruvbox'
     source $HOME/.config/nvim/plugins/settings/gruvbox.vim
 
-    " Plug 'altercation/vim-colors-solarized' " Gross
     " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
-    " Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast 
-    " Plug 'drewtempelmeyer/palenight.vim' " Based on onedark: harder contrast, but also cooler.
-    " Plug 'ayu-theme/ayu-vim'
+
+    Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
+
+    Plug 'danilo-augusto/vim-afterglow'
+    source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
+
+    Plug 'ayu-theme/ayu-vim'
+    source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
   endif
 
 
@@ -114,12 +117,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Xuyuanp/nerdtree-git-plugin'
     source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'airblade/vim-gitgutter'
+    " Trying this out instead
+    Plug 'mhinz/vim-signify'
+    source $HOME/.config/nvim/plugins/settings/vim-signify.vim
+
+    " Commit browser
+    Plug 'junegunn/gv.vim'
 
     " Integration for git in vim.
     " TODO: Learn, configure, and start using.
     Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb' " This enables GBrowse and some other github-specific functionality for fugitive.
+    " This enables GBrowse and some other github-specific functionality for fugitive.
+    " TODO: Figure out gitlab integration.
+    Plug 'tpope/vim-rhubarb'
   endif
 
 call plug#end()
