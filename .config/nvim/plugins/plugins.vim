@@ -35,6 +35,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     source $HOME/.config/nvim/plugins/settings/fzf.vim
 
+    " Start Screen
+    Plug 'mhinz/vim-startify'
+    source $HOME/.config/nvim/plugins/settings/vim-startify.vim
   endif
 
 
