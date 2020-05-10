@@ -45,7 +45,7 @@ if !exists('g:vscode')
 
   " TODO: Does this actually have anything to do with fzf?  If not, remove it.
   " set wildignore+=.git/*,*/target/*
-  set wildmenu " I TODO: What does this do?
+  set wildmenu " TODO: What does this do?
 
   set foldenable " enable folding
   set foldlevelstart=100 " open most folds by default
