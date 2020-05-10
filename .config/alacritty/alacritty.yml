@@ -12,20 +12,20 @@ font:
     y: 1
 
   normal:
-    family: Roboto Mono Medium for Powerline
-    style: Medium
+    family: DejaVu Sans Mono for Powerline
+    style: Book
 
   bold:
-    family: Roboto Mono Medium for Powerline
+    family: DejaVu Sans Mono for Powerline
     style: Bold
 
   italic:
-    family: Roboto Mono Medium for Powerline
-    style: Italic
+    family: DejaVu Sans Mono for Powerline
+    style: Oblique
 
   bold_italic:
-    family: Roboto Mono Medium for Powerline
-    style: Bold Italic
+    family: DejaVu Sans Mono for Powerline
+    style: Bold Oblique
 
 background_opacity: 0.95
 

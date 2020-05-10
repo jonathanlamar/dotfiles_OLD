@@ -1,11 +1,11 @@
 # Dotfiles
 
-These are my dotfiles.  Most work has been done on the vim config.
+These are my dotfiles.  **By far** Most work has been done on the vim config.
 
 ## To-do list
 
-1. Break init.vim into smaller files.
-2. Integrate relevant parts of init.vim with vscode and intellij vim plugins.
+1. Integrate relevant parts of init.vim with vscode and intellij vim plugins (in
+   progress).
 
 ## Install
 
