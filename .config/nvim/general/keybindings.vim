@@ -39,8 +39,8 @@ if !exists('g:vscode')
   " Navigation a la Intellij
   nnoremap <C-[> <C-O> 
   nnoremap <C-]> <C-I> 
-  " nnoremap <C-O> <Nop>
-  " nnoremap <C-I> <Nop>
+  nnoremap <C-O> <Nop>
+  nnoremap <C-I> <Nop>
 
   " Make it easier to make it easier to edit text :P
   map <leader>rc :tabe $MYVIMRC <cr>
