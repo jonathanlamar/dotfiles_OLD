@@ -4,6 +4,22 @@
 " nnoremap j gj
 " nnoremap k gk
 
+imap <Up>    <Nop>
+imap <Down>  <Nop>
+imap <Left>  <Nop>
+imap <Right> <Nop>
+
+nmap <Up>    <Nop>
+nmap <Down>  <Nop>
+nmap <Left>  <Nop>
+nmap <Right> <Nop>
+
+" Insert mode nav keys
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " Half page up/down but recenter
 nnoremap <m-d> Lzz
 nnoremap <m-u> Hzz
@@ -19,6 +35,12 @@ vnoremap < <gv
 vnoremap > >gv
 
 if !exists('g:vscode')
+
+  " Navigation a la Intellij
+  nnoremap <C-[> <C-O> 
+  nnoremap <C-]> <C-I> 
+  " nnoremap <C-O> <Nop>
+  " nnoremap <C-I> <Nop>
 
   " Make it easier to make it easier to edit text :P
   map <leader>rc :tabe $MYVIMRC <cr>
