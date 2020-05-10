@@ -18,9 +18,10 @@ else
 
   " Airline for nifty info in the status and tablines
   Plug 'vim-airline/vim-airline'
+  source $HOME/.config/nvim/plugins/settings/vim-airline.vim
 
   Plug 'vim-airline/vim-airline-themes'
-  source $HOME/.config/nvim/plugins/settings/airline.vim
+  source $HOME/.config/nvim/plugins/settings/vim-airline-themes.vim
 
   " Neat column highlighting for csv and tsv files.
   " Also allows some basic SQL functionality, but I haven't learned that
