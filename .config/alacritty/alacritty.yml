@@ -9,23 +9,23 @@ font:
   # Offset y can be thought of as vertical spacing.
   offset:
     x: 0
-    y: 0
+    y: 1
 
   normal:
-    family: DejaVu Sans Mono for Powerline
-    style: Book
+    family: Fira Mono for Powerline
+    style: Medium
 
   bold:
-    family: DejaVu Sans Mono for Powerline
+    family: Fira Mono for Powerline
     style: Bold
 
   italic:
-    family: DejaVu Sans Mono for Powerline
-    style: Oblique
+    family: Fira Mono for Powerline
+    style: Italic
 
   bold_italic:
-    family: DejaVu Sans Mono for Powerline
-    style: Bold Oblique
+    family: Fira Mono for Powerline
+    style: Bold Italic
 
 background_opacity: 0.95
 
