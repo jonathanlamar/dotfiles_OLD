@@ -1,7 +1,8 @@
 " ------- coc settings
 
 
-
+" WARNING: In order to use coc-python with virtualenv, environments must
+" always be created with the --site-packages keyword!
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
