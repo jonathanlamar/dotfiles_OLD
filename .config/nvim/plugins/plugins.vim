@@ -9,18 +9,6 @@ if exists('g:vscode')
 " None of these will be loaded for vscode ssessions.
 else
 
-  " Colorschemes
-
-  " The gold standard of warm dark colorschemes
-  Plug 'morhetz/gruvbox' 
-  source $HOME/.config/nvim/plugins/settings/gruvbox.vim
-
-  " Plug 'altercation/vim-colors-solarized' " Gross
-  " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
-  " Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast 
-  " Plug 'drewtempelmeyer/palenight.vim' " Based on onedark: harder contrast, but also cooler.
-  " Plug 'ayu-theme/ayu-vim'
-
 
   " General functionality
 
@@ -34,10 +22,64 @@ else
   Plug 'vim-airline/vim-airline-themes'
   source $HOME/.config/nvim/plugins/settings/airline.vim
 
-  " Syntax highlighting
-  Plug 'sheerun/vim-polyglot'
   " Neat column highlighting for csv and tsv files.
+  " Also allows some basic SQL functionality, but I haven't learned that
   Plug 'mechatroner/rainbow_csv'
+
+  " Repleat-plugin-with-.:
+  " TODO: Come up with better mappings for this
+  Plug 'tpope/vim-repeat'
+
+  " Increment dates and times with C-A and C-X
+  Plug 'tpope/vim-speeddating'
+
+  " Fuzzy search for files and tags, grep contents, etc.
+  Plug 'junegunn/fzf.vim'
+  source $HOME/.config/nvim/plugins/settings/fzf.vim
+
+
+
+  " Colorschemes
+
+
+  " The gold standard of warm dark colorschemes
+  Plug 'morhetz/gruvbox' 
+  source $HOME/.config/nvim/plugins/settings/gruvbox.vim
+
+  " Plug 'altercation/vim-colors-solarized' " Gross
+  " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
+  " Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast 
+  " Plug 'drewtempelmeyer/palenight.vim' " Based on onedark: harder contrast, but also cooler.
+  " Plug 'ayu-theme/ayu-vim'
+
+
+
+  " Make coding easier
+
+
+  " The best worst language server/linting integration.
+  Plug 'neoclide/coc.nvim', {'branch': 'release' }
+  source $HOME/.config/nvim/plugins/settings/coc-nvim.vim
+
+  " Provides auto-completion for common commands.
+  " Plug 'mattn/emmet-vim'
+
+  " Syntax highlighting for many languages
+  Plug 'sheerun/vim-polyglot'
+
+  " Colored parens
+  Plug 'junegunn/rainbow_parentheses.vim'
+  source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
+
+  " Better Comments
+  Plug 'jbgutierrez/vim-better-comments'
+
+  " Comment-in-movement:
+  Plug 'tpope/vim-commentary'
+  source $HOME/.config/nvim/plugins/settings/vim-commentary.vim
+
+  " Surround-movement-with-X:
+  Plug 'tpope/vim-surround'
 
   " vim-scala - modern scaladoc indentation
   Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
@@ -53,45 +95,23 @@ else
   source $HOME/.config/nvim/plugins/settings/vim-go.vim
 
 
-  " Code auto-completion.
-  Plug 'neoclide/coc.nvim', {'branch': 'release' }
-  source $HOME/.config/nvim/plugins/settings/coc-nvim.vim
 
-  " New plugins to experiment with
-  " Have the file system follow you around
+  " General dev/git stuff
+
+
+  " Have the file system follow you around.  Not sure how I feel about this one...
   Plug 'airblade/vim-rooter'
+  source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
 
-  " Colored parens
-  Plug 'junegunn/rainbow_parentheses.vim'
-  source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
-
-  " Better Comments
-  Plug 'jbgutierrez/vim-better-comments'
-
-  " Commenting and other nice code stuff
-  " Comment-in-movement:
-  Plug 'tpope/vim-commentary'
-  source $HOME/.config/nvim/plugins/settings/vim-commentary.vim
-
-  " Surround-movement-with-X:
-  Plug 'tpope/vim-surround'
-
-  " Repleat-plugin-with-.:
-  Plug 'tpope/vim-repeat'
-
-
-  " Fzf
-  Plug 'junegunn/fzf.vim'
-  source $HOME/.config/nvim/plugins/settings/fzf.vim
-
-
-  " Git stuff
-  "
   Plug 'Xuyuanp/nerdtree-git-plugin'
   source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
-  Plug 'airblade/vim-gitgutter' " Not sure if this plays nice with fugitive.
+  Plug 'airblade/vim-gitgutter'
+
+  " Integration for git in vim.
+  " TODO: Learn, configure, and start using.
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb' " This enables GBrowse and some other github-specific functionality for fugitive.
 
 endif
 

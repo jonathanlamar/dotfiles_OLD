@@ -11,10 +11,3 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-" NERDTree stuff
-augroup nerd
-  autocmd!
-  nnoremap <Leader>n :NERDTreeFocus <CR>
-  autocmd FileType nerdtree nnoremap <buffer> <Esc> :NERDTreeClose <CR>
-augroup end
-
