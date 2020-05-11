@@ -1,18 +1,6 @@
 " ## 5. Terimal Stuff
 
 
-" Terminal stuff for neovim
-" These are for more permanent shells.  They will not persist on close
-command! T new term://$SHELL | setlocal nonumber nocursorline
-command! VT vnew term://$SHELL | setlocal nonumber nocursorline
-command! TT tabnew term://$SHELL | setlocal nonumber nocursorline
-
-" Set Esc to be the key for leaving the terminal.
-" Except for fzf, where it is already mapped to kill the program and exit.
-" This dumb mapping with no qualification is to silence an error for unmapping
-" when there has been no map.  Very :|
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
-
 
 " Popup guake-style terminal
 " Keep track of buffer and window with these variables
@@ -41,12 +29,26 @@ function! TermToggle(height)
   endif
 endfunction
 
-nnoremap <silent><leader>t :call TermToggle(0.3)<CR>
-" FIXME: This activates in insert mode. Not good!
-" inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
-" FIXME: This still activates in insert mode while in a terminal buffer.
-" Also not good!
-tnoremap <silent><leader>t <C-\><C-n>:call TermToggle(0.3)<CR>
+if !exists('g:vscode') && !exists('g:intellij')
+  nnoremap <silent><leader>t :call TermToggle(0.3)<CR>
+  " FIXME: This activates in insert mode. Not good!
+  " inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
+  " FIXME: This still activates in insert mode while in a terminal buffer.
+  " Also not good!
+  tnoremap <silent><leader>t <C-\><C-n>:call TermToggle(0.3)<CR>
 
+  " Terminal stuff for neovim
+  " These are for more permanent shells.  They will not persist on close
+  command! T new term://$SHELL | setlocal nonumber nocursorline
+  command! VT vnew term://$SHELL | setlocal nonumber nocursorline
+  command! TT tabnew term://$SHELL | setlocal nonumber nocursorline
+
+  " Set Esc to be the key for leaving the terminal.
+  " Except for fzf, where it is already mapped to kill the program and exit.
+  " This dumb mapping with no qualification is to silence an error for unmapping
+  " when there has been no map.  Very :|
+  tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+
+endif
 
 

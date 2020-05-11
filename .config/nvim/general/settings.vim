@@ -1,6 +1,6 @@
 " ## 3. Basic settings
 
-if !exists('g:vscode')
+if !exists('g:vscode') && !exists('g:intellij')
 
   " Configure how vim runs
   set clipboard=unnamedplus " Enable clipboard interaction.

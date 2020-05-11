@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Increment dates and times with C-A and C-X
   Plug 'tpope/vim-speeddating'
 
-  if !exists('g:vscode')
+  if !exists('g:vscode') && !exists('g:intellij')
     " Neat column highlighting for csv and tsv files.
     " Also allows some basic SQL functionality, but I haven't learned that
     Plug 'mechatroner/rainbow_csv'
@@ -59,7 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Colorschemes
 
 
-  if !exists('g:vscode')
+  if !exists('g:vscode') && !exists('g:intellij')
     " The gold standard of warm dark colorschemes
     Plug 'morhetz/gruvbox'
     source $HOME/.config/nvim/plugins/settings/gruvbox.vim
@@ -87,7 +87,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Surround-movement-with-X:
   Plug 'tpope/vim-surround'
 
-  if !exists('g:vscode')
+  if !exists('g:vscode') && !exists('g:intellij')
     " The best worst language server/linting integration.
     Plug 'neoclide/coc.nvim', {'branch': 'release' }
     source $HOME/.config/nvim/plugins/settings/coc-nvim.vim
@@ -128,7 +128,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-rooter'
   source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
 
-  if !exists('g:vscode')
+  if !exists('g:vscode') && !exists('g:intellij')
     Plug 'Xuyuanp/nerdtree-git-plugin'
     source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
