@@ -12,19 +12,19 @@ font:
     y: 1
 
   normal:
-    family: Fira Mono for Powerline
+    family: FiraMono Nerd Font
     style: Medium
 
   bold:
-    family: Fira Mono for Powerline
+    family: FiraMono Nerd Font
     style: Bold
 
   italic:
-    family: Fira Mono for Powerline
+    family: FiraMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: Fira Mono for Powerline
+    family: FiraMono Nerd Font
     style: Bold Italic
 
 # Colorschems

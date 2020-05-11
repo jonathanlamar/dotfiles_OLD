@@ -11,7 +11,7 @@
 " TODO: Figure out where this belongs.
 let g:python3_host_prog = expand('~/.config/nvim/venv/bin/python')
 
-
+" Remember gf goes to a file!
 source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/keybindings.vim
