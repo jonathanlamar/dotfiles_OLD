@@ -34,6 +34,9 @@ nnoremap <M-o> o<Esc>
 vnoremap < <gv
 vnoremap > >gv
 
+" For testing vscode integration.
+nnoremap <leader>b ifoo<esc>
+
 if !exists('g:vscode') && !exists('g:intellij')
 
   " Navigation a la Intellij
