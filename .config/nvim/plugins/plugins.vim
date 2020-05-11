@@ -39,12 +39,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     source $HOME/.config/nvim/plugins/settings/vim-startify.vim
 
     " Text Navigation - not sure how I feel about this.
-    Plug 'justinmk/vim-sneak'
-    source $HOME/.config/nvim/plugins/settings/vim-sneak.vim
+    " Plug 'justinmk/vim-sneak'
+    " source $HOME/.config/nvim/plugins/settings/vim-sneak.vim
 
     " Ranger integration
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    source $HOME/.config/nvim/plugins/settings/rnvimr.vim
+    " Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    " source $HOME/.config/nvim/plugins/settings/rnvimr.vim
+
+    Plug 'francoiscabrol/ranger.vim'
+    Plug 'rbgrouleff/bclose.vim'
+    source $HOME/.config/nvim/plugins/settings/ranger.vim
 
     " Neat icons
     Plug 'ryanoasis/vim-devicons'
