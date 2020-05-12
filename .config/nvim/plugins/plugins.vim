@@ -68,12 +68,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " The gold standard of warm dark colorschemes
     Plug 'morhetz/gruvbox'
     " TODO: Some of the settings in these colorscheme files apply to all colorschemes
-    " source $HOME/.config/nvim/plugins/settings/gruvbox.vim
+    source $HOME/.config/nvim/plugins/settings/gruvbox.vim
 
     Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
+    source $HOME/.config/nvim/plugins/settings/papercolor-theme.vim
 
     Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
-    " source $HOME/.config/nvim/plugins/settings/onedark.vim
 
     Plug 'danilo-augusto/vim-afterglow'
     source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim

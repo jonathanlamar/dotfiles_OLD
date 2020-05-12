@@ -217,7 +217,7 @@ schemes:
       - { index: 21, color: '0xd7875f' }
 
 # Set colors and opacity here
-colors: *afterglow
+colors: *gruvbox
 background_opacity: 0.95
 
 
