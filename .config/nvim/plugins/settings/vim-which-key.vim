@@ -26,7 +26,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
-let g:which_key_map['/'] = [ ':Commentary'                         , 'comment' ]
+" let g:which_key_map['/'] = [ ':Commentary'                         , 'comment' ]
 let g:which_key_map['f'] = [ ':FzfFiles'                           , 'search files' ]
 let g:which_key_map['h'] = [ ':sp'                                 , 'split below']
 let g:which_key_map['r'] = [ ':RangerCurrentFileExistingOrNewTab'  , 'ranger' ]
