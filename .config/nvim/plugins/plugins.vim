@@ -34,6 +34,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     source $HOME/.config/nvim/plugins/settings/fzf.vim
 
+    " Display available keybindings in popup.
+    Plug 'liuchengxu/vim-which-key'
+    " source $HOME/.config/nvim/plugins/settings/vim-which-key.vim
+
     " Start Screen
     Plug 'mhinz/vim-startify'
     source $HOME/.config/nvim/plugins/settings/vim-startify.vim
@@ -66,13 +70,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
 
-    Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
+    " Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
 
-    Plug 'danilo-augusto/vim-afterglow'
-    source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
+    " Plug 'danilo-augusto/vim-afterglow'
+    " source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
 
-    Plug 'ayu-theme/ayu-vim'
-    source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
+    " Plug 'ayu-theme/ayu-vim'
+    " source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
   endif
 
 

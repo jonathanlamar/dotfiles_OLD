@@ -3,16 +3,16 @@ set rtp+=$HOME/bin/fzf
 " Use FZF for files and tags if available, otherwise fall back onto CtrlP
 let g:fzf_command_prefix = 'Fzf' " namespacing commands
 
-nnoremap <leader>v :FzfFiles<cr>
-nnoremap <leader>u :FzfTags<cr>
-nnoremap <leader>a :FzfBuffers<CR>
-nnoremap <leader>A :FzfWindows<CR>
-" <leader>j will search for tag using word under cursor
-nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
-" Grepping codebase
-nnoremap <leader>g :FzfRg<CR>
-" Not sure what this does
-nnoremap <leader>m :FzfMarks<CR>
+" nnoremap <leader>v :FzfFiles<cr>
+" nnoremap <leader>u :FzfTags<cr>
+" nnoremap <leader>a :FzfBuffers<CR>
+" nnoremap <leader>A :FzfWindows<CR>
+" " <leader>j will search for tag using word under cursor
+" nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
+" " Grepping codebase
+" nnoremap <leader>g :FzfRg<CR>
+" " Not sure what this does
+" nnoremap <leader>m :FzfMarks<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color

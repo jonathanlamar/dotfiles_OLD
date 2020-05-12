@@ -30,7 +30,7 @@ function! TermToggle(height)
 endfunction
 
 if !exists('g:vscode') && !exists('g:intellij')
-  nnoremap <silent><leader>t :call TermToggle(0.3)<CR>
+  " nnoremap <silent><leader>t :call TermToggle(0.3)<CR>
   " FIXME: This activates in insert mode. Not good!
   " inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
   " FIXME: This still activates in insert mode while in a terminal buffer.

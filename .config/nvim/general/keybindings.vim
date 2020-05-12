@@ -1,4 +1,9 @@
 " ## 4. Cool remaps
+"
+" g Leader key
+let mapleader=" "
+" let localleader=" "
+nnoremap <Space> <Nop>
 
 " map to move up/down over wraps
 " nnoremap j gj
@@ -35,7 +40,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " For testing vscode integration.
-nnoremap <leader>b ifoo<esc>
+" nnoremap <leader>b ifoo<esc>
 
 if !exists('g:vscode') && !exists('g:intellij')
 
@@ -48,7 +53,7 @@ if !exists('g:vscode') && !exists('g:intellij')
   " nnoremap <Esc> <Esc>
 
   " Make it easier to make it easier to edit text :P
-  map <leader>rc :tabe $MYVIMRC <cr>
+  " map <leader>rc :tabe $MYVIMRC <cr>
   autocmd! bufwritepost $MYVIMRC source % " TODO: This breaks vim-airline.
 
   " easier split navigations

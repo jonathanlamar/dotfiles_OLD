@@ -29,8 +29,8 @@ let g:signify_sign_show_text = 1
 
 
 " Jump though hunks
-nmap <space>j <plug>(signify-next-hunk)
-nmap <space>k <plug>(signify-prev-hunk)
+" nmap <space>j <plug>(signify-next-hunk)
+" nmap <space>k <plug>(signify-prev-hunk)
 " nmap <space>J 9999<leader>gJ " These throw an error for some reason.
 " nmap <space>K 9999<leader>gk
 
