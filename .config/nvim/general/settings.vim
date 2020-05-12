@@ -33,8 +33,8 @@ if !exists('g:vscode') && !exists('g:intellij')
   " ColorScheme settings need to be enabled before the colorscheme is set.
   set termguicolors
   set background=dark
-  colorscheme gruvbox
-  let g:airline_theme = 'gruvbox'
+  colorscheme afterglow
+  let g:airline_theme = 'afterglow'
 
 
   " TABS:

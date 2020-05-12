@@ -50,6 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     " source $HOME/.config/nvim/plugins/settings/rnvimr.vim
 
+    " TODO: Figure out how to make this less ugly
     Plug 'francoiscabrol/ranger.vim'
     Plug 'rbgrouleff/bclose.vim'
     source $HOME/.config/nvim/plugins/settings/ranger.vim
@@ -66,17 +67,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   if !exists('g:vscode') && !exists('g:intellij')
     " The gold standard of warm dark colorschemes
     Plug 'morhetz/gruvbox'
-    source $HOME/.config/nvim/plugins/settings/gruvbox.vim
+    " TODO: Some of the settings in these colorscheme files apply to all colorschemes
+    " source $HOME/.config/nvim/plugins/settings/gruvbox.vim
 
-    " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
+    Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
 
-    " Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
+    Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
+    " source $HOME/.config/nvim/plugins/settings/onedark.vim
 
-    " Plug 'danilo-augusto/vim-afterglow'
-    " source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
+    Plug 'danilo-augusto/vim-afterglow'
+    source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
 
-    " Plug 'ayu-theme/ayu-vim'
-    " source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
+    Plug 'ayu-theme/ayu-vim'
+    source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
   endif
 
 
