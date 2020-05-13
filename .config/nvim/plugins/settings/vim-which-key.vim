@@ -89,7 +89,7 @@ let g:which_key_map.g = {
       \ 'A' : [':Git add %'                        , 'add current'],
       \ 'b' : [':Git blame'                        , 'blame'],
       \ 'B' : [':GBrowse'                          , 'browse'],
-      \ 'c' : [':Git commit -m "autocommit"'       , 'commit'], " making a diff
+      \ 'c' : [':Git commit'                       , 'commit'],
       \ 'd' : [':Git diff'                         , 'diff'],
       \ 'D' : [':Gdiffsplit'                       , 'diff split'],
       \ 'g' : [':GGrep'                            , 'git grep'],
