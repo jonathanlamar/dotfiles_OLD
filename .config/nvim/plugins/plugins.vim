@@ -132,8 +132,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
   " Have the file system follow you around.  Not sure how I feel about this one...
-  " Plug 'airblade/vim-rooter'
-  " source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
+  Plug 'airblade/vim-rooter'
+  source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
 
   if !exists('g:vscode') && !exists('g:intellij')
     Plug 'Xuyuanp/nerdtree-git-plugin'
