@@ -1,7 +1,7 @@
 
 " Map leader to which_key
-nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <leader> :silent WhichKey '\'<CR>
+vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '\'<CR>
 
 " Create map to add keys to
 let g:which_key_map =  {}
@@ -158,4 +158,4 @@ let g:which_key_map.t = {
 
 
 " Register which key map
-call which_key#register('<Space>', "g:which_key_map")
+call which_key#register('\', "g:which_key_map")

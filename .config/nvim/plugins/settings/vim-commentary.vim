@@ -1,4 +1,4 @@
 " Commentary settings
-nnoremap <space>/ :Commentary<CR>
-vnoremap <space>/ :Commentary<CR>
+nnoremap <leader>/ :Commentary<CR>
+vnoremap <leader>/ :Commentary<CR>
 

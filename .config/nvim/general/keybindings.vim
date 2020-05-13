@@ -1,9 +1,9 @@
 " ## 4. Cool remaps
 "
 " g Leader key
-let mapleader=" "
-" let localleader=" "
-nnoremap <Space> <Nop>
+" let mapleader=" "
+" " let localleader=" "
+" nnoremap <Space> <Nop>
 
 " map to move up/down over wraps
 " nnoremap j gj
