@@ -3,6 +3,10 @@
 if !exists('g:vscode') && !exists('g:intellij')
 
   " Configure how vim runs
+
+  " Vim is becoming a slight memory hog... :/
+  set maxmempattern=10000
+
   set clipboard=unnamedplus " Enable clipboard interaction.
   set cmdheight=2 " Give more space for displaying messages.
   set encoding=utf-8

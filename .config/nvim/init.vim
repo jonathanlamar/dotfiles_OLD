@@ -4,8 +4,14 @@
 " development, without too much bloat.
 
 " Outstanding TODOs:
-" 1. Integrate with vim plugins for intellij, vscode, and other editors
-" 2. Figure out option for Alt+* keybindings in Mac (use option instead)
+" 1. Figure out option for Alt+* keybindings in Mac (use option instead)
+" 2. Revert back to gitgutter (looks better)
+" 3. unmap spacebar from terminal mode, or remap leader back to backslash.
+" 4. Look into better code folding settings.
+" 5. Turn off drop down completion in free text entry (comments, text/markdown)
+" 6. Figure out why syntax highlighting doesn't work as well in other
+"    colorschemes.
+" 7. Figure out why sourcing vimrc breaks airline.
 
 " Virtual environment for running required neovim modules
 " TODO: Figure out where this belongs.
