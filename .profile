@@ -32,3 +32,22 @@ export PATH=$GOBIN:$PATH
 if [[ ! "$PATH" == *$HOME/bin/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}$HOME/bin/fzf/bin"
 fi
+
+# FZF functions
+
+# Checkout git branch
+fbr() {
+  # git fetch
+  local branches branch
+  branches=$(git branch -a) &&
+  branch=$(echo "$branches" | fzf --height=50% +s +m -e) &&
+  git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+}
+
+# ls and change directory
+lscd() {
+  # git fetch
+  dirs=$(ls -a -1) &&
+  dir=$(echo "$dirs" | fzf --height=50%) &&
+  cd $dir
+}
