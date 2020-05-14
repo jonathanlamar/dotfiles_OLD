@@ -29,6 +29,7 @@
       ["expanded?", "collapse", "expand"],
       "open"
     ],
+    "<esc>": "esc",
     "e": "open",
     "v": "open:vsplit",
     "h": "open:split",
