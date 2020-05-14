@@ -21,8 +21,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mechatroner/rainbow_csv'
 
     " NERDTree for file navigation
-    Plug 'scrooloose/nerdtree'
-    source $HOME/.config/nvim/plugins/settings/nerdtree.vim
+    " Plug 'scrooloose/nerdtree'
+    " source $HOME/.config/nvim/plugins/settings/nerdtree.vim
 
     " Airline for nifty info in the status and tablines
     Plug 'vim-airline/vim-airline'

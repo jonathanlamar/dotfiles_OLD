@@ -33,7 +33,7 @@ let g:which_key_map['r'] = [ ':RangerCurrentFileExistingOrNewTab'  , 'ranger' ]
 let g:which_key_map['S'] = [ ':Startify'                           , 'start screen' ]
 let g:which_key_map['T'] = [ ':Rg'                                 , 'search text' ]
 let g:which_key_map['v'] = [ ':vsp'                                , 'split right']
-let g:which_key_map['n'] = [ ':NERDTreeFocus'                      , 'nerdtree']
+" let g:which_key_map['n'] = [ ':NERDTreeFocus'                      , 'nerdtree']
 let g:which_key_map['i'] = [ ':tabe $MYVIMRC'                      , 'init.vim']
 " TODO: Figure out a letter for terminal
 " let g:which_key_map[''] = [ ':call TermToggle(0.3)'               , 'terminal'],
