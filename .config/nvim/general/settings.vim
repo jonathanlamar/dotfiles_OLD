@@ -17,11 +17,11 @@ if !exists('g:vscode') && !exists('g:intellij')
   set nowritebackup " Recommended by coc
   set shortmess+=c " Don't pass messages to |ins-completion-menu|.
   set showcmd " drop-down tab completion on commands
-  set updatetime=300 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+  set updatetime=200 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
   set nocompatible
   filetype plugin indent on    " required
   syntax enable
-  set wildmenu " TODO: What does this do?
+  set wildmenu " 'wild' tab completion of commands
 
 
   " GENERAL:

@@ -36,6 +36,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Display available keybindings in popup.
     Plug 'liuchengxu/vim-which-key'
+    " FIXME: This souce has to go after all plugins have been configured.
     " source $HOME/.config/nvim/plugins/settings/vim-which-key.vim
 
     " Start Screen
@@ -110,7 +111,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
 
     " Better Comments
-    " Plug 'jbgutierrez/vim-better-comments'
+    Plug 'jbgutierrez/vim-better-comments'
 
     " vim-scala - modern scaladoc indentation
     Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
@@ -132,17 +133,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
   " Have the file system follow you around.  Not sure how I feel about this one...
-  " Plug 'airblade/vim-rooter'
-  " source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
+  Plug 'airblade/vim-rooter'
+  source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
 
   if !exists('g:vscode') && !exists('g:intellij')
     Plug 'Xuyuanp/nerdtree-git-plugin'
     source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
     Plug 'airblade/vim-gitgutter'
-    " Trying this out instead
-    " Plug 'mhinz/vim-signify'
-    " source $HOME/.config/nvim/plugins/settings/vim-signify.vim
 
     " Commit browser
     Plug 'junegunn/gv.vim'

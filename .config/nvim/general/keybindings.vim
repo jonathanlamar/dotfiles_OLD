@@ -6,8 +6,8 @@
 " nnoremap <Space> <Nop>
 
 " map to move up/down over wraps
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 imap <Up>    <Nop>
 imap <Down>  <Nop>
