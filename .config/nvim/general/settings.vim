@@ -21,7 +21,7 @@ if !exists('g:vscode') && !exists('g:intellij')
   set nocompatible
   filetype plugin indent on    " required
   syntax enable
-  set wildmenu " TODO: What does this do?
+  set wildmenu " 'wild' tab completion of commands
 
 
   " GENERAL:

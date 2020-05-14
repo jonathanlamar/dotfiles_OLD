@@ -35,7 +35,7 @@ if !exists('g:vscode') && !exists('g:intellij')
   " inoremap <silent><leader>t <Esc>:call TermToggle(20)<CR>
   " FIXME: This still activates in insert mode while in a terminal buffer.
   " Also not good!
-  tnoremap <silent><leader>t <C-\><C-n>:call TermToggle(0.3)<CR>
+  tnoremap <silent><leader>tt <C-\><C-n>:call TermToggle(0.3)<CR>
 
   " Terminal stuff for neovim
   " These are for more permanent shells.  They will not persist on close
