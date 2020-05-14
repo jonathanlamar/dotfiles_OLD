@@ -218,7 +218,7 @@ schemes:
 
 # Set colors and opacity here
 colors: *gruvbox
-background_opacity: 0.95
+# background_opacity: 0.95
 
 
 

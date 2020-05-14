@@ -81,6 +81,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'ayu-theme/ayu-vim'
     source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
+
+    Plug 'chriskempson/base16-vim'
+    source $HOME/.config/nvim/plugins/settings/base16-vim.vim
   endif
 
 
