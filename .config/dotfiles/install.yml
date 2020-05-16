@@ -18,7 +18,7 @@
         - neovim 
         - nodejs 
         - npm 
-        - openjdk-8-jdk,
+        - openjdk-8-jdk
         - python3-gi
         - python3-pip 
         - python3-xlib
