@@ -9,8 +9,7 @@
 " 3. Turn off drop down completion in free text entry (comments, text/markdown)
 " 4. Figure out why syntax highlighting doesn't work as well in other
 "    colorschemes.
-" 5. Figure out why sourcing vimrc breaks airline.
-" 6. Work on better ranger integration.
+" 5. Work on better ranger integration.
 
 " Virtual environment for running required neovim modules
 " TODO: Figure out where this belongs.

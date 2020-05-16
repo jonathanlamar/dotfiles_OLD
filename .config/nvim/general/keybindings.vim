@@ -54,7 +54,17 @@ if !exists('g:vscode') && !exists('g:intellij')
 
   " Make it easier to make it easier to edit text :P
   " map <leader>rc :tabe $MYVIMRC <cr>
-  autocmd! bufwritepost $MYVIMRC source % " TODO: This breaks vim-airline.
+
+  " Source vimrc after saving.  Have to refresh airline and colorscheme to fix
+  " some weird behavior, which is probably related to order of settings
+  " FIXME: This doesn't fix the issue.  I still have to manually call
+  " :colorscheme gruvbox
+  function! ResetColors()
+    AirlineRefresh
+    " colorscheme gruvbox
+  endfunction
+
+  autocmd! bufwritepost $MYVIMRC source % | call ResetColors()
 
   " easier split navigations
   " a la i3
