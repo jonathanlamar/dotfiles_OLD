@@ -49,16 +49,7 @@
       command: /home/{{ userName }}/.config/dotfiles/powerline.sh {{ userName }}
 
     - name: Install fzf
-      expect:
-        command: /home/{{ userName }}/.config/dotfiles/fzf.sh {{ userName }}
-        responses:
-          '*': 'n'
+      command: /home/{{ userName }}/.config/dotfiles/fzf.sh {{ userName }}
 
     - name: Install neovim
       command: /home/{{ userName }}/.config/dotfiles/neovim.sh {{ userName }}
-
-    - name: Configure nvim plugins
-      command: bash -c $(nvim -c "PlugInstall" -c "qa\!")
-
-    # - name: Install golang binaries
-    #   command: bash -c $(nvim -c "GoInstallBinaries" -c "qa\!")
