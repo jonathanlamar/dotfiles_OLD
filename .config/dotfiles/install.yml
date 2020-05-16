@@ -3,6 +3,8 @@
 - hosts: 127.0.0.1
   connection: local
   vars_prompt:
+    - name: userName
+      prompt: "Enter your username: "
     - name: userPasswd
       prompt: "Enter your password: "
 
