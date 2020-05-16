@@ -11,6 +11,3 @@ virtualenv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
 deactivate
-
-nvim -c "PlugInstall" -c "qa\!"
-nvim -c "GoInstallBinaries" -c "qa\!"

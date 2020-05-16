@@ -54,3 +54,9 @@
 
     - name: Install neovim
       command: /home/{{ userName }}/.config/dotfiles/neovim.sh {{ userName }}
+
+    - name: Configure nvim plugins
+      command: bash -c $(nvim -c "PlugInstall" -c "qa\!")
+
+    - name: Install golang binaries
+      command: bash -c $(nvim -c "GoInstallBinaries" -c "qa\!")
