@@ -2,12 +2,10 @@
 
 HOMEDIR=/home/$1
 
-cd $HOMEDIR
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
-if [ -f $HOMEDIR/.zshrc.pre-oh-my-zsh ]
+if [ -d $HOMEDIR/.oh-my-zsh ]
 then
-    echo "$HOMEDIR/.zshrc was moved.  Moving it back."
-    rm $HOMEDIR/.zshrc
-    mv $HOMEDIR/.zshrc.pre-oh-my-zsh .zshrc
+    echo "$HOMEDIR/.oh-my-zsh found.  Deleting it."
+    rm -rf $HOMEDIR/.oh-my-zsh
 fi
+
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOMEDIR/.oh-my-zsh
