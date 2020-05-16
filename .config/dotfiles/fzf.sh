@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FZFDIR=/home/$1/bin/fzf
+FZFDIR=$HOME/bin/fzf
 
 if [ -d $FZFDIR ]
 then
@@ -13,4 +13,4 @@ cd $FZFDIR
 yes n | ./install
 
 # Clean up junk
-rm /home/$1/.fzf.*
+rm $HOME/.fzf.*

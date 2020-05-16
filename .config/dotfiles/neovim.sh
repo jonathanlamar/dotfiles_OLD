@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NVIMDIR=/home/$1/.config/nvim
+NVIMDIR=$HOME/.config/nvim
 
 mkdir -p $NVIMDIR/autoload
 curl -fLo $NVIMDIR/autoload/plug.vim --create-dirs \

@@ -1,11 +1,9 @@
 #!/bin/bash
 
-HOMEDIR=/home/$1
-
-if [ -d $HOMEDIR/.oh-my-zsh ]
+if [ -d $HOME/.oh-my-zsh ]
 then
-    echo "$HOMEDIR/.oh-my-zsh found.  Deleting it."
-    rm -rf $HOMEDIR/.oh-my-zsh
+    echo "$HOME/.oh-my-zsh found.  Deleting it."
+    rm -rf $HOME/.oh-my-zsh
 fi
 
-git clone https://github.com/ohmyzsh/ohmyzsh.git $HOMEDIR/.oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh

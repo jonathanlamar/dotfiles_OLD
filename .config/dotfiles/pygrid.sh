@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BINDIR=/home/$1/bin
+BINDIR=$HOME/bin
 
 # Make bin if not there
 if [ ! -d $BINDIR ]

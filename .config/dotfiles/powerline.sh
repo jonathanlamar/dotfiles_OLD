@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CLONEDIR=/home/$1/repos/notMine
+CLONEDIR=$HOME/repos/notMine
 
 if [ ! -d $CLONEDIR ]
 then

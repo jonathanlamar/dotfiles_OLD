@@ -1,9 +1,8 @@
 #!/bin/bash
 
-HOMEDIR=/home/$1
 FONTDIR=/usr/share/fonts/truetype
 
-cd $HOMEDIR/Downloads
+cd $HOME/Downloads
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
 unzip FiraMono.zip -d FiraMono
