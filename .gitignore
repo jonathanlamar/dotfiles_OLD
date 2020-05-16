@@ -9,7 +9,7 @@
 !.config/autostart
 !.config/autostart/pygrid.desktop
 !.config/dotfiles
-!.config/dotfiles/install.yml
+!.config/dotfiles/*
 !.config/nvim
 !.config/nvim/init.vim
 !.config/nvim/coc-settings.json
