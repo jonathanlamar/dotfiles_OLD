@@ -2,6 +2,14 @@
 
 FZFDIR=/home/$1/bin/fzf
 
+if [ -d $FZFDIR ]
+then
+    echo "$FZFDIR exists.  Deleting it."
+    rm -rf $FZFDIR
+fi
+
 git clone --depth 1 https://github.com/junegunn/fzf.git $FZFDIR
-.$FZFDIR/install
+bash -c $($FZFDIR/install)
+
+# Clean up junk
 rm /home/$1/.fzf.*
