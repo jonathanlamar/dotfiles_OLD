@@ -9,7 +9,8 @@ then
 fi
 
 git clone --depth 1 https://github.com/junegunn/fzf.git $FZFDIR
-bash -c $($FZFDIR/install)
+cd $FZFDIR
+./install
 
 # Clean up junk
 rm /home/$1/.fzf.*
