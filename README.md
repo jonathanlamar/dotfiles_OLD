@@ -27,8 +27,7 @@ git pull
 
 I made an Ansible playbook for installing, hidden in
 `.config/dotfiles/install.sh`.  Just execute that script (from that directory)
-and follow the prompts.  After installing, you will need to open neovim and
-run `:PlugInstall` and `:GoInstallBinaries`.
+and follow the prompts.
 
 ### Manual Install
 
