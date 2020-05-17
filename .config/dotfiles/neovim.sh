@@ -12,20 +12,14 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 deactivate
 
-# echo "Installing vim plugins."
-# nvim -c "PlugInstall" -c "qa\!"
+echo "Installing vim plugins."
+nvim +"PlugInstall" +qa
 
-# if [ ! -d $GOROOT ]
-# then
-#     echo "GOROOT not set.  Skipping golang integration with neovim."
-#     echo "Set that up and run :GoInstallBinaries in a veovim session."
-# else
-#     echo "Configuring golang integration with neovim."
-#     # Golang stuff.
-#     export PATH=$GOROOT/bin:$PATH
-#     export GOPATH=$HOME/repos/golang
-#     export GOBIN=$GOPATH/bin
-#     export PATH=$GOBIN:$PATH
-#     nvim -c "GoInstallBinaries" -c "qa\!"
-# fi
+echo "Configuring golang integration with neovim."
+# Golang stuff.
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=$HOME/repos/golang
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
+nvim +"GoInstallBinaries" +qa
 
