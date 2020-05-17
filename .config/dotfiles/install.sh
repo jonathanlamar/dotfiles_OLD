@@ -23,6 +23,9 @@ chsh -s /bin/zsh
 # Install powerline fonts
 ./powerline.sh
 
+# Install nerd fonts
+./nerdfonts.sh
+
 # Install fzf
 ./fzf.sh
 
