@@ -23,13 +23,14 @@ git checkout -f master
 git pull
 ```
 
-### Ansible Install
+### Install script
 
 I made an Ansible playbook for installing, hidden in
-`.config/dotfiles/install.yml`.  This has not been tested, but should work in
-Ubuntu.
+`.config/dotfiles/install.sh`.  Just execute that script (from that directory)
+and follow the prompts.  After installing, you will need to open neovim and
+run `:PlugInstall` and `:GoInstallBinaries`.
 
 ### Manual Install
 
-To install without Ansible, follow the steps in the playbook in your shell.  It
-should be fairly human-readable.
+To install manually, follow the steps in the install scripts in your shell.  It
+really isn't that complicated.
