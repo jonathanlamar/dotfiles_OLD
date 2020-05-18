@@ -12,6 +12,7 @@
 " 5. Work on better ranger integration.
 " 6. Finish configuing coc-explorer
 " 7. Remap commentary.
+" 8. Goyo should preserve old splits.
 
 " Virtual environment for running required neovim modules
 " TODO: Figure out where this belongs.

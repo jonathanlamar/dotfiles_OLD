@@ -134,7 +134,7 @@ let g:which_key_map.l = {
 " t is for toggle
 let g:which_key_map.t = {
       \ 'name' : '+toggle' ,
-      \ 'g' : [':Goyo'                   , 'goyo'],
+      \ 'g' : [':call GoyoNoLines()'     , 'goyo'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
       \ 's' : [':let @/ = ""'            , 'remove search highlight'],
