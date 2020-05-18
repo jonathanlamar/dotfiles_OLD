@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Add ppa for alacritty
-add-apt-repository ppa:mmstick76/alacritty
+sudo add-apt-repository ppa:mmstick76/alacritty
 
 # Install apt dependencies
 yes | sudo apt install alacritty curl exuberant-ctags git golang-go neovim \
