@@ -58,6 +58,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Neat icons
     Plug 'ryanoasis/vim-devicons'
+
+    " Distraction-free markdown writing
+    Plug 'junegunn/goyo.vim'
+    source $HOME/.config/nvim/plugins/settings/goyo.vim
   endif
 
 
