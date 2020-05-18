@@ -10,6 +10,8 @@
 " 4. Figure out why syntax highlighting doesn't work as well in other
 "    colorschemes.
 " 5. Work on better ranger integration.
+" 6. Finish configuing coc-explorer
+" 7. Remap commentary.
 
 " Virtual environment for running required neovim modules
 " TODO: Figure out where this belongs.

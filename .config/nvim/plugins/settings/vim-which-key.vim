@@ -33,25 +33,10 @@ let g:which_key_map['r'] = [ ':RangerCurrentFileExistingOrNewTab'  , 'ranger' ]
 let g:which_key_map['S'] = [ ':Startify'                           , 'start screen' ]
 let g:which_key_map['T'] = [ ':Rg'                                 , 'search text' ]
 let g:which_key_map['v'] = [ ':vsp'                                , 'split right']
-" let g:which_key_map['n'] = [ ':NERDTreeFocus'                      , 'nerdtree']
 let g:which_key_map['i'] = [ ':tabe $MYVIMRC'                      , 'init.vim']
 " TODO: Figure out a letter for terminal
 " let g:which_key_map[''] = [ ':call TermToggle(0.3)'               , 'terminal'],
 
-
-" b is for buffer
-" let g:which_key_map.b = {
-"       \ 'name' : '+buffer' ,
-"       \ '1' : ['b1'        , 'buffer 1']        ,
-"       \ '2' : ['b2'        , 'buffer 2']        ,
-"       \ 'd' : ['bd'        , 'delete-buffer']   ,
-"       \ 'f' : ['bfirst'    , 'first-buffer']    ,
-"       \ 'h' : ['Startify'  , 'home-buffer']     ,
-"       \ 'l' : ['blast'     , 'last-buffer']     ,
-"       \ 'n' : ['bnext'     , 'next-buffer']     ,
-"       \ 'p' : ['bprevious' , 'previous-buffer'] ,
-"       \ '?' : ['Buffers'   , 'fzf-buffer']      ,
-"       \ }
 
 " s is for search
 let g:which_key_map.s = {
@@ -150,6 +135,7 @@ let g:which_key_map.l = {
 " t is for toggle
 let g:which_key_map.t = {
       \ 'name' : '+toggle' ,
+      \ 'g' : [':Goyo'                   , 'goyo'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
       \ 's' : [':let @/ = ""'            , 'remove search highlight'],
