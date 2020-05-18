@@ -43,7 +43,6 @@ let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'     , 'history'],
       \ ';' : [':Commands'     , 'commands'],
-      \ 'a' : [':FzfAg'        , 'text Ag'],
       \ 'b' : [':FzfBLines'    , 'current buffer'],
       \ 'B' : [':FzfBuffers'   , 'open buffers'],
       \ 'c' : [':FzfCommits'   , 'commits'],
