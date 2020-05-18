@@ -39,9 +39,9 @@ if !exists('g:vscode') && !exists('g:intellij')
 
   " Terminal stuff for neovim
   " These are for more permanent shells.  They will not persist on close
-  command! T new term://$SHELL | setlocal nonumber nocursorline
-  command! VT vnew term://$SHELL | setlocal nonumber nocursorline
-  command! TT tabnew term://$SHELL | setlocal nonumber nocursorline
+  command! T new term://$SHELL | setlocal nonumber norelativenumber nocursorline
+  command! VT vnew term://$SHELL | setlocal nonumber norelativenumber nocursorline
+  command! TT tabnew term://$SHELL | setlocal nonumber norelativenumber nocursorline
 
   " Set Esc to be the key for leaving the terminal.
   " Except for fzf, where it is already mapped to kill the program and exit.
