@@ -28,7 +28,7 @@ if !exists('g:vscode') && !exists('g:intellij')
   set hidden " TextEdit might fail if hidden is not set.
   set nowrap
   set number
-  set signcolumn=yes " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/become resolved.
+  set relativenumber
   set splitbelow " These are more intuitive to me
   set splitright
 
