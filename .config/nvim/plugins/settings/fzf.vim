@@ -27,8 +27,8 @@ let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 " Change fzf actions to mimic nerdtree
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-i': 'split',
-  \ 'ctrl-s': 'vsplit' }
+  \ 'ctrl-h': 'split',
+  \ 'ctrl-v': 'vsplit' }
 " Set colors to match colorscheme
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
