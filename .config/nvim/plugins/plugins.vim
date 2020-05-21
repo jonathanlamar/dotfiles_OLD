@@ -114,11 +114,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
 
     " Colored parens
-    Plug 'junegunn/rainbow_parentheses.vim'
-    source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
+    " Plug 'junegunn/rainbow_parentheses.vim'
+    " source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
 
     " Better Comments
-    Plug 'jbgutierrez/vim-better-comments'
+    " Plug 'jbgutierrez/vim-better-comments'
 
     " vim-scala - modern scaladoc indentation
     Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
