@@ -118,6 +118,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
 
     " Better Comments
+    " Not sure how I feel about this one...
     " Plug 'jbgutierrez/vim-better-comments'
 
     " vim-scala - modern scaladoc indentation

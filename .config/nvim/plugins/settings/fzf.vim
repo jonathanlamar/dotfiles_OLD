@@ -3,32 +3,17 @@ set rtp+=$HOME/bin/fzf
 " Use FZF for files and tags if available, otherwise fall back onto CtrlP
 let g:fzf_command_prefix = 'Fzf' " namespacing commands
 
-" nnoremap <leader>v :FzfFiles<cr>
-" nnoremap <leader>u :FzfTags<cr>
-" nnoremap <leader>a :FzfBuffers<CR>
-" nnoremap <leader>A :FzfWindows<CR>
-" " <leader>j will search for tag using word under cursor
-" nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
-" " Grepping codebase
-" nnoremap <leader>g :FzfRg<CR>
-" " Not sure what this does
-" nnoremap <leader>m :FzfMarks<CR>
-
 let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-" This makes :Files only search git files.  There is a built in commend for
-" that.
-" let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
-"-g '!{node_modules,.git}'
 
 " Change fzf actions to mimic nerdtree
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-i': 'split',
-  \ 'ctrl-s': 'vsplit' }
+  \ 'ctrl-h': 'split',
+  \ 'ctrl-v': 'vsplit' }
 " Set colors to match colorscheme
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
