@@ -7,9 +7,9 @@ curl -fLo $NVIMDIR/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cd $NVIMDIR
-virtualenv venv
+virtualenv --system-site-packages venv
 source venv/bin/activate
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 deactivate
 
 echo "Installing vim plugins."
