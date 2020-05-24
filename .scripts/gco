@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Checkout git branch
+git fetch
+local branches branch
+branches=$(git branch -a) &&
+branch=$(echo "$branches" | fzf --height=50% +s +m -e) &&
+git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+
