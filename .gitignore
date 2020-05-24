@@ -10,6 +10,8 @@
 !.config/autostart/pygrid.desktop
 !.config/dotfiles
 !.config/dotfiles/*
+!.config/i3
+!.config/i3/*
 !.config/nvim
 !.config/nvim/init.vim
 !.config/nvim/coc-settings.json
@@ -24,9 +26,17 @@
 !.config/nvim/plugins/settings/*
 !.config/nvim/utils
 !.config/nvim/utils/snips
+!.config/polybar
+!.config/polybar/*
+!.config/polybar/scripts
+!.config/polybar/scripts/*
+!.config/polybar/source
+!.config/polybar/source/*
 !.config/pygrid.json
 !.config/ranger
 !.config/ranger/*
+!.config/rofi
+!.config/rofi/*
 !.config/termite
 !.config/termite/config
 !.ctags
@@ -34,4 +44,5 @@
 !README.md
 !.scripts
 !.scripts/*
+!.xprofile
 !.zshrc
