@@ -52,6 +52,8 @@ bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"
 
 # w
 # bindsym $mod+w 			            exec --no-startup-id brave
+bindsym $mod+w                      exec --no-startup-id firefox
+
 
 # e
 bindsym $mod+e 			            exec --no-startup-id $lock
@@ -60,7 +62,6 @@ bindsym $mod+Shift+e		        exec --no-startup-id $suspend
 # r
 bindsym $mod+r 			            exec $term -e ranger
 bindsym $mod+Shift+r		        exec --no-startup-id winresize
-bindsym $mod+$alt+r                 reload
 
 # t
 bindsym $mod+t 			            exec $term -e htop
@@ -83,8 +84,9 @@ bindsym $mod+i                  fullscreen disable; floating enable; resize set 
 bindsym $mod+a		              exec $term -e alsamixer
 
 # s
-bindsym $mod+s        			    sticky toggle;
+# bindsym $mod+s        			    sticky toggle;
 bindsym $mod+Shift+s			      split toggle
+bindsym $mod+s                      exec --no-startup-id slack
 
 # d
 bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop
@@ -131,7 +133,7 @@ bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
 # bindsym $mod+Shift+c		        exec --no-startup-id killall picom
 
 # v
-bindsym $mod+v			            exec --no-startup-id $term -e nvim
+# bindsym $mod+v			            exec --no-startup-id $term -e nvim
 
 # b
 bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/ultrawide/*
@@ -167,7 +169,7 @@ set $ws10 "10"
 # assign [class="Brave"] $ws1
 # assign [class="Chromium"] $ws2
 # assign [class="discord"] $ws8
-# for_window [class="Spotify"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws9
 # assign [class="obs"] $ws10
 
 # Assing autofloat
@@ -205,8 +207,6 @@ for_window [window_role="GtkFileChooserDialog"] move position center
 
 # #---Function Buttons---# #
 bindsym $mod+F1		        restart
-bindsym $mod+F2		        exec --no-startup-id screenkey -s small --scr 1
-bindsym $mod+F3	          exec --no-startup-id killall screenkey
 bindsym $mod+F12	        exec $term -e nmtui
 
 # #---Arrow Keys---# #
