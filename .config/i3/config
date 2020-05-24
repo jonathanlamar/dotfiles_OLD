@@ -3,6 +3,7 @@
 # This config file will use environment variables such as $BROWSER and $TERMINAL.
 
 # Exec on startup
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/ultrawide/*
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling

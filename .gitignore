@@ -26,6 +26,8 @@
 !.config/nvim/plugins/settings/*
 !.config/nvim/utils
 !.config/nvim/utils/snips
+!.config/picom
+!.config/picom/*
 !.config/polybar
 !.config/polybar/*
 !.config/polybar/scripts
