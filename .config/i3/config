@@ -89,8 +89,8 @@ bindsym $mod+Shift+s			      split toggle
 bindsym $mod+s                      exec --no-startup-id slack
 
 # d
-bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop
-
+# bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d                  exec --no-startup-id "rofi -show drun -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
 # f
 bindsym $mod+f			            fullscreen toggle
 bindsym $mod+Shift+f 	          floating toggle
