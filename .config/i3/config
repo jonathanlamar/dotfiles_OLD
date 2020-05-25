@@ -39,6 +39,7 @@ set $spotify spotify
 set $files nautilus
 set $browser firefox
 set $zoom zoom-client
+set $intellij intellij-idea-community
 
 # --- TUI apps -- should have generic names
 set $term --no-startup-id alacritty
@@ -99,7 +100,8 @@ bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pictures/
 bindsym $mod+u                  [urgent=latest] focus
 
 # i
-bindsym $mod+i                  fullscreen disable; floating enable; resize set 500 300; sticky enable; move position 4610 1130
+# bindsym $mod+i                  fullscreen disable; floating enable; resize set 500 300; sticky enable; move position 4610 1130
+bindsym $mod+i                      exec --no-startup-id $intellij
 
 # o
 # bindsym $mod+o			        exec --no-startup-id $term -e nvim ~/repos
