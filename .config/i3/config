@@ -167,8 +167,8 @@ bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-not
 bindsym $mod+Shift+n			    exec --no-startup-id $netrefresh
 
 # m
-bindsym $mod+m		              exec --no-startup-id spotify
-# bindsym $mod+Shift+m		        exec --no-startup-id discord
+bindsym $mod+m		              exec --no-startup-id $spotify
+bindsym $mod+Shift+m		      exec --no-startup-id $mail
 
 
 # #---Workspace Bindings---# #
