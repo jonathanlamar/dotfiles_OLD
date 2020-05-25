@@ -8,7 +8,7 @@ window:
     y: 2
 
 font:
-  size: 9
+  size: 6
 
   # Offset y can be thought of as vertical spacing.
   offset:

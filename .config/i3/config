@@ -4,9 +4,10 @@
 
 # Exec on startup
 exec_always --no-startup-id picom -b
-exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/ultrawide/*
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/standard/*
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id autotiling
+exec_always --no-startup-id $HOME/.config/i3/autotiling.py
+exec --no-startup-id /usr/bin/gnome-screensaver
 
 #
 # #---Basic Definitions---# #
@@ -14,15 +15,36 @@ smart_gaps on
 smart_borders on
 set $inner_gaps 10
 set $outer_gaps 0
-set $term --no-startup-id alacritty
 set $mod Mod4
 set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $lock i3lock
+set $lock  dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
+
+# --- Gnome Utilities
+set $controlcenter gnome-control-center
+set $calendar gnome-calendar
+set $calculator gnome-calculator
+set $diskutil gnome-disks
+set $sysmonitor gnome-system-monitor
+
+# --- Other GUI apps
+set $bluetooth blueman-manager
+set $mail mailspring
+set $slack slack
+set $spotify spotify
+set $files nautilus
+set $browser firefox
+
+# --- TUI apps -- should have generic names
+set $term --no-startup-id alacritty
+set $ranger ranger
+set $htop htop
+set $nmtui nmtui
+set $rofi-dmenu "rofi -show drun -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -36,14 +58,14 @@ gaps outer $outer_gaps
 bindsym $mod+Return 		         exec $term
 bindsym $mod+Shift+Return	       exec $term --working-directory  $(xcwd)
 
-bindsym $mod+Escape	             exec --no-startup-id dm-tool switch-to-greeter
+bindsym $mod+Escape                 exec --no-startup-id $lock
 bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
 
 # bindsym $mod+BackSpace
 # bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
 
 # space
-bindsym $mod+space 			            exec --no-startup-id rofi-menu 
+# bindsym $mod+space 			            exec --no-startup-id rofi-menu 
 
 
 # #---Letter Key Bindings---# #
@@ -52,7 +74,7 @@ bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"
 
 # w
 # bindsym $mod+w 			            exec --no-startup-id brave
-bindsym $mod+w                      exec --no-startup-id firefox
+bindsym $mod+w                      exec --no-startup-id $browser
 
 
 # e
@@ -60,11 +82,12 @@ bindsym $mod+e 			            exec --no-startup-id $lock
 bindsym $mod+Shift+e		        exec --no-startup-id $suspend
 
 # r
-bindsym $mod+r 			            exec $term -e ranger
-bindsym $mod+Shift+r		        exec --no-startup-id winresize
+bindsym $mod+r 			            exec --no-startup-id $term -e $ranger
+# bindsym $mod+Shift+r		        exec --no-startup-id winresize
 
 # t
-bindsym $mod+t 			            exec $term -e htop
+bindsym $mod+t 			            exec --no-startup-id $term -e $htop
+# ??
 bindsym $mod+Shift+t            focus mode_toggle
 
 # y
@@ -86,11 +109,12 @@ bindsym $mod+a		              exec $term -e alsamixer
 # s
 # bindsym $mod+s        			    sticky toggle;
 bindsym $mod+Shift+s			      split toggle
-bindsym $mod+s                      exec --no-startup-id slack
+bindsym $mod+s                      exec --no-startup-id $slack
 
 # d
 # bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d                  exec --no-startup-id "rofi -show drun -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
+bindsym $mod+d                  exec --no-startup-id $rofi-dmenu
+
 # f
 bindsym $mod+f			            fullscreen toggle
 bindsym $mod+Shift+f 	          floating toggle
@@ -136,10 +160,11 @@ bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
 # bindsym $mod+v			            exec --no-startup-id $term -e nvim
 
 # b
-bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/ultrawide/*
+bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/standard/*
 
 # n
 bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
+bindsym $mod+Shift+n			    exec --no-startup-id $netrefresh
 
 # m
 bindsym $mod+m		              exec --no-startup-id spotify
@@ -147,7 +172,7 @@ bindsym $mod+m		              exec --no-startup-id spotify
 
 
 # #---Workspace Bindings---# #
-bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
+# bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
 bindsym $mod+Shift+Tab		      workspace next
 bindsym $mod+apostrophe		      split horizontal ;; exec $term
 bindsym $mod+slash		          split vertical ;; exec $term
@@ -167,8 +192,9 @@ set $ws10 "10"
 
 # Assign Workspaces:
 # assign [class="Brave"] $ws1
-# assign [class="Chromium"] $ws2
-# assign [class="discord"] $ws8
+assign [class="Firefox"] $ws2
+for_window [class="Slack"] move to workspace $ws8
+for_window [class="Mailspring"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
 # assign [class="obs"] $ws10
 
@@ -207,7 +233,7 @@ for_window [window_role="GtkFileChooserDialog"] move position center
 
 # #---Function Buttons---# #
 bindsym $mod+F1		        restart
-bindsym $mod+F12	        exec $term -e nmtui
+bindsym $mod+F12	        exec $term -e $nmtui
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		      focus left
@@ -227,6 +253,17 @@ bindsym $mod+Ctrl+Right		move workspace to output left
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+# FIXME
+# Screen brightness keys
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Window borders
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #abb2bf
