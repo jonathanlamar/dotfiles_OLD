@@ -38,6 +38,7 @@ set $slack slack
 set $spotify spotify
 set $files nautilus
 set $browser firefox
+set $zoom zoom-client
 
 # --- TUI apps -- should have generic names
 set $term --no-startup-id alacritty
@@ -146,7 +147,7 @@ bindsym $mod+Ctrl+l		          move workspace to output right
 # bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
 # z
-# bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
+bindsym $mod+z			            exec --no-startup-id $zoom
 
 # x
 bindsym $mod+x 			            exec --no-startup-id $reboot
@@ -160,7 +161,8 @@ bindsym $mod+Shift+x		        exec --no-startup-id $shutdown
 # bindsym $mod+v			            exec --no-startup-id $term -e nvim
 
 # b
-bindsym $mod+b			            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/standard/*
+bindsym $mod+b                      exec $files
+bindsym $mod+Shift+b	            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/standard/*
 
 # n
 bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
