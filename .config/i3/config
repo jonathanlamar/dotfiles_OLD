@@ -17,6 +17,8 @@ set $inner_gaps 10
 set $outer_gaps 0
 set $mod Mod4
 set $alt Mod1
+
+# --- System Commands
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
@@ -189,11 +191,10 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
 
 # Assign Workspaces:
 # assign [class="Brave"] $ws1
-assign [class="Firefox"] $ws2
+assign [class="Firefox"] $ws6
 for_window [class="Slack"] move to workspace $ws8
 for_window [class="Mailspring"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
@@ -212,7 +213,6 @@ bindsym $mod+6		workspace $ws6
 bindsym $mod+7		workspace $ws7
 bindsym $mod+8		workspace $ws8
 bindsym $mod+9		workspace $ws9
-bindsym $mod+0		workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1	move container to workspace $ws1
