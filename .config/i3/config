@@ -22,7 +22,7 @@ set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $lock  dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+set $lock gnome-screensaver-command --lock
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
 
