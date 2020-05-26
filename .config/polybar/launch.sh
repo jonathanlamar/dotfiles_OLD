@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 ## Add this to your wm startup file.
 
@@ -9,4 +9,12 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar -c ~/.config/polybar/config.ini main &
+if [[ $HOST == "desktop" ]]; then
+    BAR="desktop"
+elif [[ $HOST == "xps" ]]; then
+    BAR="laptop"
+else
+    BAR="basic"
+fi
+
+polybar -c ~/.config/polybar/config.ini "$BAR" &
