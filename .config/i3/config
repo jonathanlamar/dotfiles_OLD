@@ -198,6 +198,10 @@ assign [class="Firefox"] $ws6
 for_window [class="Slack"] move to workspace $ws8
 for_window [class="Mailspring"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
+
+# FIXME: This does not work
+for_window [class="Gnome-control-center"] floating enable; resize set 800 600; move position center
+for_window [class="Gnome-system-monitor"] floating enable; resize set 800 600; move position center
 # assign [class="obs"] $ws10
 
 # Assing autofloat
@@ -226,10 +230,10 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [window_role="GtkFileChooserDialog"] resize set 800 600
-for_window [window_role="GtkFileChooserDialog"] move position center
+# for_window [title="GIMP Startup"] move workspace $ws5
+# for_window [class="Gimp"] move workspace $ws5
+# for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+# for_window [window_role="GtkFileChooserDialog"] move position center
 
 
 # #---Function Buttons---# #
