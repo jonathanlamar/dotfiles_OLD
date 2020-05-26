@@ -85,6 +85,8 @@ schemes:
       cyan:    '#5c8482'
       white:   '#828282'
 
+    draw_bold_text_with_bright_colors: true
+
   # Colors (Gruvbox dark)
   gruvbox: &gruvbox
     # Default colors
@@ -117,6 +119,8 @@ schemes:
       cyan:    '#8ec07c'
       white:   '#ebdbb2'
 
+    draw_bold_text_with_bright_colors: true
+
   # Colors (Ayu Mirage)
   ayu: &ayu
     # Default colors
@@ -146,36 +150,42 @@ schemes:
       cyan:    '#95E6CB'
       white:   '#FFFFFF'
 
-  # Colors (One Dark)
+    draw_bold_text_with_bright_colors: true
+
+  # Colors (One Darker)
   onedark: &onedark
     # Default colors
     primary:
-      background: '#282c34'
-      foreground: '#abb2bf'
-
+      background: "#1e2127"
+      foreground: "#abb2bf"
+      #
     # Normal colors
     normal:
-      # NOTE: Use '#131613' for the `black` color if you'd like to see
-      # black text on the background.
-      black:   '#282c34'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#abb2bf'
+      black:   "#1e2127"
+      red:     "#e06c75"
+      green:   "#98c379"
+      yellow:  "#d19a66"
+      blue:    "#61afef"
+      magenta: "#c678dd"
+      cyan:    "#56b6c2"
+      white:   "#abb2bf"
 
     # Bright colors
     bright:
-      black:   '#5c6370'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#d19a66'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#ffffff'
+      black:   "#5c6370"
+      red:     "#e06c75"
+      green:   "#98c379"
+      yellow:  "#d19a66"
+      blue:    "#61afef"
+      magenta: "#c678dd"
+      cyan:    "#56b6c2"
+      white:   "#ffffff"
+      # Default colors
+      primary:
+        background: '#282c34'
+        foreground: '#abb2bf'
+
+    draw_bold_text_with_bright_colors: true
 
   # Base16 PaperColor Dark 256 - alacritty color config
   # Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
@@ -211,6 +221,8 @@ schemes:
       magenta: '0x00afaf'
       cyan:    '0xffaf00'
       white:   '0xd0d0d0'
+
+    draw_bold_text_with_bright_colors: true
 
     indexed_colors:
       - { index: 16, color: '0x5faf5f' }
