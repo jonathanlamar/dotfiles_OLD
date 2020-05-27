@@ -79,7 +79,7 @@ bindsym $mod+w                      exec --no-startup-id $browser
 
 
 # e
-# bindsym $mod+e 			            exec --no-startup-id $lock
+bindsym $mod+e 			            exec --no-startup-id $mail
 
 # r
 bindsym $mod+r 			            exec --no-startup-id $term -e $ranger
@@ -108,7 +108,8 @@ bindsym $mod+i                      exec --no-startup-id $intellij
 bindsym $mod+a		              exec $term -e alsamixer
 
 # s
-# bindsym $mod+s        			    sticky toggle;
+# FIXME
+# bindsym $mod+$alt+s        			    sticky toggle
 bindsym $mod+Shift+s			      split toggle
 bindsym $mod+s                      exec --no-startup-id $slack
 
@@ -127,28 +128,28 @@ bindsym $mod+Shift+g		        gaps inner current set 0; gaps outer current set 0
 # h
 bindsym $mod+h			            focus left
 bindsym $mod+Shift+h		        move left 30
-bindsym $mod+Ctrl+h		          move workspace to output left
+# bindsym $mod+Ctrl+h		          move workspace to output left
 
 # j
 bindsym $mod+j			            focus down
 bindsym $mod+Shift+j		        move down 30
-bindsym $mod+Ctrl+j		          move workspace to output down
+# bindsym $mod+Ctrl+j		          move workspace to output down
 
 # k
 bindsym $mod+k			            focus up
 bindsym $mod+Shift+k		        move up 30
-bindsym $mod+Ctrl+k		          move workspace to output up
+# bindsym $mod+Ctrl+k		          move workspace to output up
 
 # l
 bindsym $mod+l			            focus right
 bindsym $mod+Shift+l		        move right 30
-bindsym $mod+Ctrl+l		          move workspace to output right
+# bindsym $mod+Ctrl+l		          move workspace to output right
 bindsym $alt+Ctrl+l               exec --no-startup-id $lock
 
 # bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
 # z
-bindsym $mod+z			            exec --no-startup-id $zoom
+# bindsym $mod+z			            exec --no-startup-id $zoom
 
 # x
 bindsym $mod+x 			            exec --no-startup-id $reboot
@@ -171,16 +172,16 @@ bindsym $mod+Shift+n			    exec --no-startup-id $netrefresh
 
 # m
 bindsym $mod+m		              exec --no-startup-id $spotify
-bindsym $mod+Shift+m		      exec --no-startup-id $mail
 
 
 # #---Workspace Bindings---# #
 bindsym $mod+Tab		            exec --no-startup-id rofi -show window
-bindsym $mod+Shift+Tab		      workspace next
+bindsym $alt+Tab    		      workspace back_and_forth
+bindsym $mod+$alt+Right		      workspace next
+bindsym $mod+$alt+Left		      workspace prev
 bindsym $mod+apostrophe		      split horizontal ;; exec $term
 bindsym $mod+slash		          split vertical ;; exec $term
 bindsym $mod+Shift+slash	      kill
-bindsym $mod+backslash		      workspace back_and_forth
 
 set $ws1 "1"
 set $ws2 "2"
@@ -193,16 +194,14 @@ set $ws8 "8"
 set $ws9 "9"
 
 # Assign Workspaces:
-# assign [class="Brave"] $ws1
 assign [class="Firefox"] $ws6
 for_window [class="Slack"] move to workspace $ws8
 for_window [class="Mailspring"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
 
-# FIXME: This does not work
 for_window [class="Gnome-control-center"] floating enable; resize set 800 600; move position center
+# FIXME: This does not work
 for_window [class="Gnome-system-monitor"] floating enable; resize set 800 600; move position center
-# assign [class="obs"] $ws10
 
 # Assing autofloat
 # for_window [title=".*Emulator.*"] floating enable
