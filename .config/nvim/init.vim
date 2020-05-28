@@ -7,12 +7,10 @@
 " 1. Figure out option for Alt+* keybindings in Mac (use option instead)
 " 2. Look into better code folding settings.
 " 3. Turn off drop down completion in free text entry (comments, text/markdown)
-" 4. Figure out why syntax highlighting doesn't work as well in other
-"    colorschemes.
-" 5. Work on better ranger integration.
-" 6. Finish configuing coc-explorer
-" 7. Remap commentary.
-" 8. Goyo should preserve old splits.
+" 4. Work on better ranger integration.
+" 5. Finish configuing coc-explorer
+" 6. Remap commentary.
+" 7. Goyo should preserve old splits.
 
 " Virtual environment for running required neovim modules
 " TODO: Figure out where this belongs.
