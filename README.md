@@ -1,11 +1,7 @@
 # Dotfiles
 
-These are my dotfiles.  **By far** Most work has been done on the vim config.
-
-## To-do list
-
-1. Integrate relevant parts of init.vim with vscode and intellij vim plugins (in
-   progress).
+These are my dotfiles.  Most work has been done on the vim config, but the i3
+config is coming along nicely.
 
 ## Install
 
@@ -25,9 +21,10 @@ git pull
 
 ### Install script
 
-I made an Ansible playbook for installing, hidden in
-`.config/dotfiles/install.sh`.  Just execute that script (from that directory)
-and follow the prompts.
+I made a shell script for installing the necessary dependencies, after the repo
+has been clones.  It is hidden in `.config/dotfiles/install.sh`.  Just execute
+that script (from that directory) and follow the prompts.  It should work on
+Ubuntu 20, but no promises.
 
 ### Manual Install
 
