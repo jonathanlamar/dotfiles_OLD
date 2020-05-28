@@ -167,7 +167,7 @@ bindsym $mod+b                      exec $files
 bindsym $mod+Shift+b	            exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/*
 
 # n
-bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
+# bindsym $mod+n			            exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 bindsym $mod+Shift+n			    exec --no-startup-id $netrefresh
 
 # m
