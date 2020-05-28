@@ -31,3 +31,15 @@ chsh -s /bin/zsh
 
 # Install neovim
 ./neovim.sh
+
+# Install polybar
+./polybar.sh
+
+# Install i3-gaps
+./i3gaps.sh
+
+# Install picom
+./picom.sh
+
+# Install i3gaps utils
+./i3other.sh
