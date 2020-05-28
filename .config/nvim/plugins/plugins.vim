@@ -145,13 +145,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-gitgutter'
 
   " Commit browser
+  " TODO: How much do I actually use this?
   Plug 'junegunn/gv.vim'
 
   " Integration for git in vim.
-  " TODO: Learn, configure, and start using.
   Plug 'tpope/vim-fugitive'
   " This enables GBrowse and some other github-specific functionality for fugitive.
-  " TODO: Figure out gitlab integration.
   Plug 'tpope/vim-rhubarb'
 
 call plug#end()

@@ -39,20 +39,6 @@ nnoremap <M-o> o<Esc>
 vnoremap < <gv
 vnoremap > >gv
 
-" For testing vscode integration.
-" nnoremap <leader>b ifoo<esc>
-
-" Navigation a la Intellij
-" nnoremap <C-[> <C-O>
-" nnoremap <C-]> <C-I>
-" nnoremap <C-O> <Nop>
-" nnoremap <C-I> <Nop>
-" " For some reason, the above mappings make escape act like Ctrl-O
-" nnoremap <Esc> <Esc>
-
-" Make it easier to make it easier to edit text :P
-" map <leader>rc :tabe $MYVIMRC <cr>
-
 " Source vimrc after saving.  Have to refresh airline and colorscheme to fix
 " some weird behavior, which is probably related to order of settings
 " FIXME: This doesn't fix the issue.  I still have to manually call
