@@ -7,3 +7,6 @@ then
 fi
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
+
+# Place custom theme
+cp $HOME/.config/dotfiles/clean2.zsh-theme $HOME/.oh-my-zsh/custom/themes
