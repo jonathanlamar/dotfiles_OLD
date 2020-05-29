@@ -31,7 +31,7 @@ else
 endif
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -86,6 +86,6 @@ let g:coc_global_extensions = [
   \ ]
 
 " coc-explorer
-nmap <leader>e :CocCommand explorer<CR>
+" nmap <leader>e :CocCommand explorer<CR>
 " nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
