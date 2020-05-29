@@ -42,7 +42,6 @@
 !.config/termite
 !.config/termite/config
 !.ctags
-!.oh-my-zsh/custom/themes/clean2.zsh-theme
 !.profile
 !README.md
 !.scripts

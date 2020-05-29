@@ -8,5 +8,5 @@ fi
 
 git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 
-# Place custom theme
-cp $HOME/.config/dotfiles/clean2.zsh-theme $HOME/.oh-my-zsh/custom/themes
+# Place custom theme in correct location
+ln $HOME/.oh-my-zsh/custom/themes/mine.zsh-theme $HOME/.config/dotfiles/mine.zsh-theme
