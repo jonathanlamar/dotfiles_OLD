@@ -27,6 +27,10 @@ export GOPATH=$HOME/repos/golang
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 
+# Java stuff
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+alias jshell=$JAVA_HOME/bin/jshell
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == *$HOME/bin/fzf/bin* ]]; then
