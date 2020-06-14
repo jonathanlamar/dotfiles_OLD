@@ -12,7 +12,7 @@ yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock neovim nodejs \
 ./yay.sh
 
 # Install AUR dependencies
-yes | yay -S universal-ctags autotiling
+yes | yay -S universal-ctags autotiling deadd-notification-center
 
 # Install pip dependencies
 pip3 install pylint jedi virtualenv
