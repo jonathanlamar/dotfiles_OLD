@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install pacman dependencies
-yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock neovim nodejs \
-    npm jdk-openjdk light picom python-pip ranger ripgrep unzip wget \
+yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock jdk-openjdk \
+    light neovim nodejs npm picom python-pip ranger ripgrep unzip wget \
     xorg-xbacklight xsel yarn zip zsh
 
 # Not sure about these
@@ -12,10 +12,10 @@ yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock neovim nodejs \
 ./yay.sh
 
 # Install AUR dependencies
-yes | yay -S universal-ctags autotiling deadd-notification-center
+yes | yay -S universal-ctags autotiling deadd-notification-center ytop
 
 # Install pip dependencies
-pip3 install pylint jedi virtualenv
+pip3 install pylint jedi virtualenv notify-send.py
 
 # Other packages for my i3 config
 ./i3other.sh
