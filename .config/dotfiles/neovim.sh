@@ -17,6 +17,7 @@ nvim +"PlugInstall" +qa
 
 echo "Configuring golang integration with neovim."
 # Golang stuff.
+export GOROOT=/usr/lib/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/repos/golang
 export GOBIN=$GOPATH/bin

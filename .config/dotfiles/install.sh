@@ -1,18 +1,27 @@
 #!/bin/bash
 
-# Add ppa for alacritty
-sudo add-apt-repository ppa:mmstick76/alacritty
+# Install pacman dependencies
+yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock neovim nodejs \
+    npm jdk-openjdk light picom python-pip ranger ripgrep unzip wget \
+    xorg-xbacklight xsel yarn zip zsh
 
-# Install apt dependencies
-yes | sudo apt install alacritty curl exuberant-ctags git golang-go neovim \
-    nodejs npm openjdk-8-jdk python3-gi python3-pip python3-xlib ranger \
-    ripgrep xsel yarn zsh
+# Not sure about these
+#python3-gi python3-xlib
+
+# Install yay
+./yay.sh
+
+# Install AUR dependencies
+yes | yay -S universal-ctags autotiling
 
 # Install pip dependencies
 pip3 install pylint jedi virtualenv
 
-# Install pygrid
-./pygrid.sh
+# Other packages for my i3 config
+./i3other.sh
+
+# Install nerd fonts
+./nerdfonts.sh
 
 # Change default shell to fzf
 chsh -s /bin/zsh
@@ -20,26 +29,5 @@ chsh -s /bin/zsh
 # Install oh-my-zsh
 ./ohMyZsh.sh
 
-# Install powerline fonts
-./powerline.sh
-
-# Install nerd fonts
-./nerdfonts.sh
-
-# Install fzf
-./fzf.sh
-
 # Install neovim
 ./neovim.sh
-
-# Install polybar
-./polybar.sh
-
-# Install i3-gaps
-./i3gaps.sh
-
-# Install picom
-./picom.sh
-
-# Install i3gaps utils
-./i3other.sh

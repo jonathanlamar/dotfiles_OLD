@@ -8,8 +8,10 @@ then
     mkdir -p $CLONEDIR
 fi
 
-git clone https://github.com/powerline/fonts.git --depth=1 $CLONEDIR/fonts
-cd $CLONEDIR/fonts
-./install.sh
-cd ..
-rm -rf fonts
+cd $CLONEDIR
+
+git clone https://aur.archlinux.org/yay.git
+
+cd yay
+
+yes | makepkg -si

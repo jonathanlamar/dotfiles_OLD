@@ -6,8 +6,7 @@
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/*
 exec_always --no-startup-id zsh $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/.config/i3/autotiling.py
-exec --no-startup-id /usr/bin/gnome-screensaver
+exec_always --no-startup-id autotiling
 
 #
 # #---Basic Definitions---# #
@@ -22,16 +21,9 @@ set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $lock gnome-screensaver-command --lock
+set $lock i3lock
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
-
-# --- Gnome Utilities
-set $controlcenter gnome-control-center
-set $calendar gnome-calendar
-set $calculator gnome-calculator
-set $diskutil gnome-disks
-set $sysmonitor gnome-system-monitor
 
 # --- Other GUI apps
 set $bluetooth blueman-manager
@@ -194,7 +186,7 @@ set $ws8 "8"
 set $ws9 "9"
 
 # Assign Workspaces:
-assign [class="Firefox"] $ws6
+assign [class="firefox"] $ws6
 for_window [class="Slack"] move to workspace $ws8
 for_window [class="Mailspring"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
