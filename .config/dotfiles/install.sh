@@ -2,8 +2,8 @@
 
 # Install pacman dependencies
 yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock jdk-openjdk \
-    light neovim nodejs npm picom python-pip ranger ripgrep unzip wget \
-    xorg-xbacklight xsel yarn zip zsh
+    light neovim nodejs npm pavucontrol picom pulseaudio python-pip ranger \
+    ripgrep unzip wget xorg-xbacklight xsel yarn zip zsh
 
 # Not sure about these
 #python3-gi python3-xlib
@@ -12,7 +12,7 @@ yes | sudo pacman -S alacritty curl fzf git go i3-gaps i3lock jdk-openjdk \
 ./yay.sh
 
 # Install AUR dependencies
-yes | yay -S universal-ctags autotiling deadd-notification-center ytop
+yay -S universal-ctags autotiling deadd-notification-center ytop-bin
 
 # Install pip dependencies
 pip3 install pylint jedi virtualenv notify-send.py
