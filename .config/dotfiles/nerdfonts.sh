@@ -30,7 +30,7 @@ sudo cp -r Terminus $FONTDIR
 rm -r Terminus Terminus.zip
 
 # I don't know why this these are not included out of the box...
-wget https://github.com/adi1090x/polybar-themes/blob/master/polybar-8/fonts/Material.ttf?raw=true
+wget http://raw.githubusercontent.com/adi1090x/polybar-themes/master/polybar-8/fonts/Material.ttf
 sudo mv Material.ttf $FONTDIR
 
 sudo fc-cache -f -v

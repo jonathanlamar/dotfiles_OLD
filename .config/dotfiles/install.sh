@@ -14,7 +14,7 @@ yes | sudo pacman -S alacritty blueman bluez bluez-utils curl feh flameshot \
 ./yay.sh
 
 # Install AUR dependencies
-yes | yay -S universal-ctags autotiling deadd-notification-center ytop
+yay -S universal-ctags autotiling deadd-notification-center ytop-bin
 
 # Install pip dependencies
 pip3 install pylint jedi virtualenv notify-send.py
