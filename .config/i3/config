@@ -8,6 +8,7 @@ exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/*
 exec_always --no-startup-id zsh $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id deadd-notification-center
+exec_always --no-startup-id light-locker
 
 #
 # #---Basic Definitions---# #
@@ -22,7 +23,7 @@ set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $lock i3lock
+set $lock light-locker-command -l
 set $suspend sudo systemctl suspend
 set $hibernate sudo -A systemctl hibernate
 
