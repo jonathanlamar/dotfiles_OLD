@@ -156,7 +156,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " This enables GBrowse and some other github-specific functionality for fugitive.
   Plug 'tpope/vim-rhubarb'
 
-  Plug 'christoomey/vim-tmux/navigator'
+  Plug 'christoomey/vim-tmux-navigator'
   source $HOME/.config/nvim/plugins/settings/navigator.vim
 
 call plug#end()
