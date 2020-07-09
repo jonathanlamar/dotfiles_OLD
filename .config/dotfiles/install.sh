@@ -4,10 +4,7 @@
 yes | sudo pacman -S alacritty blueman bluez bluez-utils curl feh flameshot \
     fzf git gnome-keyring gnome-keyring go htop i3-gaps jdk-openjdk light-locker \
     lightdm  neovim nodejs npm picom playerctl pulseaudio-bluetooth python-pip \
-    ranger ripgrep rofi unzip wget xorg-xbacklight xsel yarn zip zsh
-
-# Not sure about these
-#python3-gi python3-xlib
+    ranger ripgrep rofi tmux unzip wget xorg-xbacklight xsel yarn zip zsh
 
 # Install yay
 ./yay.sh
