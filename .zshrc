@@ -106,17 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-function tmux_title() {
-  if [[ $PWD =~ /google/src/cloud/[^/]+/([^/]+)/.* ]]; then
-    tmux rename-window "${match[1]}"
-  else
-    tmux rename-window "$(basename `pwd`)"
-  fi
-}
-if [[ ! -z "$TMUX" ]]; then
-  precmd_functions+=(tmux_title)
-fi
-
 # Just source .profile
 [[ -f ~/.profile ]] && . ~/.profile
 
