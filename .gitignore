@@ -46,5 +46,6 @@
 !README.md
 !.scripts
 !.scripts/*
+!.tmux.conf
 !.xprofile
 !.zshrc
