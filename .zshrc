@@ -108,9 +108,9 @@ source $ZSH/oh-my-zsh.sh
 
 function tmux_title() {
   if [[ $PWD =~ /google/src/cloud/[^/]+/([^/]+)/.* ]]; then
-    tmx2 rename-window "${match[1]}"
+    tmux rename-window "${match[1]}"
   else
-    tmx2 rename-window "$(basename `pwd`)"
+    tmux rename-window "$(basename `pwd`)"
   fi
 }
 if [[ ! -z "$TMUX" ]]; then
