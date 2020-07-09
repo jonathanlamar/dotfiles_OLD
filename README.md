@@ -22,9 +22,9 @@ git pull
 ### Install script
 
 I made a shell script for installing the necessary dependencies, after the repo
-has been clones.  It is hidden in `.config/dotfiles/install.sh`.  Just execute
+has been cloned.  It is hidden in `.config/dotfiles/install.sh`.  Just execute
 that script (from that directory) and follow the prompts.  It should work on
-Ubuntu 20, but no promises.
+arch (mid 2020), but no promises.
 
 ### Manual Install
 
