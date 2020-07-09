@@ -118,8 +118,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Plug 'jbgutierrez/vim-better-comments'
 
   " vim-scala - modern scaladoc indentation
-  Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
-  source $HOME/.config/nvim/plugins/settings/vim-scala.vim
+  " Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
+  " source $HOME/.config/nvim/plugins/settings/vim-scala.vim
 
   " Nice python syntax highlighting.  Doesn't seem to work with all
   " colorschemes, but does with gruvbox
@@ -129,6 +129,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Golang support for building, etc.
   Plug 'fatih/vim-go'
   source $HOME/.config/nvim/plugins/settings/vim-go.vim
+
+  " TODO
+  Plug 'majutsushi/tagbar'
 
 
 
@@ -152,6 +155,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   " This enables GBrowse and some other github-specific functionality for fugitive.
   Plug 'tpope/vim-rhubarb'
+
+  Plug 'christoomey/vim-tmux/navigator'
+  source $HOME/.config/nvim/plugins/settings/navigator.vim
 
 call plug#end()
 

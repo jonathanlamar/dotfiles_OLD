@@ -50,13 +50,6 @@ endfunction
 
 autocmd! bufwritepost $MYVIMRC source % | call ResetColors()
 
-" easier split navigations
-" a la i3
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-L> <C-W><C-L>
-
 " Window resize a la i3
 nnoremap <M-j> :resize -1<CR>
 nnoremap <M-k> :resize +1<CR>
