@@ -130,8 +130,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'fatih/vim-go'
   source $HOME/.config/nvim/plugins/settings/vim-go.vim
 
-  " TODO
   Plug 'majutsushi/tagbar'
+  source $HOME/.config/nvim/plugins/settings/tagbar.vim
 
 
 
