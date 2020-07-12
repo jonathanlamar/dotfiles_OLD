@@ -208,17 +208,13 @@ bindsym $mod+F1		        restart
 bindsym $mod+F12	        exec $term -e $nmtui
 
 # #---Arrow Keys---# #
-bindsym $mod+Left		      focus left
-bindsym $mod+Shift+Left   resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+Left   resize shrink width 30 px or 5 ppt
 bindsym $mod+Ctrl+Left		move workspace to output right
-bindsym $mod+Down		      focus down
-bindsym $mod+Shift+Down   resize shrink height 5 px or 5 ppt
+bindsym $mod+Shift+Down   resize shrink height 30 px or 5 ppt
 bindsym $mod+Ctrl+Down		move workspace to output up
-bindsym $mod+Up			      focus up
-bindsym $mod+Shift+Up     resize grow height 5 px or 5 ppt
+bindsym $mod+Shift+Up     resize grow height 30 px or 5 ppt
 bindsym $mod+Ctrl+Up		  move workspace to output down
-bindsym $mod+Right 		    focus right
-bindsym $mod+Shift+Right  resize grow width 5 px or 5 ppt
+bindsym $mod+Shift+Right  resize grow width 30 px or 5 ppt
 bindsym $mod+Ctrl+Right		move workspace to output left
 
 # Pulse Audio controls
