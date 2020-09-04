@@ -1,12 +1,11 @@
 alias ll="ls -lhGt"
 alias la="ls -alhGt"
 alias vim="nvim"
-alias jnb="jupyter notebook"
 alias pip=pip3
 alias python=python3
 
 export EDITOR="nvim -n"
-export BROWSER="firefox"
+export BROWSER="google-chrome-stable"
 export TERMINAL="alacritty"
 
 # Dotfiles for easy access
@@ -21,18 +20,21 @@ export PATH=$SCRIPTS:$PATH
 # python virtualenv stuff
 export PATH=$HOME/.local/bin:$PATH
 
-# Golang stuff.
-export PATH=$GOROOT/bin:$PATH
-export GOPATH=$HOME/repos/golang
-export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
-
 # Java stuff
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 alias jshell=$JAVA_HOME/bin/jshell
 
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == *$HOME/bin/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}$HOME/bin/fzf/bin"
-fi
+# TODO: Make these scripts and move to $SCRIPTS
+function fv() {
+    local file
+    file="$(fzf --height 40% --reverse --query="$1" --select-1 --exit-0)"
+    [[ -n $file ]] && vim $file
+}
+
+function tm() { tmux new -A -s $1 }
+
+function tma() {
+    local sess
+    sess="$(tmux ls | sed "s/:.*//" | fzf --height 40% --reverse --select-1 --exit-0)"
+    [[ -n $sess ]] && tmux new -A -s $sess
+}
