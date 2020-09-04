@@ -122,6 +122,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Plug 'mhinz/vim-signify'
   " source $HOME/.config/nvim/plugins/settings/vim-signify.vim
 
+  Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+  source $HOME/.config/nvim/plugins/settings/vim-pydocstring.vim
+
 
 
   " General dev/git stuff
