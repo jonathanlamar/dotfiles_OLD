@@ -29,7 +29,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " let g:which_key_map['/'] = [ ':Commentary'                         , 'comment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'                , 'file explorer']
 let g:which_key_map['f'] = [ ':FzfGFiles'                          , 'search files' ]
-let g:which_key_map['h'] = [ ':sp'                                 , 'split below']
+let g:which_key_map['h'] = [ ':split'                              , 'split below']
 " FIXME:
 " let g:which_key_map['K'] = [ ':call <SID>show_documentation()<CR>' , 'code hint']
 let g:which_key_map['r'] = [ ':RangerCurrentFileExistingOrNewTab'  , 'ranger' ]

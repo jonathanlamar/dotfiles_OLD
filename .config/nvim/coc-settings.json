@@ -1,15 +1,17 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["markdown", "yaml", "json"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "yaml",
+    "json",
+    "python",
+    "java"
+  ],
 
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
 
-  "snippets.ultisnips.directories": 
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
 
   "languageserver": {
     "golang": {
@@ -24,11 +26,7 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.keyMappings": {
-    "<cr>": [
-      "expandable?",
-      ["expanded?", "collapse", "expand"],
-      "open"
-    ],
+    "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
     "<esc>": "esc",
     "e": "open",
     "v": "open:vsplit",
@@ -48,5 +46,4 @@
     "r": "rename",
     "gp": "preview:labeling"
   }
-
 }
