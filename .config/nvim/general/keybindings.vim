@@ -14,10 +14,20 @@ imap <Down>  <Nop>
 imap <Left>  <Nop>
 imap <Right> <Nop>
 
+imap <C-Up>    <Nop>
+imap <C-Down>  <Nop>
+imap <C-Left>  <Nop>
+imap <C-Right> <Nop>
+
 nmap <Up>    <Nop>
 nmap <Down>  <Nop>
 nmap <Left>  <Nop>
 nmap <Right> <Nop>
+
+nmap <C-Up>    <Nop>
+nmap <C-Down>  <Nop>
+nmap <C-Left>  <Nop>
+nmap <C-Right> <Nop>
 
 " Insert mode nav keys
 inoremap <C-k> <Up>
@@ -36,8 +46,8 @@ nnoremap Q <Nop>
 nnoremap <M-o> o<Esc>
 
 " Better indenting
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Source vimrc after saving.  Have to refresh airline and colorscheme to fix
 " some weird behavior, which is probably related to order of settings

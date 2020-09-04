@@ -42,19 +42,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'mhinz/vim-startify'
   source $HOME/.config/nvim/plugins/settings/vim-startify.vim
 
-  " Text Navigation - not sure how I feel about this.
-  " Plug 'justinmk/vim-sneak'
-  " source $HOME/.config/nvim/plugins/settings/vim-sneak.vim
-
-  " Ranger integration
-  " Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-  " source $HOME/.config/nvim/plugins/settings/rnvimr.vim
-
-  " TODO: Figure out how to make this less ugly
-  Plug 'francoiscabrol/ranger.vim'
-  Plug 'rbgrouleff/bclose.vim'
-  source $HOME/.config/nvim/plugins/settings/ranger.vim
-
   " Neat icons
   Plug 'ryanoasis/vim-devicons'
 
@@ -62,30 +49,41 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/goyo.vim'
   source $HOME/.config/nvim/plugins/settings/goyo.vim
 
+  " TODO: Figure out how to make this less ugly
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
+  source $HOME/.config/nvim/plugins/settings/ranger.vim
+
+  Plug 'christoomey/vim-tmux-navigator'
+  source $HOME/.config/nvim/plugins/settings/navigator.vim
+
 
 
   " Colorschemes
 
 
   " The gold standard of warm dark colorschemes
-  Plug 'morhetz/gruvbox'
+  " Plug 'morhetz/gruvbox'
   " TODO: Some of the settings in these colorscheme files apply to all colorschemes
-  source $HOME/.config/nvim/plugins/settings/gruvbox.vim
+  " source $HOME/.config/nvim/plugins/settings/gruvbox.vim
 
-  Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
-  source $HOME/.config/nvim/plugins/settings/papercolor-theme.vim
+  " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.
+  " source $HOME/.config/nvim/plugins/settings/papercolor-theme.vim
 
   Plug 'joshdick/onedark.vim' " Decent middle ground with good support for both scala and python, but low contrast
   source $HOME/.config/nvim/plugins/settings/onedark.vim
 
-  Plug 'danilo-augusto/vim-afterglow'
-  source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
+  " Plug 'danilo-augusto/vim-afterglow'
+  " source $HOME/.config/nvim/plugins/settings/vim-afterglow.vim
 
-  Plug 'ayu-theme/ayu-vim'
-  source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
+  " Plug 'ayu-theme/ayu-vim'
+  " source $HOME/.config/nvim/plugins/settings/ayu-vim.vim
 
-  Plug 'chriskempson/base16-vim'
-  source $HOME/.config/nvim/plugins/settings/base16-vim.vim
+  " Plug 'chriskempson/base16-vim'
+  " source $HOME/.config/nvim/plugins/settings/base16-vim.vim
+
+  " Plug 'arcticicestudio/nord-vim'
+  " source $HOME/.config/nvim/plugins/settings/nord-vim.vim
 
 
 
@@ -109,41 +107,28 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Syntax highlighting for many languages
   Plug 'sheerun/vim-polyglot'
 
-  " Colored parens
-  " Plug 'junegunn/rainbow_parentheses.vim'
-  " source $HOME/.config/nvim/plugins/settings/rainbow_parentheses.vim
-
-  " Better Comments
-  " Not sure how I feel about this one...
-  " Plug 'jbgutierrez/vim-better-comments'
-
-  " vim-scala - modern scaladoc indentation
-  " Plug 'derekwyatt/vim-scala' " This one has a bit more than syntax highlighting.
-  " source $HOME/.config/nvim/plugins/settings/vim-scala.vim
+  " Better syntax highlighting for java
+  Plug 'uiiaoo/java-syntax.vim'
+  source $HOME/.config/nvim/plugins/settings/java-syntax.vim
 
   " Nice python syntax highlighting.  Doesn't seem to work with all
   " colorschemes, but does with gruvbox
   Plug 'vim-python/python-syntax'
   source $HOME/.config/nvim/plugins/settings/python-syntax.vim
 
-  " Golang support for building, etc.
-  Plug 'fatih/vim-go'
-  source $HOME/.config/nvim/plugins/settings/vim-go.vim
-
   Plug 'majutsushi/tagbar'
   source $HOME/.config/nvim/plugins/settings/tagbar.vim
+
+  " Plug 'mhinz/vim-signify'
+  " source $HOME/.config/nvim/plugins/settings/vim-signify.vim
 
 
 
   " General dev/git stuff
 
 
-  " Have the file system follow you around.  Not sure how I feel about this one...
-  Plug 'airblade/vim-rooter'
-  source $HOME/.config/nvim/plugins/settings/vim-rooter.vim
-
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
+  " Plug 'Xuyuanp/nerdtree-git-plugin'
+  " source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
   Plug 'airblade/vim-gitgutter'
 
@@ -155,9 +140,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   " This enables GBrowse and some other github-specific functionality for fugitive.
   Plug 'tpope/vim-rhubarb'
-
-  Plug 'christoomey/vim-tmux-navigator'
-  source $HOME/.config/nvim/plugins/settings/navigator.vim
 
 call plug#end()
 

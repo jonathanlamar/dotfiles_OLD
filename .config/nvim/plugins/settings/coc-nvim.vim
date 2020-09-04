@@ -46,8 +46,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
@@ -58,15 +56,19 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ic <Plug>(coc-classobj-i)
+omap ac <Plug>(coc-classobj-a)
 
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
+" command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+" command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+" command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Support comments within json syntax.  Useful for editing coc config
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -77,8 +79,6 @@ let g:coc_global_extensions = [
   \ 'coc-java',
   \ 'coc-json',
   \ 'coc-markdownlint',
-  \ 'coc-metals',
-  \ 'coc-pairs',
   \ 'coc-python',
   \ 'coc-snippets',
   \ 'coc-vimlsp',

@@ -27,18 +27,15 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 " let g:which_key_map['/'] = [ ':Commentary'                         , 'comment' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer'            , 'file explorer']
+let g:which_key_map['e'] = [ ':CocCommand explorer'                , 'file explorer']
 let g:which_key_map['f'] = [ ':FzfGFiles'                          , 'search files' ]
 let g:which_key_map['h'] = [ ':sp'                                 , 'split below']
 " FIXME:
 " let g:which_key_map['K'] = [ ':call <SID>show_documentation()<CR>' , 'code hint']
 let g:which_key_map['r'] = [ ':RangerCurrentFileExistingOrNewTab'  , 'ranger' ]
-let g:which_key_map['S'] = [ ':Startify'                           , 'start screen' ]
+let g:which_key_map['S'] = [ ':tabnew | Startify'                  , 'start screen' ]
 let g:which_key_map['T'] = [ ':Rg'                                 , 'search text' ]
 let g:which_key_map['v'] = [ ':vsp'                                , 'split right']
-let g:which_key_map['i'] = [ ':tabe $MYVIMRC'                      , 'init.vim']
-" TODO: Figure out a letter for terminal
-" let g:which_key_map[''] = [ ':call TermToggle(0.3)'               , 'terminal'],
 
 
 " s is for search
@@ -66,7 +63,6 @@ let g:which_key_map.s = {
       \ 'T' : [':FzfBTags'     , 'buffer tags'],
       \ 'w' : [':FzfWindows'   , 'search windows'],
       \ 'y' : [':FzfFiletypes' , 'file types'],
-      \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
 " g is for git

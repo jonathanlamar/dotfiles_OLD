@@ -1,14 +1,14 @@
 window:
   dimensions:
     columns: 100
-    lines: 54
+    lines: 50
 
   padding:
     x: 2
     y: 2
 
 font:
-  size: 7
+  size: 12
 
   # Offset y can be thought of as vertical spacing.
   offset:
@@ -156,7 +156,7 @@ schemes:
   onedark: &onedark
     # Default colors
     primary:
-      background: "#1e2127"
+      background: "#1B1D23"
       foreground: "#abb2bf"
       #
     # Normal colors
@@ -233,8 +233,8 @@ schemes:
       - { index: 21, color: '0xd7875f' }
 
 # Set colors and opacity here
-colors: *gruvbox
-# background_opacity: 0.95
+colors: *onedark
+background_opacity: 0.95
 
 
 
