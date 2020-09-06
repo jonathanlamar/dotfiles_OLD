@@ -31,7 +31,13 @@ function fv() {
     [[ -n $file ]] && vim $file
 }
 
-function tm() { tmux new -A -s $1 }
+function tm() { 
+    if [[ -n $1 ]]; then
+        tmux new -A -s $1
+    else
+        tmux
+    fi
+}
 
 function tma() {
     local sess
