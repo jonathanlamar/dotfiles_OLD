@@ -1,10 +1,11 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "markdown",
-    "yaml",
+    "java",
+    "javascript",
     "json",
+    "markdown",
     "python",
-    "java"
+    "yaml"
   ],
 
   // python config
