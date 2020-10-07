@@ -3,6 +3,7 @@ alias la="ls -alhGt"
 alias vim="nvim"
 alias pip=pip3
 alias python=python3
+alias cl=clear
 
 export EDITOR="nvim -n"
 export BROWSER="google-chrome-stable"
