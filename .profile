@@ -18,6 +18,9 @@ export REPOS=$HOME/repos
 # Make sure my scripts are on path
 export PATH=$SCRIPTS:$PATH
 
+# Make sure cargo is on PATH
+source "$HOME/.cargo/env"
+
 # python virtualenv stuff
 export PATH=$HOME/.local/bin:$PATH
 
