@@ -28,6 +28,12 @@ export PATH=$HOME/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 alias jshell=$JAVA_HOME/bin/jshell
 
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/jon/repos/notMine/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/jon/repos/notMine/fzf/bin"
+fi
+
 # TODO: Make these scripts and move to $SCRIPTS
 function fv() {
     local file
