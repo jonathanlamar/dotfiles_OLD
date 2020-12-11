@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'vim-airline/vim-airline-themes'
 
   " Fuzzy search for files and tags, grep contents, etc.
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   source $HOME/.config/nvim/plugins/settings/fzf.vim
 
