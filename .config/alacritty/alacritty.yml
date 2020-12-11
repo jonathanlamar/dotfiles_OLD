@@ -229,7 +229,7 @@ schemes:
 
 # Set colors and opacity here
 colors: *onedark
-background_opacity: 0.95
+# background_opacity: 0.95
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
