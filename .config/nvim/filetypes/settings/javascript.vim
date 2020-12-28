@@ -1,4 +1,4 @@
-augroup python
+augroup javascript
   autocmd!
   autocmd BufRead,BufNewFile  *.ts set filetype=javascript
   autocmd FileType javascript set shiftwidth=2
