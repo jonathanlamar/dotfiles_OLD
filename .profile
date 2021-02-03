@@ -1,13 +1,14 @@
-alias ll="ls -lhGt"
-alias la="ls -alhGt"
+alias ll="ls -lhG"
+alias la="ls -alhG"
 alias vim="nvim"
-alias pip=pip3
-alias python=python3
+# alias pip=pip3
+# alias python=python3
 alias cl=clear
+alias jnb="jupyter notebook"
 
 export EDITOR="nvim -n"
 export BROWSER="google-chrome-stable"
-export TERMINAL="alacritty"
+# export TERMINAL="alacritty"
 
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile
@@ -18,11 +19,14 @@ export REPOS=$HOME/repos
 # Make sure my scripts are on path
 export PATH=$SCRIPTS:$PATH
 
-# Make sure cargo is on PATH
-source "$HOME/.cargo/env"
-
 # python virtualenv stuff
 export PATH=$HOME/.local/bin:$PATH
+
+# Homebrew-installed version of python
+export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
+
+# Need to add library to path
+export PATH=/Library/Frameworks/R.framework/Resources:$PATH
 
 # Java stuff
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
@@ -30,9 +34,9 @@ alias jshell=$JAVA_HOME/bin/jshell
 
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/jon/repos/notMine/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/jon/repos/notMine/fzf/bin"
-fi
+# if [[ ! "$PATH" == */home/jon/repos/notMine/fzf/bin* ]]; then
+#   export PATH="${PATH:+${PATH}:}/home/jon/repos/notMine/fzf/bin"
+# fi
 
 # TODO: Make these scripts and move to $SCRIPTS
 function fv() {

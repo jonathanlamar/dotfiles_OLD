@@ -8,7 +8,7 @@ window:
     y: 2
 
 font:
-  size: 10
+  size: 13
 
   # Offset y can be thought of as vertical spacing.
   offset:
@@ -229,7 +229,7 @@ schemes:
 
 # Set colors and opacity here
 colors: *onedark
-# background_opacity: 0.95
+background_opacity: 0.95
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
