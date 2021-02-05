@@ -29,7 +29,7 @@ export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
 export PATH=/Library/Frameworks/R.framework/Resources:$PATH
 
 # Java stuff
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 alias jshell=$JAVA_HOME/bin/jshell
 
 # Setup fzf
