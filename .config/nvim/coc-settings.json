@@ -5,6 +5,7 @@
     "json",
     "markdown",
     "python",
+    "scala",
     "yaml"
   ],
 
@@ -46,5 +47,9 @@
     "A": "addDirectory",
     "r": "rename",
     "gp": "preview:labeling"
-  }
+  },
+
+  // scala-metals
+  "metals.showInferredType": true,
+  "metals.statusBarEnabled": true
 }

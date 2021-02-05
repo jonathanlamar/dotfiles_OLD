@@ -65,7 +65,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " The gold standard of warm dark colorschemes
   " Plug 'morhetz/gruvbox'
-  " TODO: Some of the settings in these colorscheme files apply to all colorschemes
+  " TODO: Some of the settings in these colorscheme files apply to all
+  " colorschemes. It would be nice to source all of them and condition on the
+  " active colorscheme
+  "
   " source $HOME/.config/nvim/plugins/settings/gruvbox.vim
 
   " Plug 'NLKNguyen/papercolor-theme' " Beautiful with python! But not much support for scala.

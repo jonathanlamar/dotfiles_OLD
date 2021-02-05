@@ -35,7 +35,7 @@ let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 
 let g:startify_bookmarks = [
-            \{ 'i'     : '~/.config/i3/config' },
+            \{ 'a'     : '~/.config/alacritty/alacritty.yml' },
             \{ 'v'     : '~/.config/nvim/init.vim' },
             \{ 'doc'   : '~/Documents' },
             \{ 'dow'   : '~/Downloads' },

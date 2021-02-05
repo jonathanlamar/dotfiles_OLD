@@ -79,6 +79,7 @@ let g:coc_global_extensions = [
   \ 'coc-java',
   \ 'coc-json',
   \ 'coc-markdownlint',
+  \ 'coc-metals',
   \ 'coc-prettier',
   \ 'coc-python',
   \ 'coc-snippets',
@@ -133,3 +134,5 @@ let g:coc_explorer_global_presets = {
 
 " List all presets
 " nmap <space>el :CocList explPresets
+
+nmap <Leader>ws <Plug>(coc-metals-expand-decoration)
