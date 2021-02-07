@@ -111,6 +111,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Syntax highlighting for many languages
   Plug 'sheerun/vim-polyglot'
 
+  Plug 'derekwyatt/vim-scala'
+  source $HOME/.config/nvim/plugins/settings/vim-scala.vim
+
   " Better syntax highlighting for java
   Plug 'uiiaoo/java-syntax.vim'
   source $HOME/.config/nvim/plugins/settings/java-syntax.vim
@@ -133,6 +136,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " General dev/git stuff
 
+  " Plug 'tmsvg/pear-tree'
+  " source $HOME/.config/nvim/plugins/settings/pear-tree.vim
+
+  Plug 'jiangmiao/auto-pairs'
+  source $HOME/.config/nvim/plugins/settings/auto-pairs.vim
 
   " Plug 'Xuyuanp/nerdtree-git-plugin'
   " source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
