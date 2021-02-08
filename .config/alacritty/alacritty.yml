@@ -228,7 +228,7 @@ schemes:
       - { index: 21, color: "0xd7875f" }
 
 # Set colors and opacity here
-colors: *onedark
+colors: *gruvbox
 background_opacity: 0.95
 
 mouse_bindings:

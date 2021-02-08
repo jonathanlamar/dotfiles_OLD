@@ -43,8 +43,8 @@ set viewoptions=cursor,folds
 " ColorScheme settings need to be enabled before the colorscheme is set.
 set termguicolors
 set background=dark
-colorscheme onedark
-let g:airline_theme = 'onedark'
+colorscheme gruvbox
+let g:airline_theme = 'gruvbox'
 
 
 " TABS:
