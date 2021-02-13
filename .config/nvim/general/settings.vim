@@ -33,7 +33,7 @@ autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
 set hidden " TextEdit might fail if hidden is not set.
 set nowrap
 set number
-set relativenumber
+" set relativenumber
 set splitbelow " These are more intuitive to me
 set splitright
 set viewoptions=cursor,folds

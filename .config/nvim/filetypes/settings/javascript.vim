@@ -1,6 +1,7 @@
 augroup javascript
   autocmd!
   autocmd BufRead,BufNewFile  *.ts set filetype=javascript
+  autocmd BufRead,BufNewFile  *.jsx set filetype=javascript
   autocmd FileType javascript set shiftwidth=2
   autocmd FileType javascript set softtabstop=2
   autocmd FileType javascript set tabstop=2
