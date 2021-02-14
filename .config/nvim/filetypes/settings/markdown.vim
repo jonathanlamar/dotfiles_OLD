@@ -9,5 +9,6 @@ augroup markdown
   autocmd BufWritePre *.md %s/\s\+$//e
   " autocmd BufWritePre *.md :normal ggVGgq " Format file on save
   autocmd FileType markdown set textwidth=80
+  autocmd FileType markdown set colorcolumn=80
 augroup end
 
