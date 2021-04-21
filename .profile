@@ -1,8 +1,8 @@
 alias ll="ls -lhG"
 alias la="ls -alhG"
 alias vim="nvim"
-# alias pip=pip3
-# alias python=python3
+alias pip=pip3
+alias python=python3
 alias cl=clear
 alias jnb="jupyter notebook"
 
@@ -21,9 +21,6 @@ export PATH=$SCRIPTS:$PATH
 
 # python virtualenv stuff
 export PATH=$HOME/.local/bin:$PATH
-
-# Homebrew-installed version of python
-export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
 
 # Need to add library to path
 export PATH=/Library/Frameworks/R.framework/Resources:$PATH
@@ -58,3 +55,6 @@ function tma() {
     sess="$(tmux ls | sed "s/:.*//" | fzf --height 40% --reverse --select-1 --exit-0)"
     [[ -n $sess ]] && tmux new -A -s $sess
 }
+
+# put homebrew on path
+eval "$(/opt/homebrew/bin/brew shellenv)"
