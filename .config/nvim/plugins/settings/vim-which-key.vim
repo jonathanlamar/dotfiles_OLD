@@ -26,13 +26,10 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
-" let g:which_key_map['/'] = [ ':Commentary'                         , 'comment' ]
 " let g:which_key_map['e'] = [ ':CocCommand explorer'                , 'file explorer']
 let g:which_key_map['e'] = [ ':NERDTreeToggle'                , 'file explorer']
 let g:which_key_map['f'] = [ ':FzfGFiles'                          , 'search files' ]
 let g:which_key_map['h'] = [ ':split'                              , 'split below']
-" FIXME:
-" let g:which_key_map['K'] = [ ':call <SID>show_documentation()<CR>' , 'code hint']
 let g:which_key_map['r'] = [ ':RangerCurrentFileExistingOrNewTab'  , 'ranger' ]
 let g:which_key_map['S'] = [ ':tabnew | Startify'                  , 'start screen' ]
 let g:which_key_map['T'] = [ ':Rg'                                 , 'search text' ]
@@ -93,6 +90,7 @@ let g:which_key_map.g = {
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }
 
+" TODO: Why doesn't this work?
 " " l is for language server protocol
 " let g:which_key_map.l = {
 "       \ 'name' : '+lsp' ,
