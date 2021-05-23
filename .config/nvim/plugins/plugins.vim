@@ -106,6 +106,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Common configurations for built in LSP client.
   Plug 'neovim/nvim-lspconfig'
   Plug 'scalameta/nvim-metals'
+  Plug 'nvim-lua/completion-nvim'
+  source $HOME/.config/nvim/plugins/settings/completion-nvim.vim
 
   " Provides auto-completion for common commands.
   " Plug 'mattn/emmet-vim'
