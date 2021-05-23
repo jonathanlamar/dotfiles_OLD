@@ -58,3 +58,6 @@ function tma() {
 
 # put homebrew on path
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# put coursier on path for metals support in vim
+export PATH="$PATH:/Users/jon/Library/Application Support/Coursier/bin"
