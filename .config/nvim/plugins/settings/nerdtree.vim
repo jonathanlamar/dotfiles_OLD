@@ -6,3 +6,5 @@ augroup nerd
   autocmd FileType nerdtree nnoremap <buffer> <space>n :NERDTreeClose <CR>
 augroup end
 
+" Close nerd tree if it is the only open buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
