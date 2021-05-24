@@ -20,8 +20,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'mechatroner/rainbow_csv'
 
   " NERDTree for file navigation
-  " Plug 'scrooloose/nerdtree'
-  " source $HOME/.config/nvim/plugins/settings/nerdtree.vim
+  Plug 'preservim/nerdtree'
+  source $HOME/.config/nvim/plugins/settings/nerdtree.vim
+
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
   " Airline for nifty info in the status and tablines
   Plug 'vim-airline/vim-airline'
@@ -100,8 +103,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-surround'
 
   " The best worst language server/linting integration.
-  Plug 'neoclide/coc.nvim', {'branch': 'release' }
-  source $HOME/.config/nvim/plugins/settings/coc-nvim.vim
+  " Plug 'neoclide/coc.nvim', {'branch': 'release' }
+  " source $HOME/.config/nvim/plugins/settings/coc-nvim.vim
+
+  " Common configurations for built in LSP client.
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'scalameta/nvim-metals'
+  Plug 'nvim-lua/completion-nvim'
+  source $HOME/.config/nvim/plugins/settings/completion-nvim.vim
 
   " Provides auto-completion for common commands.
   " Plug 'mattn/emmet-vim'
@@ -139,9 +148,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'jiangmiao/auto-pairs'
   source $HOME/.config/nvim/plugins/settings/auto-pairs.vim
-
-  " Plug 'Xuyuanp/nerdtree-git-plugin'
-  " source $HOME/.config/nvim/plugins/settings/nerdtree-git-plugin.vim
 
   Plug 'airblade/vim-gitgutter'
 
