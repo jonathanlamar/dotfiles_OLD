@@ -1,8 +1,10 @@
 alias ll="ls -lhG"
 alias la="ls -alhG"
 alias vim="nvim"
-alias pip=pip3
+alias pip=pip3.9
 alias python=python3
+alias ipython=/Library/Frameworks/Python.framework/Versions/3.9/bin/ipython3
+alias jupyter=/Library/Frameworks/Python.framework/Versions/3.9/bin/jupyter
 alias cl=clear
 alias jnb="jupyter notebook"
 
