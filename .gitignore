@@ -23,6 +23,8 @@
 !.config/nvim/lua/lang/*
 !.config/nvim/plugin
 !.config/nvim/plugin/*
+!.config/nvim/plugin/filetypes
+!.config/nvim/plugin/filetypes/*
 !.config/picom
 !.config/picom/*
 !.config/polybar
