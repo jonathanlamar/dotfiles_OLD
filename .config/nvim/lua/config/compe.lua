@@ -31,7 +31,7 @@ require'compe'.setup {
         spell = true;
         tags = true;
         snippets_nvim = true;
-        treesitter = true;
+        treesitter = false;
   };
 }
 
@@ -51,7 +51,6 @@ end
 -- Use (s-)tab to:
 --- move to prev/next item in completion menuone
 --- jump to prev/next snippet's placeholder
--- FIXME: This is inserting vsnip-expand-or-jump text into the buffer.  Bad!
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
@@ -69,11 +68,12 @@ _G.s_tab_complete = function()
   elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
     return t "<Plug>(vsnip-jump-prev)"
   else
+    -- If <S-Tab> is not working in your terminal, change it to <C-h>
     return t "<S-Tab>"
   end
 end
 
-utils.map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-utils.map("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-utils.map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-utils.map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
