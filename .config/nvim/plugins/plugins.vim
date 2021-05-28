@@ -9,15 +9,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
   " Repleat-plugin-with-.:
-  " TODO: Come up with better mappings for this
   Plug 'tpope/vim-repeat'
 
   " Increment dates and times with C-A and C-X
   Plug 'tpope/vim-speeddating'
-
-  " Neat column highlighting for csv and tsv files.
-  " Also allows some basic SQL functionality, but I haven't learned that
-  Plug 'mechatroner/rainbow_csv'
 
   " NERDTree for file navigation
   Plug 'preservim/nerdtree'

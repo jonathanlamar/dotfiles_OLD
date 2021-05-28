@@ -4,3 +4,4 @@ pynvim
 sexpdata
 six
 websocket-client
+black

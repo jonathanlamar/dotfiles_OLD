@@ -11,7 +11,8 @@ augroup nerd
 augroup end
 
 " let NERDTreeMapActivateNode = 'o'
-let NERDTreeMapOpenSplit = 's'
+let NERDTreeMapOpenSplit = 'h'
 let NERDTreeMapPreviewSplit = 'gs'
 let NERDTreeMapOpenVSplit = 'v'
 let NERDTreeMapPreviewVSplit = 'gv'
+let NERDTreeMapToggleHidden = '.'

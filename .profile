@@ -25,6 +25,9 @@ export PATH=$HOME/Library/Python/3.8/bin:$PATH
 # Need to add library to path
 export PATH=/Library/Frameworks/R.framework/Resources:$PATH
 
+# secret database credentials
+source $HOME/.credentials
+
 # TODO: Make these scripts and move to $SCRIPTS
 function fv() {
     local file

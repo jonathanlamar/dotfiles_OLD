@@ -27,6 +27,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 " let g:which_key_map['e'] = [ ':CocCommand explorer'                , 'file explorer']
+let g:which_key_map['b'] = [ ':call Black()'                , 'code formatting']
 let g:which_key_map['e'] = [ ':NERDTreeToggle'                , 'file explorer']
 let g:which_key_map['f'] = [ ':FzfGFiles'                          , 'search files' ]
 let g:which_key_map['h'] = [ ':split'                              , 'split below']
@@ -66,16 +67,14 @@ let g:which_key_map.s = {
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'A' : [':Git add .'                        , 'add all'],
       \ 'a' : [':Git add %'                        , 'add current'],
+      \ 'A' : [':Git add .'                        , 'add all'],
       \ 'b' : [':Git blame'                        , 'blame'],
-      \ 'B' : [':GBrowse'                          , 'browse'],
+      \ 'B' : [':GBrowse'                          , 'view in browser'],
       \ 'c' : [':Git commit'                       , 'commit'],
-      \ 'd' : [':Git diff'                         , 'diff'],
-      \ 'D' : [':Gdiffsplit'                       , 'diff split'],
+      \ 'd' : [':Gdiffsplit'                       , 'diff split'],
+      \ 'D' : [':Git diff'                         , 'diff'],
       \ 'g' : [':GGrep'                            , 'git grep'],
-      \ 'G' : [':Gstatus'                          , 'status'],
-      \ 'h' : [':GitGutterLineHighlightsToggle'    , 'highlight hunks'],
       \ 'H' : ['<Plug>(GitGutterPreviewHunk)'      , 'preview hunk'],
       \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
       \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
@@ -84,7 +83,7 @@ let g:which_key_map.g = {
       \ 'P' : [':Git pull'                         , 'pull'],
       \ 'r' : [':GRemove'                          , 'remove'],
       \ 's' : ['<Plug>(GitGutterStageHunk)'        , 'stage hunk'],
-      \ 't' : [':GitGutterSignsToggle'             , 'toggle signs'],
+      \ 'S' : [':Gstatus'                          , 'status'],
       \ 'u' : ['<Plug>(GitGutterUndoHunk)'         , 'undo hunk'],
       \ 'v' : [':GV'                               , 'view commits'],
       \ 'V' : [':GV!'                              , 'view buffer commits'],
@@ -111,13 +110,14 @@ let g:which_key_map.g = {
 " t is for toggle
 let g:which_key_map.t = {
       \ 'name' : '+toggle' ,
-      \ 'c' : ['TagbarToggle'            , 'tagbar'],
-      \ 'g' : [':call GoyoNoLines()'     , 'goyo'],
-      \ 'n' : [':set nonumber!'          , 'line-numbers'],
-      \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 's' : [':let @/ = ""'            , 'remove search highlight'],
-      \ 't' : [':call TermToggle(0.3)'   , 'terminal'],
-      \ 'w' : [':set nowrap!'            , 'wrap text']
+      \ 'c' : ['TagbarToggle'                      , 'tagbar'],
+      \ 'G' : [':call GoyoNoLines()'               , 'goyo'],
+      \ 'g' : [':GitGutterSignsToggle'             , 'git signs'],
+      \ 'n' : [':set nonumber!'                    , 'line-numbers'],
+      \ 'r' : [':set norelativenumber!'            , 'relative line nums'],
+      \ 's' : [':let @/ = ""'                      , 'remove search highlight'],
+      \ 't' : [':call TermToggle(0.3)'             , 'terminal'],
+      \ 'w' : [':set nowrap!'                      , 'wrap text']
       \ }
 
 

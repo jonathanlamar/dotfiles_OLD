@@ -5,9 +5,7 @@
 
 " Outstanding TODOs:
 " 1. Look into better code folding settings.
-" 2. Turn off drop down completion in free text entry (comments, text/markdown)
 " 3. Work on better ranger integration.
-" 4. Finish configuing coc-explorer
 " 5. Goyo should preserve old splits.
 
 " Virtual environment for running required neovim modules
@@ -36,8 +34,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>la', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<leader>ld', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', '<leader>lD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', '<leader>lf', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_set_keymap('n', '<leader>lF', '<Cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
+  -- buf_set_keymap('n', '<leader>lf', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  -- buf_set_keymap('n', '<leader>lF', '<Cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
+  buf_set_keymap('n', '<leader>lf', '<Cmd>call Black()<CR>', opts)
   buf_set_keymap('n', '<leader>li', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<leader>lI', '<Cmd>lua vim.lsp.diagnostic.get_all()<CR>', opts)
   buf_set_keymap('n', '<leader>ln', '<Cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
