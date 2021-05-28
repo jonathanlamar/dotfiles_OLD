@@ -51,6 +51,7 @@ end
 -- Use (s-)tab to:
 --- move to prev/next item in completion menuone
 --- jump to prev/next snippet's placeholder
+-- FIXME: This is inserting vsnip-expand-or-jump text into the buffer.  Bad!
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
