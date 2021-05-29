@@ -1,14 +1,14 @@
 alias ll="ls -lhG"
 alias la="ls -alhG"
 alias vim="nvim"
-alias pip=pip3.9
+alias pip=pip3
 alias python=python3
-alias ipython=/Library/Frameworks/Python.framework/Versions/3.9/bin/ipython3
-alias jupyter=/Library/Frameworks/Python.framework/Versions/3.9/bin/jupyter
 alias cl=clear
 alias jnb="jupyter notebook"
 
 export EDITOR="nvim -n"
+export BROWSER="google-chrome-stable"
+# export TERMINAL="alacritty"
 
 # Dotfiles for easy access
 export PROFILE=$HOME/.profile
@@ -20,13 +20,20 @@ export REPOS=$HOME/repos
 export PATH=$SCRIPTS:$PATH
 
 # python virtualenv stuff
-export PATH=$HOME/Library/Python/3.8/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Need to add library to path
 export PATH=/Library/Frameworks/R.framework/Resources:$PATH
 
-# secret database credentials
-source $HOME/.credentials
+# Java stuff
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+alias jshell=$JAVA_HOME/bin/jshell
+
+# Setup fzf
+# ---------
+# if [[ ! "$PATH" == */home/jon/repos/notMine/fzf/bin* ]]; then
+#   export PATH="${PATH:+${PATH}:}/home/jon/repos/notMine/fzf/bin"
+# fi
 
 # TODO: Make these scripts and move to $SCRIPTS
 function fv() {
@@ -48,3 +55,9 @@ function tma() {
     sess="$(tmux ls | sed "s/:.*//" | fzf --height 40% --reverse --select-1 --exit-0)"
     [[ -n $sess ]] && tmux new -A -s $sess
 }
+
+# put homebrew on path
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# put coursier on path for metals support in vim
+export PATH="$PATH:/Users/jon/Library/Application Support/Coursier/bin"
