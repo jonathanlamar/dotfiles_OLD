@@ -17,6 +17,21 @@ local on_attach = function(client, bufnr)
         augroup END
         ]], false)
     end
+
+    local cfg = {
+      bind = true, -- This is mandatory, otherwise border config won't get registered.
+                   -- If you want to hook lspsaga or other signature handler, pls set to false
+      doc_lines = 2, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
+                     -- set to 0 if you do not want any API comments be shown
+                     -- This setting only take effect in insert mode, it does not affect signature help in normal
+                     -- mode
+
+      hint_enable = true, -- virtual hint enable
+      use_lspsaga = false,  -- set to true if you want to use lspsaga popup
+    }
+
+    -- I don't get this whole on_attach thing.
+    require('lsp_signature').on_attach(cfg)
 end
 
 

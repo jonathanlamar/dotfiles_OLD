@@ -63,6 +63,7 @@ return require('packer').startup(function()
   use { 'hrsh7th/nvim-compe' }
   use { 'glepnir/lspsaga.nvim' }
   use { 'onsails/lspkind-nvim' }
+  use { "ray-x/lsp_signature.nvim" }
 
   -- nvim LSP for scala
   -- TODO: Not sure if needed anymore
