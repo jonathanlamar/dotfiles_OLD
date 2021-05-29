@@ -23,6 +23,7 @@
 !.config/nvim/lua/lang/*
 !.config/nvim/plugin
 !.config/nvim/plugin/*
+.config/nvim/plugin/packer_compiled.vim
 !.config/nvim/plugin/filetypes
 !.config/nvim/plugin/filetypes/*
 !.config/picom
