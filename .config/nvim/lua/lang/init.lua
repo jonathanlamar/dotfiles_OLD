@@ -19,15 +19,22 @@ local on_attach = function(client, bufnr)
     end
 
     local cfg = {
-      bind = true, -- This is mandatory, otherwise border config won't get registered.
+        bind = true, -- This is mandatory, otherwise border config won't get registered.
                    -- If you want to hook lspsaga or other signature handler, pls set to false
-      doc_lines = 2, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
+        doc_lines = 2, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
                      -- set to 0 if you do not want any API comments be shown
                      -- This setting only take effect in insert mode, it does not affect signature help in normal
                      -- mode
+        hint_prefix = "▸ ",
+        handler_opts = {
+            border = "single"   -- double, single, shadow, none
+        },
+        decorator = {"`", "`"},  -- decoractor can be `decorator = {"***", "***"}`  `decorator = {"**", "**"}` `decorator = {"**_", "_**"}`
+                                 -- `decorator = {"*", "*"} see markdown help for more details
+                                 -- <u></u> ~ ~ does not supported by nvim
 
-      hint_enable = true, -- virtual hint enable
-      use_lspsaga = false,  -- set to true if you want to use lspsaga popup
+        hint_enable = true, -- virtual hint enable
+        use_lspsaga = false,  -- set to true if you want to use lspsaga popup
     }
 
     -- I don't get this whole on_attach thing.
